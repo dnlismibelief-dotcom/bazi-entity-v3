@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""校准统计与事前性核验 — bazi-entity-v5.
+"""校准统计与事前性核验 — BFFT v5.
 
 回答三个问题:
   1. 这些判据是不是**事前**写的？    → 用 git 首次提交时间对比预测窗口起点
@@ -174,7 +174,7 @@ def main():
                          ensure_ascii=False, indent=2))
     else:
         print("=" * 66)
-        print("bazi-entity-v5 校准报告")
+        print("BFFT 校准报告")
         print("=" * 66)
         for e in per_entity:
             print(f"[{e['entity']}] {e['entity_type']}  判据 {e['total']} 条"

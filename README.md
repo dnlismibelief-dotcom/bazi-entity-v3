@@ -1,4 +1,4 @@
-# bazi-entity-v5 · 万物命理
+# BFFT · 万物命理
 
 把四柱八字做成一套**可证伪**的分析框架，对象不限于人——`human` / `game` / `product` / `company`
 四类实体共用同一套推演，按各自的寿命尺度缩放读取。游戏用公测时刻当"生辰"，
@@ -25,6 +25,8 @@
 ## 快速开始
 
 零依赖，纯 Python 3 标准库。
+
+**安装**：clone 本仓库，或直接解压 `dist/BFFT.zip`（内含使用文档 `docs/usage.md`）。
 
 ```bash
 # 人盘（务必给出生地经度，否则时柱可能整根错）
@@ -66,7 +68,7 @@ references/model-v3-deprecated.md v3 旧规范，仅供旧记录追溯
 predictions/                      预测登记（git 时间戳作事前证明）
 tests/                            42 条测试（含 13 条带来源的权威万年历 fixtures）
 docs/usage.md                     安装与调用说明
-dist/                             打包产物
+dist/                             打包产物（BFFT.zip，含使用文档）
 ```
 
 ## 已知边界

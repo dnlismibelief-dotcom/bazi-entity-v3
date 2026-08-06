@@ -1,9 +1,9 @@
 ---
-name: bazi-entity-v5
+name: BFFT
 description: Apply Chinese BaZi (四柱八字/命理) to any entity — person, game, product, or company — to read life trajectory, popularity, revenue, and lifespan windows. Use for birth-chart analysis, for a game/product launch date (e.g. 鸣潮, 三角洲行动), or to calibrate past predictions against real events.
 ---
 
-# BaZi Entity Analysis (v5) — 万物命理
+# BFFT · BaZi Entity Analysis (v5) — 万物命理
 
 ## Overview
 

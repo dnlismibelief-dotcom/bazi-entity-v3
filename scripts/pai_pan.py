@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""四柱八字排盘 (BaZi chart calculator) — bazi-entity-v5.
+"""四柱八字排盘 (BaZi chart calculator) — BFFT v5.
 
 Pure Python 3 stdlib, no external dependencies.
 
@@ -628,7 +628,7 @@ def render(result: dict) -> str:
 
 
 def main():
-    ap = argparse.ArgumentParser(description="四柱八字排盘 (bazi-entity-v5)")
+    ap = argparse.ArgumentParser(description="四柱八字排盘 (BFFT)")
     ap.add_argument("datetime", help='当地钟表时间, e.g. "2024-05-23 10:00"')
     ap.add_argument("--name", default="")
     ap.add_argument("--tz", type=float, default=8.0, help="UTC 偏移小时, 默认 8")

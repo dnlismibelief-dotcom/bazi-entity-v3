@@ -1,10 +1,10 @@
-# bazi-entity-v5 使用文档
+# BFFT 使用文档
 
 > 一套可复用的「四柱八字 × 万物」分析 skill，供任何 AI agent（Claude Code / Codex 等）调用。
 
 ## 1. 这是什么
 
-`bazi-entity-v5`（万物命理）用同一套推演分析四类实体：
+`BFFT`（万物命理）用同一套推演分析四类实体：
 
 | entity_type | 锚点时间 | 寿命基准 | 主要读什么 |
 |---|---|---|---|
@@ -21,8 +21,11 @@
 零依赖，Python 3.10+ 即可。
 
 ```bash
-git clone https://github.com/dnlismibelief-dotcom/bazi-entity-v3.git bazi-entity-v5
+git clone https://github.com/dnlismibelief-dotcom/bazi-entity-v3.git BFFT
 ```
+
+不想 clone 也可以直接解压 `dist/BFFT.zip`（本文件即随包分发）。两种方式得到的
+都是同一套 `SKILL.md` ＋ 脚本 ＋ 测试。
 
 Claude Code / Codex 一类工具读取根目录的 `SKILL.md`。若 skill 目录与仓库位置不同，
 用软链接（Windows 用目录联接 `mklink /J`）指向仓库即可，不必维护两份副本。
@@ -54,8 +57,8 @@ python scripts/pai_pan.py "2017-03-02 10:00" --lon 116.4 --json
 
 ### 交给 AI 分析
 
-- 人盘：> 用 bazi-entity-v5 分析我的八字，出生 1995-06-15 08:30（UTC+8，女，上海），重点看事业和婚姻。
-- 游戏：> 用 bazi-entity-v5 分析《XXX》，公测 2024-09-26 10:00（UTC+8），输出热度、寿命关口和可验证判据。
+- 人盘：> 用 BFFT 分析我的八字，出生 1995-06-15 08:30（UTC+8，女，上海），重点看事业和婚姻。
+- 游戏：> 用 BFFT 分析《XXX》，公测 2024-09-26 10:00（UTC+8），输出热度、寿命关口和可验证判据。
 
 给人盘时**报上出生城市**，否则无法做经度修正，时柱可能整根错位。
 
@@ -108,5 +111,6 @@ python -m unittest discover -s tests -v
 
 ## 9. 版本
 
-当前 v5。v4 遗留的排盘 bug 清单与本次改动见 [CHANGELOG.md](../CHANGELOG.md)。
+当前 v5，skill 正式命名为 `BFFT`。v4 遗留的排盘 bug 清单与本次改动见
+[CHANGELOG.md](../CHANGELOG.md)。
 v3 旧规范保留在 [model-v3-deprecated.md](../references/model-v3-deprecated.md)，仅供旧校准记录追溯。

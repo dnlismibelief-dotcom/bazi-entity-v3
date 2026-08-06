@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v5.2 — 2026-08
+
+- **skill 正式命名为 `BFFT`**：SKILL.md frontmatter、使用文档、agents 配置、
+  脚本头部统一改名；仓库路径与 GitHub 链接保持不变（`bazi-entity-v3`）。
+- **分发包更新为 `dist/BFFT.zip`**：压缩包根目录为 `BFFT/`，使用文档随包分发
+  （`docs/usage.md`，另在根目录附 `使用文档.md` 同内容副本）。
+- 删除旧的 `dist/bazi-entity-v5.zip`。
+
 ## v5 — 2026-08
 
 模型层与 v4 相同（三书体系、六模块、层次原则未变）。本版全部改动集中在**排盘引擎的正确性**

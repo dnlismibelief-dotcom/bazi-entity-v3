@@ -1,4 +1,4 @@
 interface:
-  display_name: "万物命理 v5（人/游戏/产品/公司）"
+  display_name: "BFFT · 万物命理 v5（人/游戏/产品/公司）"
   short_description: "用四柱八字 v5 统一模型分析人、游戏、产品、公司的运势、寿命与应期；含真太阳时排盘、不变量测试、预测登记与校准统计"
-  default_prompt: "Use $bazi-entity-v5 to analyze this person birth chart (provide birth longitude) or this game lifecycle with entity-aware lifespan scaling."
+  default_prompt: "Use $BFFT to analyze this person birth chart (provide birth longitude) or this game lifecycle with entity-aware lifespan scaling."

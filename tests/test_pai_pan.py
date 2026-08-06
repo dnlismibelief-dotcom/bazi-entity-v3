@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""bazi-entity-v5 排盘不变量测试。
+"""BFFT 排盘不变量测试。
 
 设计原则
 --------

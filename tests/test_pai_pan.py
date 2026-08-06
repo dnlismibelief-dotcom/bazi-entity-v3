@@ -356,8 +356,12 @@ class TestFixtures(unittest.TestCase):
         if not os.path.exists(FIXTURES):
             return []
         with open(FIXTURES, encoding="utf-8") as f:
-            return [r for r in csv.DictReader(f)
-                    if r.get("datetime") and not r["datetime"].startswith("#")]
+            # 模板允许在表头前写注释行; 若直接交给 DictReader,
+            # 首行注释会被当成 fieldnames, 导致永远读不到数据。
+            lines = [ln for ln in f if ln.strip() and not ln.lstrip().startswith("#")]
+        if not lines:
+            return []
+        return [r for r in csv.DictReader(lines) if r.get("datetime")]
 
     def test_fixtures(self):
         rows = self._rows()

@@ -64,7 +64,7 @@ references/human.md               人盘专用（六亲、人生阶段、隐私�
 references/calibration.md         校准档案 schema、判据写法要求、鸣潮 worked example
 references/model-v3-deprecated.md v3 旧规范，仅供旧记录追溯
 predictions/                      预测登记（git 时间戳作事前证明）
-tests/                            42 条不变量测试 + fixtures 模板
+tests/                            42 条测试（含 13 条带来源的权威万年历 fixtures）
 docs/usage.md                     安装与调用说明
 dist/                             打包产物
 ```
@@ -73,8 +73,8 @@ dist/                             打包产物
 
 - 太阳黄经用 Meeus 低精度式，节气时刻精度约分钟级。**距节气 1 小时内的盘请与权威万年历核对**
   （脚本会告警）。
-- `tests/fixtures.csv` 目前为空，所以只保证算法自洽，**尚未对齐权威万年历的绝对精度**。
-  欢迎填入带来源的样本。
+- `tests/fixtures.csv` 已内置首批 13 条带来源的权威万年历样本（节气交界、夏令时、
+  23–01 点换日两派、极端经度、闰年），测试全绿；继续追加样本时请按模板写明 `source`。
 - 夏令时日期表（1986—1991）依据公开资料，可能与出生地档案有差异，可用 `--dst off` 覆盖。
 - 门派分歧（六亲、强弱、墓库、换日）一律并列输出，不作独断。
 

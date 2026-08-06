@@ -1,0 +1,35 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # verify.py 要读 git 首次提交时间来核验"事前性"，需要完整历史
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: 排盘不变量测试
+        run: python -m unittest discover -s tests -v
+
+      - name: 校准档案 schema 与事前性核验
+        run: python scripts/verify.py --strict
+
+      - name: 冒烟：排盘 CLI
+        run: |
+          python scripts/pai_pan.py "2024-05-23 10:00" --name smoke --lon 113.3 --lucky 3 --years 3
+          python scripts/pai_pan.py "1988-07-01 12:00" --lon 116.4 --json > /dev/null

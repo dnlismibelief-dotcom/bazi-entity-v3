@@ -1,40 +1,55 @@
 ---
-name: bazi-entity-v3
-description: Analyze the fortune, life trajectory, popularity, revenue, and lifespan of any entity — a person (human 八字), game, product, or company — using the v4 BaZi (四柱八字/命理) model distilled from 《千里命稿》《子平真诠》《滴天髓》 and modern annotations. Use when asked to apply Chinese metaphysics/八字/命理 to a person's birth chart or to a game/product/company (e.g., 鸣潮, 英雄联盟, 三角洲行动); predict life stages, career/wealth/marriage windows, popularity or shutdown years, revenue scale; or calibrate previous predictions against real events. Includes deterministic chart calculation (scripts/pai_pan.py), six-module pipeline (root/pattern/body-use/climate/timing/calibration), entity-type lifespan scaling, 寿元星 rules, dual six-relative systems, and evidence-graded calibration workflow.
+name: bazi-entity-v5
+description: Apply Chinese BaZi (四柱八字/命理) to any entity — person, game, product, or company — to read life trajectory, popularity, revenue, and lifespan windows. Use for birth-chart analysis, for a game/product launch date (e.g. 鸣潮, 三角洲行动), or to calibrate past predictions against real events.
 ---
 
-# BaZi Entity Analysis (v4) — 万物命理
+# BaZi Entity Analysis (v5) — 万物命理
 
 ## Overview
 
-v4 模型 = 三书融合（《千里命稿》实用批命 ＋《子平真诠》格局体系 ＋《滴天髓》气象理气 ＋ 梁湘潤今註现代制式）＋ 现代工程化（概率化、可证伪、可归因）。
+v5 = v4 的三书体系（《千里命稿》实用批命 ＋《子平真诠》格局 ＋《滴天髓》气象理气 ＋ 梁湘潤今註）
+＋ 修好的排盘引擎与可证伪机制。
 
-层次原则：**强弱 < 格局 < 气象 < 调候**。神煞不作格局成败依据；调候为急可超越中和；结论带置信度与条件句。
+层次原则：**强弱 < 格局 < 气象 < 调候**。神煞不作格局成败依据；调候为急可超越中和；
+结论带置信度与条件句。门派分歧并列输出，不作独断。
+
+**v5 与 v4 的差别在工程层，不在模型层** —— 详见 [CHANGELOG.md](CHANGELOG.md)。最要紧的三条：
+真太阳时修正（此前同区不同经度共用时柱，最多错 2 小时 15 分）、流年改以立春分界、
+预测登记用 git 时间戳作事前证明。
 
 ## Workflow
 
 ### 1. 确定实体类型与锚点
 
-先定 `entity_type`（human / game / product / company），再收集锚点时间（缺失先问，不猜）。human 用真实性别；game/product 默认 male（阳年男顺排）。
+先定 `entity_type`（human / game / product / company），再收集锚点时间（缺失先问，不猜）。
+human 用真实性别与**出生地经度**；game/product 默认 male（阳年男顺排）。
 
 ### 2. 排盘
 
 ```bash
-python scripts/pai_pan.py "2024-05-23 10:00" --name 鸣潮 --lucky 10 --years 12
-python scripts/pai_pan.py "1990-01-01 10:00" --name "示例人盘" --gender female --lucky 10 --years 12
-python scripts/pai_pan.py "2017-03-02 10:00" --name "某公司实体" --json
+# 人盘：务必给经度，否则时柱可能整根错
+python scripts/pai_pan.py "1990-01-01 10:00" --lon 116.4 --gender female --lucky 10 --years 12
+
+# 游戏/产品：用公测或上线时刻
+python scripts/pai_pan.py "2024-05-23 10:00" --name 鸣潮 --lon 113.3 --lucky 10 --years 12
+
+# 换日流派存疑时两派都看
+python scripts/pai_pan.py "2001-03-05 23:30" --lon 121.5 --day-boundary midnight
+python scripts/pai_pan.py "2017-03-02 10:00" --lon 116.4 --json    # 喂后续模块
 ```
 
-有条件时与万年历核对日柱；用 `--json` 喂后续模块。
+读输出时先看三处：`⚠ 警告`（未给经度／逢夏令时／距节气不足 1 小时）、
+`day_pillar_alt`（另一换日流派的日柱）、`month_jie_time`（交节时刻）。
+距节气 1 小时内务必与权威万年历核对。
 
-### 3. 六模块管线（先读 references/v4-spec.md）
+### 3. 六模块管线（先读 references/model-v5.md）
 
 - **M1 排盘与根气**：天覆地载、根重次序（长生禄刃 > 墓库余气 > 比肩）、得时不旺/失时不弱。
 - **M2 格局引擎**：月令定格、顺逆、成败、带忌/救应、相神、纯杂高低、变化、杂气、墓库刑冲、外格用舍。
 - **M3 体用喜忌**：多级体用、用神/相神、病药三分、强弱降权、四吉神破格/四凶神成格。
 - **M4 气象调候**：源流、通关、寒暖燥湿、众寡、顺逆从化、清浊、真神假神、隐显、形象方局、战局合局。
 - **M5 时序引擎**：大运成格变格、流年/月建干支并看、岁运战冲和好、透清、贞元代际、寿元三关。
-- **M6 实证校准**：证据分级 A/B/C、假设—反证归因、概率化输出、多方案对比。
+- **M6 实证校准**：证据分级 A/B/C、基线对照、假设—反证归因、概率化输出。
 
 human 盘另读 [references/human.md](references/human.md)（六亲双轨、人生阶段、隐私纪律）。
 
@@ -49,24 +64,45 @@ human 盘另读 [references/human.md](references/human.md)（六亲双轨、人�
 
 寿元星三关：一创＝重伤可过；二创＝衰退；三创＝大限。库护寿元难杀。
 
-### 5. 输出格式（v4）
+### 5. 登记判据（v5 起为必做）
 
-- 排盘与根气表；格局判定（含相神与带忌/救应）；体用喜忌（含置信度与备选方案）；气象分析（源流/通关/调候）；时序表（大运成格变格、流年干支并看、岁运战冲和好、寿元三关）。
-- 判据清单：至少 3 条 A 级事前预测，每条含时间窗、判定标准、数据源、所依赖假设。
+分析里的每条时间窗预测都要落进 `predictions/<entity>.json`，**并在窗口起点之前 commit**——
+git 首次提交时间就是"事前"的证明，这是判据能否算 A 级的唯一依据。
+
+每条必须写 `base_rate`（不用本模型、仅凭行业常识的发生概率）。若 `base_rate ≥ probability`，
+标 `low_information: true`，该条不计入命中统计——因为它即使命中也不说明模型有效。
+
+```bash
+python scripts/verify.py            # 命中率 + Brier + 技巧分数
+python scripts/verify.py --strict   # CI 用
+```
+
+判据写法与回填纪律见 [predictions/README.md](predictions/README.md)。
+
+### 6. 输出格式
+
+- 排盘与根气表（含警告与另一派日柱）；格局判定（含相神与带忌/救应）；体用喜忌（含置信度与备选方案）；
+  气象分析（源流/通关/调候）；时序表（大运成格变格、流年干支并看、岁运战冲和好、寿元三关）。
+- 判据清单：至少 3 条 A 级事前预测，每条含时间窗、判定标准、**基线概率**、数据源、所依赖假设。
 - 六亲（human）：双轨并列（父印系 vs 父偏财系）＋宫位法。
 
 ## Resources
 
-- [references/v4-spec.md](references/v4-spec.md) — v4 完整规范（六模块、六亲双轨、v3→v4 升级清单）。深度分析必读。
-- [references/model-v3.md](references/model-v3.md) — 旧版规范与行业映射（game/product/company 通用概念仍有效）。
+- [references/model-v5.md](references/model-v5.md) — v5 完整规范（六模块、六亲双轨、版本变更）。深度分析必读。
 - [references/human.md](references/human.md) — 人盘专用（六亲、人生阶段、隐私）。
-- [references/calibration.md](references/calibration.md) — 校准档案 schema、鸣潮 worked example、权重规则。
-- [scripts/pai_pan.py](scripts/pai_pan.py) — 排盘 CLI（支持 JSON）。
+- [references/calibration.md](references/calibration.md) — 校准 schema、判据写法要求、鸣潮 worked example。
+- [references/model-v3-deprecated.md](references/model-v3-deprecated.md) — v3 旧规范，仅供旧记录追溯。
+- [scripts/pai_pan.py](scripts/pai_pan.py) — 排盘 CLI（真太阳时/夏令时/换日可切换/JSON）。
+- [scripts/verify.py](scripts/verify.py) — 校准统计与事前性核验。
+- [tests/](tests/) — 不变量测试；`python -m unittest discover -s tests`。
 
 ## Guardrails
 
 - 文化娱乐性质：不宣称科学预测，不作为投资/医疗/婚恋决策依据。
-- 证据分级：校准只计 A 级（事前、可查证）；B/C 级只作参考。
-- 隐私：human 盘不落盘可识别信息；校准记录只存事件与干支。
+- 证据分级：校准只计 A 级（事前、可查证、非低信息量）；B/C 级只作参考。
+- **命中率必须与基线并列报告**；技巧分数 ≤ 0 即视为模型未提供信息。
+- 隐私：human 盘不落盘可识别信息；校准记录只存事件与干支，日期脱敏到"日"。
 - 不虚构事实：事件、流水、销量引用公开可查来源并注明口径。
-- 门派分歧（如六亲、强弱、墓库）并列输出，不作独断。
+- 门派分歧（六亲、强弱、墓库、换日）并列输出，不作独断。
+- 排盘精度有边界：黄经用低精度式，距节气 1 小时内的盘须外部核对；1986—1991 出生者
+  须确认记录是否已扣夏令时。

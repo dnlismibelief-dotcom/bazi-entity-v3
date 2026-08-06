@@ -1,3 +1,9 @@
+> **DEPRECATED — 仅供历史对照。**
+> 本文件是 v3 时期的模型规范，已被 [model-v5.md](model-v5.md) 取代。
+> 其中 game / product / company 的实体映射与行业对照仍可参考，
+> 但凡与 v5 冲突之处（尤其强弱判定、神煞权重、墓库处理）一律以 v5 为准。
+> 保留本文件的唯一目的是让旧校准记录可追溯到当时所用的规则。
+
 # bazi-entity-v3 模型规范（game / product / company）
 
 ## 目录

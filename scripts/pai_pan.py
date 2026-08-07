@@ -395,6 +395,49 @@ def day_pillar_n(dt: datetime, boundary: str) -> int:
     return n
 
 
+def taiyuan_month_pillar(birth: datetime, tz_hours: float) -> dict:
+    """胎元（《三命通会》300 日法）：生日前 300 日为受胎之正，取当日所在节令月。"""
+    tai_date = datetime(birth.year, birth.month, birth.day) - timedelta(days=300)
+    jies = sorted(
+        jie_list(tai_date.year - 1, tz_hours) + jie_list(tai_date.year, tz_hours),
+        key=lambda x: x[2],
+    )
+    cur = None
+    for name, idx, t in jies:
+        if t <= tai_date:
+            cur = (name, idx, t)
+    if cur is None:
+        raise ValueError("无法定位胎元月令")
+    cur_name, cur_idx, cur_time = cur
+    zhi_i = JIE_ZHI[JIE_IDX.index(cur_idx)]
+    # 年干以胎元日所在年立春为界
+    lichun = term_local(tai_date.year, LICHUN_IDX, tz_hours)
+    ty = tai_date.year if tai_date >= lichun else tai_date.year - 1
+    year_gan = GAN[(ty - 4) % 10]
+    gan = GAN[(WUHU[year_gan] + (zhi_i - 2) % 12) % 10]
+    return {
+        "method": "300日法(三命通会)",
+        "date": tai_date.strftime("%Y-%m-%d"),
+        "jie": cur_name,
+        "jie_time": cur_time.strftime("%Y-%m-%d %H:%M:%S"),
+        "month_pillar": gan + ZHI[zhi_i],
+    }
+
+
+def minggong(year_gan: str, month_zhi_i: int, hour_zhi: str) -> str:
+    """命宫（《三命通会》法）：子位起正月逆行至生月，从月宫顺数至卯安命宫。
+
+    例：三月生戌时 → 三月在戌宫，卯时落卯宫 → 命坐卯宫；甲子年 → 丁卯。
+    """
+    month_no = (month_zhi_i - 2) % 12 + 1  # 寅=1 … 丑=12
+    month_i = (13 - month_no) % 12  # 正月在子(0)
+    hour_i = ZHI.index(hour_zhi)
+    ming_i = (month_i + (3 - hour_i)) % 12  # 卯序=3
+    ming_zhi = ZHI[ming_i]
+    ming_gan = GAN[(WUHU[year_gan] + (ming_i - 2) % 12) % 10]
+    return ming_gan + ming_zhi
+
+
 def liunian_ganzhi(year: int, tz_hours: float):
     """流年干支（以立春分界）。返回 (干支, 立春时刻)。"""
     lichun = term_local(year, LICHUN_IDX, tz_hours)
@@ -549,8 +592,12 @@ def calc(dt: datetime, tz_hours: float = 8.0, gender: str = "male",
         liunian.append({"year": y, "ganzhi": gz,
                         "lichun": lc.strftime("%Y-%m-%d %H:%M")})
 
+    # ---- 胎元与命宫（三命通会，v6 新增，低置信旁证）----
+    taiyuan = taiyuan_month_pillar(birth, tz_hours)
+    minggong_gz = minggong(year_gan, month_zhi_i, hour_zhi)
+
     return {
-        "version": "v5",
+        "version": "v6",
         "input": dt.strftime("%Y-%m-%d %H:%M"),
         "tz_hours": tz_hours,
         "lon": lon,
@@ -576,6 +623,8 @@ def calc(dt: datetime, tz_hours: float = 8.0, gender: str = "male",
         "jiao_age": format_delta(gap_days),
         "lucky": lucky,
         "liunian": liunian,
+        "taiyuan": taiyuan,
+        "minggong": minggong_gz,
         "warnings": warnings,
     }
 
@@ -611,6 +660,9 @@ def render(result: dict) -> str:
     lines.append("")
     lines.append("十二长生: " + " ".join(f"{k}={v}" for k, v in result["changsheng"].items()))
     lines.append("五行统计: " + " ".join(f"{k}{v}" for k, v in result["wuxing_counts"].items()))
+    lines.append(f"胎元: {result['taiyuan']['month_pillar']}"
+                 f" (受胎约 {result['taiyuan']['date']}, {result['taiyuan']['method']})")
+    lines.append(f"命宫: {result['minggong']} (三命通会法, 低置信旁证)")
     if result["shensha"]:
         lines.append("神煞: " + "; ".join(f"{k}:{','.join(v)}" for k, v in result["shensha"].items()))
     lines.append("")

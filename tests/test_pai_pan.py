@@ -318,6 +318,27 @@ class TestChartInvariants(unittest.TestCase):
         for a, b in zip(ages, ages[1:]):
             self.assertAlmostEqual(b - a, 10.0, places=6)
 
+    def test_taiyuan_300_days(self):
+        """胎元（三命通会 300 日法）：鸣潮 2024-05-23 出生 → 受胎约 2023-07-28，未月己未。"""
+        r = pp.calc(datetime(2024, 5, 23, 10, 0), tz_hours=TZ, lon=113.3)
+        self.assertEqual(r["version"], "v6")
+        self.assertEqual(r["taiyuan"]["date"], "2023-07-28")
+        self.assertEqual(r["taiyuan"]["month_pillar"], "己未")
+
+    def test_minggong_sanming_example(self):
+        """命宫（三命通会例）：甲子年三月生戌时 → 命坐卯宫 → 丁卯。"""
+        # 1984 甲子年 5 月 1 日 19:30：辰月（农历三月）、戌时
+        r = pp.calc(datetime(1984, 5, 1, 19, 30), tz_hours=TZ, lon=116.4)
+        self.assertEqual(r["year_pillar"], "甲子")
+        self.assertEqual(r["month_pillar"], "戊辰")
+        self.assertEqual(r["hour_pillar"], "丙戌")
+        self.assertEqual(r["minggong"], "丁卯")
+
+    def test_minggong_mingchao(self):
+        """鸣潮 2024-05-23 巳时 → 命宫辛未（三命通会法）。"""
+        r = pp.calc(datetime(2024, 5, 23, 10, 0), tz_hours=TZ, lon=113.3)
+        self.assertEqual(r["minggong"], "辛未")
+
     def test_wuxing_counts_total(self):
         r = pp.calc(datetime(2024, 5, 23, 10, 0), tz_hours=TZ)
         cang_total = sum(len(p["canggan"]) for p in r["pillars"])

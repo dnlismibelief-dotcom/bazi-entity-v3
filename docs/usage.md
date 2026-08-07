@@ -69,6 +69,15 @@ python scripts/pai_pan.py "2017-03-02 10:00" --lon 116.4 --json
 2. **`day_pillar_alt`** — 另一换日流派的日柱。落在子时的盘会两派并列，别只取一派。
 3. **`month_jie_time`** — 交节时刻。它决定月柱，而月令定格是 M2 格局引擎的起点。
 
+v6 起 JSON 额外输出：
+
+- `taiyuan` — 胎元（《三命通会》300 日法：生日前 300 日为受胎之正，取其节令月柱）。
+- `minggong` — 命宫（三命通会法：子位起正月逆行至生月，顺数逢卯安宫；配年干五虎遁）。
+
+两者均为**低置信旁证**：可作"早年根基/受胎背景"类结论的参考，不参与格局成败。
+命宫算法存在流派分歧（其他书有以"卯+月数+时数"或"寅宫顺数"起法），
+本引擎固定采用三命通会法并在字段中标明。
+
 ## 5. 四步用法
 
 1. 定 `entity_type` 与锚点时间（缺了先问，不猜）。
@@ -111,6 +120,6 @@ python -m unittest discover -s tests -v
 
 ## 9. 版本
 
-当前 v5，skill 正式命名为 `BFFT`。v4 遗留的排盘 bug 清单与本次改动见
+当前 v6（八书贯通），skill 正式命名为 `BFFT`。版本变更见
 [CHANGELOG.md](../CHANGELOG.md)。
 v3 旧规范保留在 [model-v3-deprecated.md](../references/model-v3-deprecated.md)，仅供旧校准记录追溯。

@@ -3,7 +3,7 @@ name: BFFT
 description: Apply Chinese BaZi (四柱八字/命理) to any entity — person, game, product, or company — to read life trajectory, popularity, revenue, and lifespan windows. Use for birth-chart analysis, for a game/product launch date (e.g. 鸣潮, 三角洲行动), or to calibrate past predictions against real events.
 ---
 
-# BFFT · BaZi Entity Analysis (v6) — 万物命理
+# BFFT · BaZi Entity Analysis (v7) — 万物命理
 
 ## Overview
 
@@ -18,7 +18,9 @@ v6 = v5 的工程体系 ＋ 第二轮五书贯通
 
 v6 新增最要紧的三条：**病药八法**（雕枯旺弱 × 损益生长，M3）、
 **岁运四分类**（战冲和好，M5）与**断语三级制**（S 结构化规则 / C 文化注记 / X 不采用，M6）。
-工程层沿用 v5：真太阳时、夏令时、换日两派、节气核对、预测事前登记。
+工程层 v7：真太阳时、夏令时（只对东八区）、换日两派、胎元两派、
+输入历法声明（`--calendar`）、节气核对、预测事前登记。
+v7 修正了 ΔT 适用年限与节气求根收敛 —— v6 及以前 1680 年前的盘月柱可能整月错位。
 
 ## Workflow
 

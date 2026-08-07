@@ -318,12 +318,35 @@ class TestChartInvariants(unittest.TestCase):
         for a, b in zip(ages, ages[1:]):
             self.assertAlmostEqual(b - a, 10.0, places=6)
 
-    def test_taiyuan_300_days(self):
-        """胎元（三命通会 300 日法）：鸣潮 2024-05-23 出生 → 受胎约 2023-07-28，未月己未。"""
+    def test_taiyuan_two_schools(self):
+        """胎元两派并列：鸣潮月柱己巳 → 进三位法庚申（主派）/ 300 日法己未（旁证）。"""
         r = pp.calc(datetime(2024, 5, 23, 10, 0), tz_hours=TZ, lon=113.3)
-        self.assertEqual(r["version"], "v6")
-        self.assertEqual(r["taiyuan"]["date"], "2023-07-28")
-        self.assertEqual(r["taiyuan"]["month_pillar"], "己未")
+        self.assertEqual(r["version"], "v7")
+        self.assertEqual(r["month_pillar"], "己巳")
+        ty = r["taiyuan"]
+        self.assertEqual(ty["primary"], "庚申")
+        self.assertEqual(ty["alt"], "己未")
+        self.assertFalse(ty["agree"])
+
+    def test_taiyuan_primary_is_month_pillar_shift(self):
+        """主派必须严格等于"月干进一位、月支进三位"，随机抽若干盘核验。"""
+        for dt in (datetime(1984, 5, 1, 19, 30), datetime(1990, 11, 3, 4, 20),
+                   datetime(2001, 2, 20, 15, 0), datetime(2024, 5, 23, 10, 0)):
+            r = pp.calc(dt, tz_hours=TZ, lon=116.4)
+            mg, mz = r["month_pillar"][0], r["month_pillar"][1]
+            want = (pp.GAN[(pp.GAN.index(mg) + 1) % 10]
+                    + pp.ZHI[(pp.ZHI.index(mz) + 3) % 12])
+            self.assertEqual(r["taiyuan"]["primary"], want, f"{dt} 月柱{mg}{mz}")
+
+    def test_taiyuan_300days_keeps_clock_time(self):
+        """300 日法必须保留出生时刻。
+
+        2024 立夏 05-05 08:03；出生 2025-03-01 20:00 精确倒推 300 日 = 05-05 20:00，
+        已过立夏，应落巳月。v6 把倒推起点截断成 00:00，会错判成上一个月（清明/辰月）。
+        """
+        r = pp.calc(datetime(2025, 3, 1, 20, 0), tz_hours=TZ, lon=120.0)
+        self.assertEqual(r["taiyuan"]["jie"], "立夏")
+        self.assertEqual(r["taiyuan"]["alt"], "己巳")
 
     def test_minggong_sanming_example(self):
         """命宫（三命通会例）：甲子年三月生戌时 → 命坐卯宫 → 丁卯。"""
@@ -338,6 +361,90 @@ class TestChartInvariants(unittest.TestCase):
         """鸣潮 2024-05-23 巳时 → 命宫辛未（三命通会法）。"""
         r = pp.calc(datetime(2024, 5, 23, 10, 0), tz_hours=TZ, lon=113.3)
         self.assertEqual(r["minggong"], "辛未")
+
+    # ---- v7 修的三处：ΔT 适用年限 / 节气求解收敛 / 夏令时地域 ----
+
+    def test_delta_t_historical_reference_values(self):
+        """ΔT 分段必须覆盖古代。v6 只有 1900 基准式，1500 年算出 −63 天。
+
+        参考值取 Espenak & Meeus 表；古代本身有不确定度，给 20 秒容差。
+        """
+        for year, want in ((1500, 198.0), (1600, 120.0), (1700, 8.83),
+                           (1800, 13.72), (1860, 7.62), (1900, -2.79),
+                           (2000, 63.87)):
+            got = pp.delta_t_seconds(year)
+            self.assertAlmostEqual(got, want, delta=20.0,
+                                   msg=f"ΔT({year}) = {got:.2f}s, 期望 ≈{want}s")
+
+    def test_delta_t_segments_continuous(self):
+        """分段端点不得跳变 —— 跳变说明某段系数抄错了。"""
+        for b in (500, 1600, 1700, 1800, 1860, 1900, 1920, 1941, 1961, 1986,
+                  2005, 2050):
+            left = pp.delta_t_seconds(b - 0.001)
+            right = pp.delta_t_seconds(b)
+            self.assertLess(abs(right - left), 2.0,
+                            f"{b} 年边界跳变 {right - left:+.2f}s")
+
+    def test_term_solver_converges_across_millennia(self):
+        """节气时刻回代黄经必须命中目标。
+
+        v6 的二分窗口只有 ±10 天，1680 年前目标点落在窗外时会把**初值**当结果返回
+        （1500 与 1582 的节气时刻因此秒级完全相同），且不抛异常。
+        """
+        for year in (1200, 1400, 1500, 1582, 1650, 1700, 1800, 1900, 2024, 2100):
+            for idx in (pp.LICHUN_IDX, 18):      # 立春 / 寒露
+                jd = pp.term_ut_jd(year, idx)
+                y = 2000.0 + (jd - 2451545.0) / 365.25
+                jd_tt = jd + pp.delta_t_seconds(y) / 86400.0
+                resid = ((pp.solar_longitude(jd_tt) - pp.TERM_DEG[idx] + 180.0)
+                         % 360.0) - 180.0
+                self.assertLess(abs(resid), 1e-6,
+                                f"{year} 年 {pp.TERM_NAME[idx]} 残差 {resid:+.6f}°")
+
+    def test_term_times_differ_across_years(self):
+        """同一节气在不同年份的时刻不该完全相同 —— 相同就是退化成初值了。"""
+        stamps = {pp.term_local(y, pp.LICHUN_IDX, 8.0).strftime("%H:%M:%S")
+                  for y in (1400, 1500, 1582, 1650)}
+        self.assertGreater(len(stamps), 1, f"立春时刻在多个古代年份完全相同: {stamps}")
+
+    def test_cn_dst_only_applies_to_utc8(self):
+        """中国夏令时表只能套东八区。1988-07-15 14:00 各地对比。"""
+        cn = pp.calc(datetime(1988, 7, 15, 14, 0), tz_hours=8, lon=120.0)
+        self.assertEqual(cn["solar_time"]["clock_time"], "1988-07-15 13:00:00")
+        for tz, lon in ((9, 135.0), (-5, -75.0), (5.5, 82.5)):
+            r = pp.calc(datetime(1988, 7, 15, 14, 0), tz_hours=tz, lon=lon)
+            self.assertEqual(r["solar_time"]["clock_time"], "1988-07-15 14:00:00",
+                             f"tz{tz:+g} 被错误套用了中国夏令时")
+
+    def test_julian_input_normalized(self):
+        """1582-10-15 之前默认按儒略历解释输入并换算成格里历。
+
+        v6 把史料的儒略历日期当推算格里历用, 日柱差 9—10 天;
+        且输入用格里历、jd_to_datetime 输出用儒略历, 两侧不一致。
+        """
+        r = pp.calc(datetime(1518, 7, 3, 12, 0), tz_hours=TZ, lon=120.0)
+        self.assertEqual(r["input_raw"], "1518-07-03 12:00")
+        self.assertEqual(r["input"], "1518-07-13 12:00")     # 1500s 差 10 天
+        self.assertTrue(any("儒略历" in w for w in r["warnings"]))
+
+    def test_calendar_gregorian_override(self):
+        """--calendar gregorian 时不做换算 (给已经换算过的日期用)。"""
+        r = pp.calc(datetime(1518, 7, 3, 12, 0), tz_hours=TZ, lon=120.0,
+                    calendar="gregorian")
+        self.assertEqual(r["input"], "1518-07-03 12:00")
+        self.assertFalse(any("儒略历" in w for w in r["warnings"]))
+
+    def test_ancient_years_do_not_crash(self):
+        """公元 1000 年儒略历闰、格里历不闰, v6 会在 jd_to_datetime 抛
+        "day is out of range for month"。"""
+        for y in (800, 900, 1000, 1100, 1265):
+            r = pp.calc(datetime(y, 6, 15, 12, 0), tz_hours=TZ, lon=120.0)
+            self.assertEqual(len(r["year_pillar"]), 2)
+
+    def test_dst_explicit_on_still_works(self):
+        """非东八区若确知当年有夏令时, --dst on 仍要能回拨。"""
+        r = pp.calc(datetime(1988, 7, 15, 14, 0), tz_hours=9, lon=135.0, dst="on")
+        self.assertEqual(r["solar_time"]["clock_time"], "1988-07-15 13:00:00")
 
     def test_wuxing_counts_total(self):
         r = pp.calc(datetime(2024, 5, 23, 10, 0), tz_hours=TZ)

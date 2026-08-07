@@ -1,8 +1,28 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""四柱八字排盘 (BaZi chart calculator) — BFFT v5.
+"""四柱八字排盘 (BaZi chart calculator) — BFFT v7.
 
 Pure Python 3 stdlib, no external dependencies.
+
+v7 相对 v6 的变化（全部由 50 人跨年代交叉验证暴露, 参照 sxtwl 与 lunar_python）
+-----------------------------------------------------------------------------
+修正:
+  * ΔT 只有以 1900 为基准的一段, 往前外推发散: 1500 年算出 -63 天、1800 年 -7.4 小时。
+    补全 Espenak & Meeus 分段(-500..2150)。
+  * 节气求根用 t0±2 天二分、最多扩到 ±10 天, 1680 年前目标落窗外时把**初值**当结果返回
+    (1500 与 1582 的节气时刻因此秒级完全相同) 且不抛异常。改牛顿迭代 + 残差校验抛异常。
+  * 中国夏令时表被无条件套到全世界: 1988 年夏天的东京/纽约/新德里盘也回拨一小时。
+    改为只对东八区生效, 别处需显式 --dst on。
+  * jd_from_gregorian(输入) 用格里历而 jd_to_datetime(输出) 在 1582 前用儒略历,
+    两侧历法不一致; 且会造出 1000-02-29 这种格里历里不存在的日期直接抛异常。
+    输出统一为推算格里历。
+  * 胎元原只输出"300 日法"并冠《三命通会》之名, 与通行口诀(月干进一/月支进三)不符,
+    且倒推时把出生时刻截断成 00:00 (交节日会错一整月)。改为两派并列 + 保留时刻。
+
+新增:
+  * --calendar auto|julian|gregorian: 输入日期的历法声明。auto 在 1582-10-15 前按
+    儒略历解释(史料惯例)。注意历法基准要逐条确认 —— 同一批史料里可能混着已换算过的值。
+  * term_ut_jd 加 lru_cache: 45 条测试从 4.1s 降到 0.07s。
 
 v5 相对 v4 的变化
 -----------------
@@ -38,6 +58,7 @@ import json
 import math
 import sys
 from datetime import datetime, timedelta
+from functools import lru_cache
 
 try:
     sys.stdout.reconfigure(encoding="utf-8")
@@ -198,15 +219,56 @@ def jd_from_gregorian(y: int, m: int, d: float, h: float = 0.0) -> float:
             math.floor(30.6001 * (m + 1)) + d + b - 1524.5 + h / 24.0)
 
 
+def jd_from_julian(y: int, m: int, d: float, h: float = 0.0) -> float:
+    """儒略历日期 → JD（就是格里历公式去掉那个世纪修正项 b）。"""
+    if m <= 2:
+        y -= 1
+        m += 12
+    return (math.floor(365.25 * (y + 4716)) +
+            math.floor(30.6001 * (m + 1)) + d - 1524.5 + h / 24.0)
+
+
+GREGORIAN_START = datetime(1582, 10, 15)
+
+
+def normalize_calendar(dt: datetime, calendar: str = "auto"
+                       ) -> tuple[datetime, str]:
+    """把输入日期规范化成推算格里历 datetime。返回 (格里历 dt, 说明)。
+
+    calendar:
+      auto      —— 1582-10-15 之前按儒略历解释（史料与 sxtwl/lunar-javascript 的惯例）
+      julian    —— 强制按儒略历
+      gregorian —— 强制按推算格里历（v6 及以前的隐含行为）
+
+    只在入口转一次, 之后全流程都是格里历, 下游逻辑不用关心历法。
+    """
+    if calendar == "gregorian":
+        return dt, ""
+    if calendar == "auto" and dt >= GREGORIAN_START:
+        return dt, ""
+    h = dt.hour + dt.minute / 60.0 + dt.second / 3600.0
+    jd = jd_from_julian(dt.year, dt.month, dt.day, h)
+    greg = jd_to_datetime(jd)
+    return greg, (f"输入 {dt:%Y-%m-%d %H:%M} 按儒略历解释，"
+                  f"已换算为格里历 {greg:%Y-%m-%d %H:%M}（相差 "
+                  f"{(greg.date() - dt.date()).days} 天）；"
+                  "若你的日期本就是格里历，请用 --calendar gregorian")
+
+
 def jd_to_datetime(jd: float) -> datetime:
-    """儒略日 → datetime（秒级，四舍五入到秒）。"""
+    """儒略日 → datetime（秒级，四舍五入到秒）。
+
+    **始终按推算格里历**, 与输入侧 jd_from_gregorian 保持一致。
+    v6 及以前对 z < 2299161 走儒略历分支, 于是输入按格里历、输出按儒略历,
+    1582 年前节气时刻与出生时刻实际是拿两套历法的日期在比较 (差 9—10 天);
+    还会造出格里历里不存在的日期 —— 公元 1000 年儒略历闰而格里历不闰,
+    算出 1000-02-29 直接让 datetime 抛 "day is out of range for month"。
+    """
     jd += 0.5
     z = math.floor(jd)
     f = jd - z
-    a = z
-    if z >= 2299161:
-        alpha = math.floor((z - 1867216.25) / 36524.25)
-        a = z + 1 + alpha - math.floor(alpha / 4)
+    alpha = math.floor((z - 1867216.25) / 36524.25)
+    a = z + 1 + alpha - math.floor(alpha / 4)
     b = a + 1524
     c = math.floor((b - 122.1) / 365.25)
     d = math.floor(365.25 * c)
@@ -214,12 +276,47 @@ def jd_to_datetime(jd: float) -> datetime:
     day = b - d - math.floor(30.6001 * e)
     month = e - 1 if e < 14 else e - 13
     year = c - 4716 if month > 2 else c - 4715
-    base = datetime(year, month, int(day))
+    base = datetime(year, month, 1) + timedelta(days=int(day) - 1)
     return base + timedelta(seconds=round(f * 86400.0))
 
 
 def delta_t_seconds(year: float) -> float:
-    """ΔT = TT - UT，秒。NASA/Espenak-Meeus 分段近似（1900—2150 足够）。"""
+    """ΔT = TT - UT，秒。Espenak & Meeus 分段多项式（NASA eclipse 网站那套）。
+
+    覆盖 −500 … +2150。**每一段只在自己的区间内有效，往外外推会发散** ——
+    v6 及以前把 1900 年前全部塞给以 1900 为基准的四次式，结果 1500 年算出 −63 天、
+    1800 年算出 −7.4 小时，节气时刻整体错位（1680 年前更是让求解器直接不收敛）。
+    分段端点互相衔接（1600 段边界 120.3 vs 120、1700 段 8.99 vs 8.83），可作自检。
+    """
+    if year < -500:
+        u = (year - 1820) / 100.0
+        return -20 + 32 * u ** 2
+    if year < 500:
+        u = year / 100.0
+        return (10583.6 - 1014.41 * u + 33.78311 * u ** 2 - 5.952053 * u ** 3
+                - 0.1798452 * u ** 4 + 0.022174192 * u ** 5
+                + 0.0090316521 * u ** 6)
+    if year < 1600:
+        u = (year - 1000) / 100.0
+        return (1574.2 - 556.01 * u + 71.23472 * u ** 2 + 0.319781 * u ** 3
+                - 0.8503463 * u ** 4 - 0.005050998 * u ** 5
+                + 0.0083572073 * u ** 6)
+    if year < 1700:
+        t = year - 1600
+        return 120 - 0.9808 * t - 0.01532 * t ** 2 + t ** 3 / 7129.0
+    if year < 1800:
+        t = year - 1700
+        return (8.83 + 0.1603 * t - 0.0059285 * t ** 2 + 0.00013336 * t ** 3
+                - t ** 4 / 1174000.0)
+    if year < 1860:
+        t = year - 1800
+        return (13.72 - 0.332447 * t + 0.0068612 * t ** 2 + 0.0041116 * t ** 3
+                - 0.00037436 * t ** 4 + 0.0000121272 * t ** 5
+                - 0.0000001699 * t ** 6 + 0.000000000875 * t ** 7)
+    if year < 1900:
+        t = year - 1860
+        return (7.62 + 0.5737 * t - 0.251754 * t ** 2 + 0.01680668 * t ** 3
+                - 0.0004473624 * t ** 4 + t ** 5 / 233174.0)
     if year < 1920:
         t = year - 1900
         return (-2.79 + 1.494119 * t - 0.0598939 * t ** 2 +
@@ -282,29 +379,37 @@ def equation_of_time(jd_ut: float) -> float:
     return diff * 4.0
 
 
+@lru_cache(maxsize=4096)
 def term_ut_jd(year: int, idx: int) -> float:
-    """太阳视黄经到达 TERM_DEG[idx] 的 UT 儒略日（含 ΔT 修正）。"""
-    target = TERM_DEG[idx]
-    t0 = jd_from_gregorian(year, 1, 6) + idx * 15.2184
+    """太阳视黄经到达 TERM_DEG[idx] 的 UT 儒略日（含 ΔT 修正）。
 
-    def f(jd_ut: float) -> float:
+    用牛顿法而不是二分: 太阳黄经日均走 0.98565°, 残差归一到 ±180° 后除以日角速度
+    就是天数步长, 任意年份都几步收敛。
+    旧版是 t0±2 天二分、失败最多扩到 ±10 天 —— 远古年份目标点落在窗外时
+    f(lo)*f(hi) 恒同号, 100 次二分白跑, `return (lo+hi)/2` 把**初值**当结果返回,
+    所以 1500 和 1582 年算出的节气时刻秒级完全相同。现在不收敛直接抛异常。
+    """
+    target = TERM_DEG[idx]
+    jd = jd_from_gregorian(year, 1, 6) + idx * 15.2184
+
+    def resid(jd_ut: float) -> float:
         y = 2000.0 + (jd_ut - 2451545.0) / 365.25
         jd_tt = jd_ut + delta_t_seconds(y) / 86400.0
         return ((solar_longitude(jd_tt) - target + 180.0) % 360.0) - 180.0
 
-    lo, hi = t0 - 2.0, t0 + 2.0
-    for _ in range(4):
-        if f(lo) * f(hi) <= 0:
+    for _ in range(40):
+        d = resid(jd)
+        if abs(d) < 1e-9:
             break
-        lo -= 2.0
-        hi += 2.0
-    for _ in range(100):
-        mid = (lo + hi) / 2.0
-        if f(lo) * f(mid) <= 0:
-            hi = mid
-        else:
-            lo = mid
-    return (lo + hi) / 2.0
+        # 限步: 防远古年份初值偏差过大时一步甩到隔年的同名节气
+        jd -= max(-40.0, min(40.0, d / 0.98564736))
+
+    d = resid(jd)
+    if abs(d) > 1e-6:
+        raise ValueError(
+            f"节气求解未收敛: year={year} idx={idx}({TERM_NAME[idx]}) "
+            f"残差={d:+.6f}° —— 请检查 ΔT 与黄经公式的适用年限")
+    return jd
 
 
 def term_local(year: int, idx: int, tz_hours: float) -> datetime:
@@ -325,12 +430,21 @@ def jie_list(year: int, tz_hours: float):
 # 时间修正：夏令时 + 真太阳时
 # --------------------------------------------------------------------------
 
-def dst_offset_hours(dt: datetime, mode: str = "auto") -> float:
-    """中国 1986—1991 夏令时。返回需要减去的小时数。"""
+def dst_offset_hours(dt: datetime, mode: str = "auto",
+                     tz_hours: float | None = None) -> float:
+    """中国 1986—1991 夏令时。返回需要减去的小时数。
+
+    auto 只对**东八区**生效 —— 这张表是中国的, 套到别处就是错。
+    v6 及以前只看 dt 不看时区, 于是 1988 年夏天出生的东京/纽约/新德里盘
+    也一律回拨一小时, 真太阳时恒错 60 分钟。
+    别国夏令时规则各异且逐年变动, 不进这张表, 需要时显式 --dst on。
+    """
     if mode == "off":
         return 0.0
     if mode == "on":
         return 1.0
+    if tz_hours is not None and abs(tz_hours - 8.0) > 1e-9:
+        return 0.0
     for start, end in CN_DST:
         if start <= dt < end:
             return 1.0
@@ -395,32 +509,51 @@ def day_pillar_n(dt: datetime, boundary: str) -> int:
     return n
 
 
-def taiyuan_month_pillar(birth: datetime, tz_hours: float) -> dict:
-    """胎元（《三命通会》300 日法）：生日前 300 日为受胎之正，取当日所在节令月。"""
-    tai_date = datetime(birth.year, birth.month, birth.day) - timedelta(days=300)
+def taiyuan_month_pillar(birth: datetime, tz_hours: float,
+                         month_pillar: str) -> dict:
+    """胎元。两派并列输出, 不作独断（同换日流派的处理方式）。
+
+    主派 —— 进三位法：月干进一位、月支进三位。十月怀胎逆推十月即地支顺进三位,
+    这是《三命通会》《渊海子平》《神峰通考》共载的通行口诀。
+    旁证 —— 300 日法：生日前 300 日所在节令月。
+
+    两派常给出不同结果（如月柱己巳: 进三位 → 庚申, 300 日法 → 己未），所以并列。
+    v6 只输出 300 日法且冠以"三命通会"之名, 与通行口诀不符, 已改。
+    """
+    # 主派: 月柱进位
+    m_gan_i = GAN.index(month_pillar[0])
+    m_zhi_i = ZHI.index(month_pillar[1])
+    primary = GAN[(m_gan_i + 1) % 10] + ZHI[(m_zhi_i + 3) % 12]
+
+    # 旁证: 300 日法。保留出生时刻再倒推 —— 只取日期会让胎元落在交节当天时错一整月
+    tai_dt = birth - timedelta(days=300)
     jies = sorted(
-        jie_list(tai_date.year - 1, tz_hours) + jie_list(tai_date.year, tz_hours),
+        jie_list(tai_dt.year - 1, tz_hours) + jie_list(tai_dt.year, tz_hours),
         key=lambda x: x[2],
     )
     cur = None
     for name, idx, t in jies:
-        if t <= tai_date:
+        if t <= tai_dt:
             cur = (name, idx, t)
     if cur is None:
         raise ValueError("无法定位胎元月令")
     cur_name, cur_idx, cur_time = cur
     zhi_i = JIE_ZHI[JIE_IDX.index(cur_idx)]
-    # 年干以胎元日所在年立春为界
-    lichun = term_local(tai_date.year, LICHUN_IDX, tz_hours)
-    ty = tai_date.year if tai_date >= lichun else tai_date.year - 1
+    lichun = term_local(tai_dt.year, LICHUN_IDX, tz_hours)
+    ty = tai_dt.year if tai_dt >= lichun else tai_dt.year - 1
     year_gan = GAN[(ty - 4) % 10]
     gan = GAN[(WUHU[year_gan] + (zhi_i - 2) % 12) % 10]
+    by_300 = gan + ZHI[zhi_i]
+
     return {
-        "method": "300日法(三命通会)",
-        "date": tai_date.strftime("%Y-%m-%d"),
+        "primary": primary,
+        "primary_method": "进三位法(月干进一/月支进三, 三命通会通行口诀)",
+        "alt": by_300,
+        "alt_method": "300日法(旁证)",
+        "agree": primary == by_300,
+        "date": tai_dt.strftime("%Y-%m-%d %H:%M"),
         "jie": cur_name,
         "jie_time": cur_time.strftime("%Y-%m-%d %H:%M:%S"),
-        "month_pillar": gan + ZHI[zhi_i],
     }
 
 
@@ -451,15 +584,30 @@ def liunian_ganzhi(year: int, tz_hours: float):
 def calc(dt: datetime, tz_hours: float = 8.0, gender: str = "male",
          lucky_count: int = 10, years_count: int = 12,
          lon: float | None = None, day_boundary: str = "zi",
-         dst: str = "auto") -> dict:
+         dst: str = "auto", calendar: str = "auto") -> dict:
     warnings = []
 
+    # ---- 输入历法: 1582-10-15 前默认按儒略历解释, 入口一次性换算成格里历 ----
+    raw_input_dt = dt
+    dt, cal_note = normalize_calendar(dt, calendar)
+    if cal_note:
+        warnings.append(cal_note)
+    if not (1000 <= dt.year <= 2200):
+        warnings.append(
+            f"出生年 {dt.year} 超出黄经与 ΔT 公式的可靠区间（约 1000—2200），"
+            "节气时刻误差会显著放大")
+
     # ---- 夏令时 ----
-    dst_h = dst_offset_hours(dt, dst)
+    dst_h = dst_offset_hours(dt, dst, tz_hours)
     if dst_h:
         warnings.append(
             f"命中中国夏令时区间（1986—1991），已将钟表时间回拨 {dst_h:g} 小时；"
             "若出生记录本身已是标准时，请用 --dst off")
+    elif dst == "auto" and abs(tz_hours - 8.0) > 1e-9 and any(
+            s <= dt < e for s, e in CN_DST):
+        warnings.append(
+            "落在中国 1986—1991 夏令时区间但不在东八区，未做回拨；"
+            "若出生地当年实行夏令时，请核对后用 --dst on")
     std = dt - timedelta(hours=dst_h)
 
     # ---- 真太阳时 ----
@@ -593,12 +741,14 @@ def calc(dt: datetime, tz_hours: float = 8.0, gender: str = "male",
                         "lichun": lc.strftime("%Y-%m-%d %H:%M")})
 
     # ---- 胎元与命宫（三命通会，v6 新增，低置信旁证）----
-    taiyuan = taiyuan_month_pillar(birth, tz_hours)
+    taiyuan = taiyuan_month_pillar(birth, tz_hours, month_gan + month_zhi)
     minggong_gz = minggong(year_gan, month_zhi_i, hour_zhi)
 
     return {
-        "version": "v6",
+        "version": "v7",
         "input": dt.strftime("%Y-%m-%d %H:%M"),
+        "input_raw": raw_input_dt.strftime("%Y-%m-%d %H:%M"),
+        "calendar": calendar,
         "tz_hours": tz_hours,
         "lon": lon,
         "gender": gender,
@@ -660,8 +810,12 @@ def render(result: dict) -> str:
     lines.append("")
     lines.append("十二长生: " + " ".join(f"{k}={v}" for k, v in result["changsheng"].items()))
     lines.append("五行统计: " + " ".join(f"{k}{v}" for k, v in result["wuxing_counts"].items()))
-    lines.append(f"胎元: {result['taiyuan']['month_pillar']}"
-                 f" (受胎约 {result['taiyuan']['date']}, {result['taiyuan']['method']})")
+    ty = result["taiyuan"]
+    if ty["agree"]:
+        lines.append(f"胎元: {ty['primary']} (两派一致: 进三位法 / 300日法)")
+    else:
+        lines.append(f"胎元: {ty['primary']} ({ty['primary_method']})"
+                     f"　｜　旁证 {ty['alt']} ({ty['alt_method']}, 受胎约 {ty['date']})")
     lines.append(f"命宫: {result['minggong']} (三命通会法, 低置信旁证)")
     if result["shensha"]:
         lines.append("神煞: " + "; ".join(f"{k}:{','.join(v)}" for k, v in result["shensha"].items()))
@@ -692,6 +846,9 @@ def main():
                     help="换日流派: zi=23时换日(默认), midnight=00时换日")
     ap.add_argument("--dst", choices=["auto", "on", "off"], default="auto",
                     help="中国 1986—1991 夏令时处理, 默认 auto")
+    ap.add_argument("--calendar", choices=["auto", "julian", "gregorian"],
+                    default="auto",
+                    help="输入日期的历法。auto=1582-10-15 前按儒略历(史料惯例), 默认 auto")
     ap.add_argument("--lucky", type=int, default=10)
     ap.add_argument("--years", type=int, default=12)
     ap.add_argument("--json", action="store_true", help="输出 JSON")
@@ -712,7 +869,8 @@ def main():
 
     result = calc(dt, tz_hours=args.tz, gender=args.gender,
                   lucky_count=args.lucky, years_count=args.years,
-                  lon=args.lon, day_boundary=args.day_boundary, dst=args.dst)
+                  lon=args.lon, day_boundary=args.day_boundary, dst=args.dst,
+                  calendar=args.calendar)
     if args.name:
         result["name"] = args.name
     if args.json:

@@ -511,5 +511,35 @@ class TestFixtures(unittest.TestCase):
                              f"{r['datetime']} 排盘与权威数据不符（来源: {r.get('source','')}）")
 
 
+class TestCompareCharts(unittest.TestCase):
+    """两盘对比工具（v7.1 新增）：同盘异命分析。"""
+
+    def _load(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "compare_charts", os.path.join(ROOT, "scripts", "compare_charts.py"))
+        cc = importlib.util.module_from_spec(spec)
+        sys.modules["compare_charts"] = cc
+        spec.loader.exec_module(cc)
+        return cc
+
+    def test_lincoln_darwin_same_pillars_different_jiao(self):
+        """林肯/达尔文（同日正午占位）：四柱相同、大运序列相同、交运日差 33 天。"""
+        cc = self._load()
+        r = cc.compare(
+            {"dt": "1809-02-12 12:00", "tz": -6.0, "lon": -85.7},
+            {"dt": "1809-02-12 12:00", "tz": 0.0, "lon": -2.8},
+        )
+        self.assertTrue(r["same_four_pillars"])
+        self.assertTrue(r["same_lucky"])
+        self.assertEqual(r["jiao_time_diff_days"], 33)
+
+    def test_sensitivity_reveals_hour_dependence(self):
+        """同一日期不同钟表时刻会改变四柱：占位时辰不可当作真实盘。"""
+        cc = self._load()
+        s = cc.sensitivity({"dt": "1809-02-12 12:00", "tz": -6.0, "lon": -85.7})
+        self.assertGreater(s["distinct_charts"], 1)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

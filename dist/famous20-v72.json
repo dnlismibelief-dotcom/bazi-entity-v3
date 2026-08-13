@@ -1,0 +1,402 @@
+﻿[
+  {
+    "name": "达芬奇",
+    "note": "B-",
+    "input": "1452-04-15 22:00",
+    "tz": 1.0,
+    "lon": 10.9,
+    "calendar": "julian",
+    "four_pillars": "壬申 甲辰 己未 乙亥",
+    "solar": "1452-04-24 21:46:01",
+    "jiao_time": "1455-11-25",
+    "jiao_age": "3年7个月",
+    "minggong": "壬寅",
+    "taiyuan_primary": "乙未",
+    "taiyuan_alt": "甲午",
+    "lucky": [
+      "乙巳",
+      "丙午",
+      "丁未"
+    ]
+  },
+  {
+    "name": "牛顿",
+    "note": "C占位",
+    "input": "1643-01-04 02:00",
+    "tz": 0.0,
+    "lon": -0.6,
+    "calendar": "gregorian",
+    "four_pillars": "壬午 壬子 庚戌 丁丑",
+    "solar": "1643-01-04 01:51:56",
+    "jiao_time": "1643-06-07",
+    "jiao_age": "0年5个月",
+    "minggong": "甲辰",
+    "taiyuan_primary": "癸卯",
+    "taiyuan_alt": "癸卯",
+    "lucky": [
+      "癸丑",
+      "甲寅",
+      "乙卯"
+    ]
+  },
+  {
+    "name": "华盛顿",
+    "note": "C占位",
+    "input": "1732-02-22 10:00",
+    "tz": -5.0,
+    "lon": -77.0,
+    "calendar": "gregorian",
+    "four_pillars": "壬子 壬寅 乙酉 辛巳",
+    "solar": "1732-02-22 09:37:58",
+    "jiao_time": "1736-01-10",
+    "jiao_age": "3年10个月",
+    "minggong": "庚戌",
+    "taiyuan_primary": "癸巳",
+    "taiyuan_alt": "壬辰",
+    "lucky": [
+      "癸卯",
+      "甲辰",
+      "乙巳"
+    ]
+  },
+  {
+    "name": "莫扎特",
+    "note": "A-",
+    "input": "1756-01-27 20:00",
+    "tz": 1.0,
+    "lon": 13.0,
+    "calendar": "gregorian",
+    "four_pillars": "乙亥 己丑 乙丑 丙戌",
+    "solar": "1756-01-27 19:38:42",
+    "jiao_time": "1763-05-26",
+    "jiao_age": "7年3个月",
+    "minggong": "壬午",
+    "taiyuan_primary": "庚辰",
+    "taiyuan_alt": "己卯",
+    "lucky": [
+      "戊子",
+      "丁亥",
+      "丙戌"
+    ]
+  },
+  {
+    "name": "歌德",
+    "note": "C占位",
+    "input": "1749-08-28 12:00",
+    "tz": 1.0,
+    "lon": 8.7,
+    "calendar": "gregorian",
+    "four_pillars": "己巳 壬申 壬戌 丙午",
+    "solar": "1749-08-28 11:33:55",
+    "jiao_time": "1756-08-18",
+    "jiao_age": "6年11个月",
+    "minggong": "丁卯",
+    "taiyuan_primary": "癸亥",
+    "taiyuan_alt": "壬戌",
+    "lucky": [
+      "辛未",
+      "庚午",
+      "己巳"
+    ]
+  },
+  {
+    "name": "拿破仑",
+    "note": "B-",
+    "input": "1769-08-15 12:00",
+    "tz": 1.0,
+    "lon": 8.7,
+    "calendar": "gregorian",
+    "four_pillars": "己丑 壬申 甲午 庚午",
+    "solar": "1769-08-15 11:30:44",
+    "jiao_time": "1772-04-26",
+    "jiao_age": "2年8个月",
+    "minggong": "丁卯",
+    "taiyuan_primary": "癸亥",
+    "taiyuan_alt": "壬戌",
+    "lucky": [
+      "辛未",
+      "庚午",
+      "己巳"
+    ]
+  },
+  {
+    "name": "贝多芬",
+    "note": "C占位",
+    "input": "1770-12-16 12:00",
+    "tz": 1.0,
+    "lon": 7.1,
+    "calendar": "gregorian",
+    "four_pillars": "庚寅 戊子 壬寅 丙午",
+    "solar": "1770-12-16 11:32:11",
+    "jiao_time": "1777-08-12",
+    "jiao_age": "6年7个月",
+    "minggong": "丁亥",
+    "taiyuan_primary": "己卯",
+    "taiyuan_alt": "戊寅",
+    "lucky": [
+      "己丑",
+      "庚寅",
+      "辛卯"
+    ]
+  },
+  {
+    "name": "林肯",
+    "note": "C占位",
+    "input": "1809-02-12 12:00",
+    "tz": -6.0,
+    "lon": -85.7,
+    "calendar": "gregorian",
+    "four_pillars": "己巳 丙寅 己未 庚午",
+    "solar": "1809-02-12 12:02:34",
+    "jiao_time": "1811-12-23",
+    "jiao_age": "2年10个月",
+    "minggong": "癸酉",
+    "taiyuan_primary": "丁巳",
+    "taiyuan_alt": "丙辰",
+    "lucky": [
+      "乙丑",
+      "甲子",
+      "癸亥"
+    ]
+  },
+  {
+    "name": "达尔文",
+    "note": "C占位",
+    "input": "1809-02-12 12:00",
+    "tz": 0.0,
+    "lon": -2.8,
+    "calendar": "gregorian",
+    "four_pillars": "己巳 丙寅 己未 庚午",
+    "solar": "1809-02-12 11:34:10",
+    "jiao_time": "1811-11-23",
+    "jiao_age": "2年9个月",
+    "minggong": "癸酉",
+    "taiyuan_primary": "丁巳",
+    "taiyuan_alt": "丙辰",
+    "lucky": [
+      "乙丑",
+      "甲子",
+      "癸亥"
+    ]
+  },
+  {
+    "name": "特斯拉",
+    "note": "B-",
+    "input": "1856-07-10 00:00",
+    "tz": 1.0,
+    "lon": 15.4,
+    "calendar": "gregorian",
+    "four_pillars": "丙辰 乙未 甲午 甲子",
+    "solar": "1856-07-09 23:56:38",
+    "jiao_time": "1866-01-02",
+    "jiao_age": "9年5个月",
+    "minggong": "戊戌",
+    "taiyuan_primary": "丙戌",
+    "taiyuan_alt": "乙酉",
+    "lucky": [
+      "丙申",
+      "丁酉",
+      "戊戌"
+    ]
+  },
+  {
+    "name": "爱因斯坦",
+    "note": "A-",
+    "input": "1879-03-14 11:30",
+    "tz": 1.0,
+    "lon": 10.0,
+    "calendar": "gregorian",
+    "four_pillars": "己卯 丁卯 丙申 甲午",
+    "solar": "1879-03-14 11:00:32",
+    "jiao_time": "1882-01-16",
+    "jiao_age": "2年10个月",
+    "minggong": "壬申",
+    "taiyuan_primary": "戊午",
+    "taiyuan_alt": "丁巳",
+    "lucky": [
+      "丙寅",
+      "乙丑",
+      "甲子"
+    ]
+  },
+  {
+    "name": "鲁迅",
+    "note": "B-",
+    "input": "1881-09-25 08:00",
+    "tz": 8.0,
+    "lon": 120.6,
+    "calendar": "gregorian",
+    "four_pillars": "辛巳 丁酉 壬戌 甲辰",
+    "solar": "1881-09-25 08:10:39",
+    "jiao_time": "1887-07-21",
+    "jiao_age": "5年9个月",
+    "minggong": "壬辰",
+    "taiyuan_primary": "戊子",
+    "taiyuan_alt": "丁亥",
+    "lucky": [
+      "丙申",
+      "乙未",
+      "甲午"
+    ]
+  },
+  {
+    "name": "蒋介石",
+    "note": "B+",
+    "input": "1887-10-31 12:00",
+    "tz": 8.0,
+    "lon": 121.4,
+    "calendar": "gregorian",
+    "four_pillars": "丁亥 庚戌 己巳 庚午",
+    "solar": "1887-10-31 12:21:52",
+    "jiao_time": "1895-05-07",
+    "jiao_age": "7年6个月",
+    "minggong": "癸丑",
+    "taiyuan_primary": "辛丑",
+    "taiyuan_alt": "庚子",
+    "lucky": [
+      "己酉",
+      "戊申",
+      "丁未"
+    ]
+  },
+  {
+    "name": "希特勒",
+    "note": "A-",
+    "input": "1889-04-20 18:30",
+    "tz": 1.0,
+    "lon": 13.0,
+    "calendar": "gregorian",
+    "four_pillars": "己丑 戊辰 丙寅 丁酉",
+    "solar": "1889-04-20 18:23:16",
+    "jiao_time": "1894-09-06",
+    "jiao_age": "5年4个月",
+    "minggong": "戊辰",
+    "taiyuan_primary": "己未",
+    "taiyuan_alt": "戊午",
+    "lucky": [
+      "丁卯",
+      "丙寅",
+      "乙丑"
+    ]
+  },
+  {
+    "name": "毛泽东",
+    "note": "B+",
+    "input": "1893-12-26 07:00",
+    "tz": 8.0,
+    "lon": 112.5,
+    "calendar": "gregorian",
+    "four_pillars": "癸巳 甲子 丁酉 癸卯",
+    "solar": "1893-12-26 06:29:17",
+    "jiao_time": "1900-05-09",
+    "jiao_age": "6年4个月",
+    "minggong": "甲寅",
+    "taiyuan_primary": "乙卯",
+    "taiyuan_alt": "甲寅",
+    "lucky": [
+      "癸亥",
+      "壬戌",
+      "辛酉"
+    ]
+  },
+  {
+    "name": "周恩来",
+    "note": "B-",
+    "input": "1898-03-05 08:00",
+    "tz": 8.0,
+    "lon": 119.1,
+    "calendar": "gregorian",
+    "four_pillars": "戊戌 甲寅 丁卯 甲辰",
+    "solar": "1898-03-05 07:44:38",
+    "jiao_time": "1898-05-09",
+    "jiao_age": "0年2个月",
+    "minggong": "癸亥",
+    "taiyuan_primary": "乙巳",
+    "taiyuan_alt": "乙巳",
+    "lucky": [
+      "乙卯",
+      "丙辰",
+      "丁巳"
+    ]
+  },
+  {
+    "name": "张爱玲",
+    "note": "C占位",
+    "input": "1920-09-30 12:00",
+    "tz": 8.0,
+    "lon": 121.5,
+    "calendar": "gregorian",
+    "four_pillars": "庚申 乙酉 辛卯 甲午",
+    "solar": "1920-09-30 12:15:50",
+    "jiao_time": "1923-07-23",
+    "jiao_age": "2年9个月",
+    "minggong": "戊寅",
+    "taiyuan_primary": "丙子",
+    "taiyuan_alt": "乙亥",
+    "lucky": [
+      "丙戌",
+      "丁亥",
+      "戊子"
+    ]
+  },
+  {
+    "name": "乔布斯",
+    "note": "A",
+    "input": "1955-02-24 19:15",
+    "tz": -8.0,
+    "lon": -122.4,
+    "calendar": "gregorian",
+    "four_pillars": "乙未 戊寅 丙辰 丁酉",
+    "solar": "1955-02-24 18:52:04",
+    "jiao_time": "1961-12-29",
+    "jiao_age": "6年10个月",
+    "minggong": "壬午",
+    "taiyuan_primary": "己巳",
+    "taiyuan_alt": "戊辰",
+    "lucky": [
+      "丁丑",
+      "丙子",
+      "乙亥"
+    ]
+  },
+  {
+    "name": "比尔·盖茨",
+    "note": "B-",
+    "input": "1955-10-28 22:00",
+    "tz": -8.0,
+    "lon": -122.3,
+    "calendar": "gregorian",
+    "four_pillars": "乙未 丙戌 壬戌 辛亥",
+    "solar": "1955-10-28 22:06:56",
+    "jiao_time": "1962-07-20",
+    "jiao_age": "6年8个月",
+    "minggong": "甲申",
+    "taiyuan_primary": "丁丑",
+    "taiyuan_alt": "丙子",
+    "lucky": [
+      "乙酉",
+      "甲申",
+      "癸未"
+    ]
+  },
+  {
+    "name": "马斯克",
+    "note": "B-",
+    "input": "1971-06-28 10:35",
+    "tz": 2.0,
+    "lon": 28.2,
+    "calendar": "gregorian",
+    "four_pillars": "辛亥 甲午 甲申 己巳",
+    "solar": "1971-06-28 10:24:46",
+    "jiao_time": "1978-10-28",
+    "jiao_age": "7年3个月",
+    "minggong": "甲午",
+    "taiyuan_primary": "乙酉",
+    "taiyuan_alt": "甲申",
+    "lucky": [
+      "癸巳",
+      "壬辰",
+      "辛卯"
+    ]
+  }
+]

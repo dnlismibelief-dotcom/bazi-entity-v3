@@ -122,6 +122,8 @@ def render(result: dict) -> str:
 
 def main():
     ap = argparse.ArgumentParser(description="两盘对比 (BFFT)")
+    ap.add_argument("name_a", nargs="?", default="A", help="盘A显示名(可选)")
+    ap.add_argument("name_b", nargs="?", default="B", help="盘B显示名(可选)")
     for p in ("1", "2"):
         ap.add_argument(f"--p{p}-dt", required=True, help='YYYY-MM-DD HH:MM')
         ap.add_argument(f"--p{p}-tz", type=float, default=8.0)
@@ -129,11 +131,12 @@ def main():
         ap.add_argument(f"--p{p}-cal", default="auto", choices=["auto", "julian", "gregorian"])
         ap.add_argument(f"--p{p}-name", default="")
     ap.add_argument("--json", action="store_true")
-    args = ap.parse_args()
+    # 位置参数(显示名)允许与选项交错: compare_charts.py A --p1-dt ... B --p2-dt ...
+    args = ap.parse_intermixed_args()
 
-    cfg1 = {"label": args.p1_name or "A", "dt": args.p1_dt, "tz": args.p1_tz,
+    cfg1 = {"label": args.p1_name or args.name_a, "dt": args.p1_dt, "tz": args.p1_tz,
             "lon": args.p1_lon, "calendar": args.p1_cal}
-    cfg2 = {"label": args.p2_name or "B", "dt": args.p2_dt, "tz": args.p2_tz,
+    cfg2 = {"label": args.p2_name or args.name_b, "dt": args.p2_dt, "tz": args.p2_tz,
             "lon": args.p2_lon, "calendar": args.p2_cal}
     result = compare(cfg1, cfg2)
     if args.json:

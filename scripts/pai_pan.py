@@ -112,11 +112,12 @@ SHENGSHEN = {"甲": "亥", "丙": "寅", "戊": "寅", "庚": "巳", "壬": "申
 CHANGSHENG = ["长生", "沐浴", "冠带", "临官", "帝旺", "衰", "病", "死",
               "墓", "绝", "胎", "养"]
 
-TIANYI = {"甲": [12, 7], "戊": [12, 7], "庚": [12, 7],
+# 天乙贵人（口诀: 甲戊庚牛羊, 乙己鼠猴乡, 丙丁猪鸡位, 壬癸兔蛇藏, 六辛逢马虎）
+TIANYI = {"甲": [1, 7], "戊": [1, 7], "庚": [1, 7],
           "乙": [0, 8], "己": [0, 8],
           "丙": [11, 9], "丁": [11, 9],
           "壬": [3, 5], "癸": [3, 5],
-          "辛": [1, 6]}
+          "辛": [2, 6]}
 LU = {"甲": 2, "乙": 3, "丙": 5, "丁": 6, "戊": 5, "己": 6,
       "庚": 8, "辛": 9, "壬": 11, "癸": 0}
 WENCHANG = {"甲": 5, "乙": 6, "丙": 8, "丁": 9, "戊": 8, "己": 9,
@@ -451,6 +452,22 @@ def dst_offset_hours(dt: datetime, mode: str = "auto",
     return 0.0
 
 
+def to_solar_time(dt: datetime, tz_hours: float, lon: float | None) -> datetime:
+    """当地标准时 → 真太阳时 datetime（lon 为 None 时原样返回）。
+
+    节气时刻、起运锚点、胎元倒推都必须与出生时刻用同一个时间基准比较，
+    否则经度偏差会伪装成"节气提前/延后"（v7.1 及以前: 乌鲁木齐 17:00 立春
+    当天的盘年柱月柱整体错位, 因为拿真太阳时的出生去比标准时的节气）。
+    """
+    if lon is None:
+        return dt
+    jd_ut = jd_from_gregorian(dt.year, dt.month, dt.day,
+                              dt.hour + dt.minute / 60.0 + dt.second / 3600.0) - tz_hours / 24.0
+    eot = equation_of_time(jd_ut)
+    lon_corr = (lon - tz_hours * 15.0) * 4.0
+    return dt + timedelta(minutes=lon_corr + eot)
+
+
 def to_true_solar(dt: datetime, tz_hours: float, lon: float | None):
     """钟表时间 → 真太阳时。返回 (真太阳时, 明细 dict)。"""
     detail = {
@@ -461,13 +478,13 @@ def to_true_solar(dt: datetime, tz_hours: float, lon: float | None):
     }
     if lon is None:
         return dt, detail
+    true_dt = to_solar_time(dt, tz_hours, lon)
     jd_ut = jd_from_gregorian(dt.year, dt.month, dt.day,
                               dt.hour + dt.minute / 60.0 + dt.second / 3600.0) - tz_hours / 24.0
     eot = equation_of_time(jd_ut)
     lon_corr = (lon - tz_hours * 15.0) * 4.0
     detail.update({"lon_correction_min": round(lon_corr, 4),
                    "eot_min": round(eot, 4), "applied": True})
-    true_dt = dt + timedelta(minutes=lon_corr + eot)
     detail["true_solar_time"] = true_dt.strftime("%Y-%m-%d %H:%M:%S")
     return true_dt, detail
 
@@ -510,7 +527,7 @@ def day_pillar_n(dt: datetime, boundary: str) -> int:
 
 
 def taiyuan_month_pillar(birth: datetime, tz_hours: float,
-                         month_pillar: str) -> dict:
+                         month_pillar: str, lon: float | None = None) -> dict:
     """胎元。两派并列输出, 不作独断（同换日流派的处理方式）。
 
     主派 —— 进三位法：月干进一位、月支进三位。十月怀胎逆推十月即地支顺进三位,
@@ -519,6 +536,7 @@ def taiyuan_month_pillar(birth: datetime, tz_hours: float,
 
     两派常给出不同结果（如月柱己巳: 进三位 → 庚申, 300 日法 → 己未），所以并列。
     v6 只输出 300 日法且冠以"三命通会"之名, 与通行口诀不符, 已改。
+    v7.2: 倒推出的时刻与节气时刻统一用真太阳时比较（与 calc 同基准）。
     """
     # 主派: 月柱进位
     m_gan_i = GAN.index(month_pillar[0])
@@ -532,14 +550,18 @@ def taiyuan_month_pillar(birth: datetime, tz_hours: float,
         key=lambda x: x[2],
     )
     cur = None
-    for name, idx, t in jies:
+    cur_std_time = None
+    for (name, idx, t), (_, _, t_std) in zip(
+            [(name, idx, to_solar_time(t, tz_hours, lon)) for name, idx, t in jies],
+            jies):
         if t <= tai_dt:
             cur = (name, idx, t)
+            cur_std_time = t_std
     if cur is None:
         raise ValueError("无法定位胎元月令")
     cur_name, cur_idx, cur_time = cur
     zhi_i = JIE_ZHI[JIE_IDX.index(cur_idx)]
-    lichun = term_local(tai_dt.year, LICHUN_IDX, tz_hours)
+    lichun = to_solar_time(term_local(tai_dt.year, LICHUN_IDX, tz_hours), tz_hours, lon)
     ty = tai_dt.year if tai_dt >= lichun else tai_dt.year - 1
     year_gan = GAN[(ty - 4) % 10]
     gan = GAN[(WUHU[year_gan] + (zhi_i - 2) % 12) % 10]
@@ -553,7 +575,7 @@ def taiyuan_month_pillar(birth: datetime, tz_hours: float,
         "agree": primary == by_300,
         "date": tai_dt.strftime("%Y-%m-%d %H:%M"),
         "jie": cur_name,
-        "jie_time": cur_time.strftime("%Y-%m-%d %H:%M:%S"),
+        "jie_time": (cur_std_time or cur_time).strftime("%Y-%m-%d %H:%M:%S"),
     }
 
 
@@ -619,32 +641,38 @@ def calc(dt: datetime, tz_hours: float = 8.0, gender: str = "male",
     birth = solar
 
     # ---- 年柱（立春为界）----
-    lichun = term_local(birth.year, LICHUN_IDX, tz_hours)
+    # 节气时刻与出生时刻统一换算成真太阳时再比较（v7.2 修复：v7.1 及以前
+    # 拿真太阳时的出生去比标准时的节气，经度偏差 ±2h16m 会整体错年/月柱）
+    lichun_std = term_local(birth.year, LICHUN_IDX, tz_hours)
+    lichun = to_solar_time(lichun_std, tz_hours, lon)
     gy = birth.year if birth >= lichun else birth.year - 1
     year_gan, year_zhi = GAN[(gy - 4) % 10], ZHI[(gy - 4) % 12]
 
     # ---- 月柱（12 节为界）----
     jies = jie_list(birth.year - 1, tz_hours) + jie_list(birth.year, tz_hours)
     jies.sort(key=lambda x: x[2])
+    jies_solar = [(name, idx, to_solar_time(t, tz_hours, lon)) for name, idx, t in jies]
     cur = None
-    for name, idx, t in jies:
+    cur_std_time = None
+    for (name, idx, t), (_, _, t_std) in zip(jies_solar, jies):
         if t <= birth:
             cur = (name, idx, t)
+            cur_std_time = t_std
     if cur is None:
         raise ValueError("无法定位月令，请检查输入时间")
-    cur_name, cur_idx, cur_time = cur
+    cur_name, cur_idx, cur_solar_time = cur
     month_zhi_i = JIE_ZHI[JIE_IDX.index(cur_idx)]
     month_zhi = ZHI[month_zhi_i]
     month_gan = GAN[(WUHU[year_gan] + (month_zhi_i - 2) % 12) % 10]
 
-    # 距节气过近时提示（低精度黄经式 + 历史授时差异）
-    hours_to_jie = abs((birth - cur_time).total_seconds()) / 3600.0
-    nxt = next((t for _, _, t in jies if t > birth), None)
+    # 距节气过近时提示（低精度黄经式 + 历史授时差异；基准已统一为真太阳时）
+    hours_to_jie = abs((birth - cur_solar_time).total_seconds()) / 3600.0
+    nxt = next((t for _, _, t in jies_solar if t > birth), None)
     if nxt is not None:
         hours_to_jie = min(hours_to_jie, abs((nxt - birth).total_seconds()) / 3600.0)
     if hours_to_jie < 1.0:
         warnings.append(
-            f"距节气交界不足 1 小时（{hours_to_jie*60:.0f} 分钟），"
+            f"距节气交界不足 1 小时（{hours_to_jie*60:.0f} 分钟，真太阳时基准），"
             "月柱对算法精度敏感，请与权威万年历核对")
 
     # ---- 日柱 ----
@@ -719,10 +747,12 @@ def calc(dt: datetime, tz_hours: float = 8.0, gender: str = "male",
     jies_all = sorted(jie_list(birth.year - 1, tz_hours) +
                       jie_list(birth.year, tz_hours) +
                       jie_list(birth.year + 1, tz_hours), key=lambda x: x[2])
+    jies_all_solar = [(name, idx, to_solar_time(t, tz_hours, lon))
+                      for name, idx, t in jies_all]
     if forward:
-        anchor = next(t for _, _, t in jies_all if t > birth)
+        anchor = next(t for _, _, t in jies_all_solar if t > birth)
     else:
-        anchor = max(t for _, _, t in jies_all if t < birth)
+        anchor = max(t for _, _, t in jies_all_solar if t < birth)
     gap_days = abs((anchor - birth).total_seconds()) / 86400.0
     jiao_time = add_months(birth, gap_days * 4.0)
     step = 1 if forward else -1
@@ -741,7 +771,7 @@ def calc(dt: datetime, tz_hours: float = 8.0, gender: str = "male",
                         "lichun": lc.strftime("%Y-%m-%d %H:%M")})
 
     # ---- 胎元与命宫（三命通会，v6 新增，低置信旁证）----
-    taiyuan = taiyuan_month_pillar(birth, tz_hours, month_gan + month_zhi)
+    taiyuan = taiyuan_month_pillar(birth, tz_hours, month_gan + month_zhi, lon)
     minggong_gz = minggong(year_gan, month_zhi_i, hour_zhi)
 
     return {
@@ -763,7 +793,7 @@ def calc(dt: datetime, tz_hours: float = 8.0, gender: str = "male",
         "hour_pillar": hour_gan + hour_zhi,
         "day_master": day_gan,
         "month_jie": cur_name,
-        "month_jie_time": cur_time.strftime("%Y-%m-%d %H:%M:%S"),
+        "month_jie_time": cur_std_time.strftime("%Y-%m-%d %H:%M:%S"),
         "pillars": pillars,
         "changsheng": changsheng,
         "wuxing_counts": counts,

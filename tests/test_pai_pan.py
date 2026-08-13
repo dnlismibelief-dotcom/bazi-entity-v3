@@ -476,6 +476,51 @@ class TestChartInvariants(unittest.TestCase):
         for kw in ("四柱", "纳音", "大运", "流年"):
             self.assertIn(kw, text)
 
+    # ---- v7.2 修复的两处：天乙贵人表 / 节气比较基准 ----
+
+    def test_tianyi_table_matches_mnemonic(self):
+        """天乙贵人表必须与通行口诀一致（甲戊庚牛羊, 乙己鼠猴乡, 丙丁猪鸡位,
+        壬癸兔蛇藏, 六辛逢马虎）。
+
+        v7.1 及以前: 甲/戊/庚 写 [12,7] —— 12 越界, 丑永远匹配不到;
+        辛 写 [1,6]（丑午）应为 [2,6]（寅午）。
+        """
+        expect = {
+            "甲": "丑未", "戊": "丑未", "庚": "丑未",
+            "乙": "子申", "己": "子申",
+            "丙": "酉亥", "丁": "酉亥",
+            "壬": "卯巳", "癸": "卯巳",
+            "辛": "寅午",
+        }
+        for gan, zhi in expect.items():
+            got = "".join(pp.ZHI[i] for i in sorted(pp.TIANYI[gan]))
+            self.assertEqual(got, zhi, f"{gan} 天乙贵人应为 {zhi}, 表给的是 {got}")
+
+    def test_tianyi_indexes_in_range(self):
+        for gan, idxs in pp.TIANYI.items():
+            for i in idxs:
+                self.assertTrue(0 <= i < 12, f"{gan} 天乙贵人索引 {i} 越界")
+
+    def test_month_pillar_consistent_across_longitudes(self):
+        """节气比较必须与出生时刻同基准（真太阳时）。
+
+        2024-02-04 17:00 钟表时在权威立春（16:26:53 UTC+8）之后 33 分钟，
+        同一时区内无论经度如何都应是 甲辰 丙寅。
+        v7.1 及以前拿真太阳时的出生比标准时的节气，乌鲁木齐（87.6E）会被
+        经度修正 -2h10m 拖回立春前，错判成 癸卯 乙丑。
+        """
+        for lon in (87.6, 116.4, 126.6, None):
+            r = pp.calc(datetime(2024, 2, 4, 17, 0), tz_hours=TZ, lon=lon)
+            self.assertEqual(r["year_pillar"], "甲辰", f"lon={lon} 年柱错")
+            self.assertEqual(r["month_pillar"], "丙寅", f"lon={lon} 月柱错")
+
+    def test_term_warning_uses_solar_basis(self):
+        """距节气告警应基于真太阳时比较（乌鲁木齐 17:00 距立春约 33 分钟,
+        不应再因基准混用而误报或漏报）。"""
+        r = pp.calc(datetime(2024, 2, 4, 17, 0), tz_hours=TZ, lon=87.6)
+        near = [w for w in r["warnings"] if "节气" in w]
+        self.assertEqual(len(near), 1, "距立春约 33 分钟应恰好一条节气告警")
+
 
 class TestFixtures(unittest.TestCase):
     """对齐权威万年历（tests/fixtures.csv）。空文件则跳过。"""
@@ -524,7 +569,11 @@ class TestCompareCharts(unittest.TestCase):
         return cc
 
     def test_lincoln_darwin_same_pillars_different_jiao(self):
-        """林肯/达尔文（同日正午占位）：四柱相同、大运序列相同、交运日差 33 天。"""
+        """林肯/达尔文（同日正午占位）：四柱相同、大运序列相同、交运日差 30 天。
+
+        v7.2 起 anchor 与出生时刻统一用真太阳时，达尔文交运由 1811-11-20
+        修正为 1811-11-23（旧逻辑把标准时立春与真太阳时出生混基准比较）。
+        """
         cc = self._load()
         r = cc.compare(
             {"dt": "1809-02-12 12:00", "tz": -6.0, "lon": -85.7},
@@ -532,7 +581,7 @@ class TestCompareCharts(unittest.TestCase):
         )
         self.assertTrue(r["same_four_pillars"])
         self.assertTrue(r["same_lucky"])
-        self.assertEqual(r["jiao_time_diff_days"], 33)
+        self.assertEqual(r["jiao_time_diff_days"], 30)
 
     def test_sensitivity_reveals_hour_dependence(self):
         """同一日期不同钟表时刻会改变四柱：占位时辰不可当作真实盘。"""

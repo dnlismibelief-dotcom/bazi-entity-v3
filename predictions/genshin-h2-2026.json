@@ -1,0 +1,28 @@
+{
+  "entity": "原神",
+  "entity_type": "game",
+  "anchor": "2020-09-28 10:00 UTC+8（全球公测开服时刻）",
+  "chart": "庚子 乙酉 甲戌 己巳",
+  "chart_engine": "scripts/pai_pan.py v7.5",
+  "model": "bazi-entity-v7.5",
+  "note": "2026 下半年（9-12 月）补充判据，独立文件登记以保证 git 首次提交时间锚正确。主盘解读见 references/genshin-reading.md 与 predictions/genshin.json。",
+  "assumptions": [
+    "丙戌运（食神生财）＋ 丙午流年（食神坐伤官），内容产能是流水的主要支撑",
+    "酉戌申月官杀重、庚子月七杀与年柱伏吟＝下半年压力/争议窗口",
+    "周年庆（9-28）与年末版本落在丁酉—戊戌月，伤官见官＋日支戌伏吟＝高潮与争议并存"
+  ],
+  "predictions": [
+    {
+      "id": "G-06",
+      "window": ["2026-09-01", "2026-12-31"],
+      "claim": "2026 下半年（9—12 月）原神全球移动端流水月均值不低于 2026 上半年月均值的 85%（AppMagic 或 Sensor Tower 同一口径）",
+      "probability": 0.60,
+      "base_rate": 0.50,
+      "base_rate_source": "运营第 7 年的长线手游，下半年（含周年庆）月均流水守住上半年 85% 的概率（作者估计，回填时以同类样本中位数替换）",
+      "falsify": "第三方口径显示 2026-09—12 月均流水低于 2026-01—08 月均值的 85%",
+      "deadline": "2027-03-31",
+      "evidence_grade": "A",
+      "verdict": "pending"
+    }
+  ]
+}

@@ -55,6 +55,9 @@ predictions/<entity>.json
 ## 工作流
 
 1. **登记**：新建或追加 `predictions/<entity>.json`，`verdict` 一律先写 `pending`。
+   注意：事前性锚点是**文件首次提交时间**——给已有文件追加新判据会继承旧文件
+   的首提时间，窗口起点早于本次追加时间的判据会被错误认证为"事前"。因此
+   追加判据请新建 `predictions/<entity>-<yyyymm>.json`，保证每批判据的锚点正确。
 2. **提交**：单独 commit，信息写清 `predict(<entity>): J-0x ...`。**必须在窗口起点之前提交。**
 3. **等待**：不要在窗口内改写 claim、probability、falsify。要修正只能新增一条并在
    旧条目上标 `revised_from`，保留原记录。

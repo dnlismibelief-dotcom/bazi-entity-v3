@@ -242,7 +242,9 @@ def score(args) -> None:
         kind = p["id"].split("-")[2]
         if kind not in ("album", "tour"):
             continue
-        fact = by_year.get(y, {})
+        fact = by_year.get(y)
+        if fact is None:
+            continue  # 事实表未覆盖的年份保持 pending，绝不回填
         outcome = bool(fact.get(f"{kind}_launch" if kind == "tour" else "new_album"))
         p["verdict"] = "hit" if outcome else "miss"
         rows.append((p, outcome))

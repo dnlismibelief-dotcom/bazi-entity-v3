@@ -44,6 +44,11 @@ python scripts/pai_pan.py "2001-03-05 23:30" --lon 121.5 --day-boundary midnight
 python scripts/famous20.py            # 排盘表
 python scripts/famous20.py --check    # 与 lunar-javascript 参照比对（20/20 通过）
 
+# 逐年伪事前回测/事前登记（示例：Taylor Swift）
+python scripts/yearly_bazi.py "1989-12-13 08:36" --name "Taylor Swift" \
+    --tz -5 --lon -75.93 --gender female --from 2006 --to 2031 \
+    --future-from 2026 --biz-years 2027 2029 2031 --write predictions/taylor.json
+
 # 自检
 python -m unittest discover -s tests
 python scripts/verify.py
@@ -72,15 +77,18 @@ CHANGELOG.md                      版本变更（含 v4 遗留 bug 清单）
 scripts/pai_pan.py                排盘 CLI：真太阳时/夏令时/换日可切换/JSON
 scripts/famous20.py               20 位 A/AA 级名人批量排盘 + 独立参照比对
 scripts/famous20_reference.mjs    独立参照生成器（lunar-javascript，可选）
+scripts/yearly_bazi.py            逐年岁运判据生成/回填打分（伪事前回测 + 事前登记）
 scripts/verify.py                 校准统计：命中率 + Brier + 技巧分数 + 事前性核验
 data/famous20_times.json          20 人出生时刻/时区/来源/评级/参照四柱
+data/taylor_facts.json            Taylor 逐年事实表（回测打分用）
 references/model-v5.md            完整模型规范（六模块 M1—M6、六亲双轨）
 references/famous20-validation.md 20 人检验报告：20/20 比对 + 真太阳时口径差异
+references/taylor-yearly.md       Taylor 逐年回测：专辑 −0.104 / 巡演 +0.047（技巧分数）
 references/human.md               人盘专用（六亲、人生阶段、隐私纪律）
 references/calibration.md         校准档案 schema、判据写法要求、鸣潮 worked example
 references/model-v3-deprecated.md v3 旧规范，仅供旧记录追溯
 predictions/                      预测登记（git 时间戳作事前证明）
-tests/                            71 条测试（含 13 条带来源的权威万年历 fixtures）
+tests/                            77 条测试（含 13 条带来源的权威万年历 fixtures）
 docs/usage.md                     安装与调用说明
 dist/                             打包产物（BFFT.zip，含使用文档）
 ```

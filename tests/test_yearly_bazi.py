@@ -93,5 +93,54 @@ class TestScoring(unittest.TestCase):
                              "事实表未覆盖的年份不得回填")
 
 
+class TestCareerModel(unittest.TestCase):
+    """rulebook v1：事业指数与显著高峰年判据。"""
+
+    def test_career_index_age_prior(self):
+        rows = yb.yearly_rows(taylor_chart(), 1989, 2024)
+        by = {r["year"]: r for r in rows}
+        idx_1989, p_1989, _ = yb.career_index(by[1989], 1989)
+        idx_2024, p_2024, _ = yb.career_index(by[2024], 1989)
+        self.assertLessEqual(p_1989, 0.03 + 1e-9, "童年高峰概率应为下限 0.03")
+        self.assertGreater(idx_2024, idx_1989)
+        self.assertTrue(0.03 <= p_2024 <= 0.75)
+
+    def test_career_predictions_grades(self):
+        import argparse
+        chart = taylor_chart()
+        rows = yb.yearly_rows(chart, 1989, 2031)
+        ns = argparse.Namespace(name="T", datetime=TAYLOR["dt"], tz=TAYLOR["tz"],
+                                lon=TAYLOR["lon"], future_from=2026, birth_year=1989)
+        doc = yb.build_career_predictions(ns, chart, rows)
+        a = [p for p in doc["predictions"] if p["evidence_grade"] == "A"]
+        self.assertEqual(len(a), 5)
+        self.assertTrue(all(not p.get("low_information") for p in a),
+                        "2027—2031 高峰概率应高于基线 0.20")
+
+    def test_score_career_keeps_missing_years_pending(self):
+        import argparse
+        with tempfile.TemporaryDirectory() as d:
+            chart = taylor_chart()
+            rows = yb.yearly_rows(chart, 1989, 2027)
+            ns = argparse.Namespace(name="T", datetime=TAYLOR["dt"], tz=TAYLOR["tz"],
+                                    lon=TAYLOR["lon"], future_from=9999, birth_year=1989)
+            doc = yb.build_career_predictions(ns, chart, rows)
+            pred_path = os.path.join(d, "p.json")
+            facts_path = os.path.join(d, "f.json")
+            with open(pred_path, "w", encoding="utf-8") as fh:
+                json.dump(doc, fh, ensure_ascii=False)
+            facts = {"high_threshold": 4,
+                     "years": [{"year": 2023, "score": 9}]}
+            with open(facts_path, "w", encoding="utf-8") as fh:
+                json.dump(facts, fh, ensure_ascii=False)
+            ns2 = argparse.Namespace(predictions=pred_path, score_career=facts_path)
+            yb.score_career(ns2)
+            with open(pred_path, encoding="utf-8") as fh:
+                out = json.load(fh)
+            by_id = {p["id"]: p for p in out["predictions"]}
+            self.assertEqual(by_id["TS2-2023-high"]["verdict"], "hit")
+            self.assertEqual(by_id["TS2-2027-high"]["verdict"], "pending")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

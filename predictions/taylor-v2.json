@@ -37,7 +37,7 @@
       "falsify": "1989 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "1990-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 3,
@@ -69,7 +69,7 @@
       "falsify": "1990 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "1991-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 3,
@@ -101,7 +101,7 @@
       "falsify": "1991 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "1992-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 3,
@@ -135,7 +135,7 @@
       "falsify": "1992 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "1993-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 3,
@@ -167,7 +167,7 @@
       "falsify": "1993 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "1994-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 3,
@@ -199,7 +199,7 @@
       "falsify": "1994 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "1995-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 3,
@@ -231,7 +231,7 @@
       "falsify": "1995 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "1996-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 4,
@@ -263,7 +263,7 @@
       "falsify": "1996 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "1997-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 3,
@@ -295,7 +295,7 @@
       "falsify": "1997 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "1998-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 15,
@@ -330,7 +330,7 @@
       "falsify": "1998 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "1999-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 12,
@@ -362,7 +362,7 @@
       "falsify": "1999 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2000-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 14,
@@ -394,7 +394,7 @@
       "falsify": "2000 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2001-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 12,
@@ -426,7 +426,7 @@
       "falsify": "2001 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2002-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 12,
@@ -458,7 +458,7 @@
       "falsify": "2002 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2003-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 34,
@@ -490,7 +490,7 @@
       "falsify": "2003 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2004-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 34,
@@ -524,7 +524,7 @@
       "falsify": "2004 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2005-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 32,
@@ -556,7 +556,7 @@
       "falsify": "2005 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2006-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 48,
@@ -588,7 +588,7 @@
       "falsify": "2006 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2007-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 41,
@@ -620,7 +620,7 @@
       "falsify": "2007 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2008-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 70,
@@ -654,7 +654,7 @@
       "falsify": "2008 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2009-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 63,
@@ -688,7 +688,7 @@
       "falsify": "2009 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2010-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 68,
@@ -720,7 +720,7 @@
       "falsify": "2010 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2011-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "hit",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 65,
@@ -754,7 +754,7 @@
       "falsify": "2011 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2012-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 67,
@@ -786,7 +786,7 @@
       "falsify": "2012 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2013-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 62,
@@ -818,7 +818,7 @@
       "falsify": "2013 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2014-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 62,
@@ -850,7 +850,7 @@
       "falsify": "2014 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2015-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "hit",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 73,
@@ -882,7 +882,7 @@
       "falsify": "2015 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2016-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 69,
@@ -914,7 +914,7 @@
       "falsify": "2016 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2017-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 61,
@@ -948,7 +948,7 @@
       "falsify": "2017 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2018-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "hit",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 61,
@@ -980,7 +980,7 @@
       "falsify": "2018 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2019-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 67,
@@ -1014,7 +1014,7 @@
       "falsify": "2019 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2020-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 80,
@@ -1049,7 +1049,7 @@
       "falsify": "2020 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2021-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "hit",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 61,
@@ -1081,7 +1081,7 @@
       "falsify": "2021 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2022-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "hit",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 70,
@@ -1113,7 +1113,7 @@
       "falsify": "2022 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2023-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "hit",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 66,
@@ -1145,7 +1145,7 @@
       "falsify": "2023 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2024-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "hit",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 76,
@@ -1179,7 +1179,7 @@
       "falsify": "2024 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
       "deadline": "2025-03-31",
       "evidence_grade": "B",
-      "verdict": "pending",
+      "verdict": "hit",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
         "career_index": 69,

@@ -113,8 +113,12 @@ python scripts/verify.py --strict   # CI 用
 - [scripts/pai_pan.py](scripts/pai_pan.py) — 排盘 CLI（真太阳时/夏令时/换日可切换/JSON）。
 - [scripts/famous20.py](scripts/famous20.py) — 20 位 A/AA 级名人批量排盘 + 独立参照比对
   （`--check`）；数据 [data/famous20_times.json](data/famous20_times.json)。
+- [scripts/yearly_bazi.py](scripts/yearly_bazi.py) — 逐年岁运判据生成/回填打分：
+  `--career` 模式输出逐年事业指数与显著高峰年概率（rulebook v1，年龄先验）。
 - [references/famous20-validation.md](references/famous20-validation.md) — 20 人检验报告
   （20/20 比对、真太阳时口径差异、效果边界）。
+- [references/taylor-yearly-v2.md](references/taylor-yearly-v2.md) — 单名人逐年事业回测
+  纪律示范：预测先 commit、事实后编译、Brier/技巧分数对照基线。
 - [scripts/verify.py](scripts/verify.py) — 校准统计与事前性核验。
 - [tests/](tests/) — 不变量测试；`python -m unittest discover -s tests`。
 

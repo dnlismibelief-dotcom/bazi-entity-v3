@@ -21,6 +21,8 @@ v6 新增最要紧的三条：**病药八法**（雕枯旺弱 × 损益生长，
 工程层 v7：真太阳时、夏令时（只对东八区）、换日两派、胎元两派、
 输入历法声明（`--calendar`）、节气核对、预测事前登记。
 v7 修正了 ΔT 适用年限与节气求根收敛 —— v6 及以前 1680 年前的盘月柱可能整月错位。
+v7.5：20 位 A/AA 级明确出生时刻名人经独立实现（lunar-javascript）逐柱比对 20/20
+通过；时柱 6 例差异为"真太阳时 vs 钟表时刻"口径，复算后吻合（非 bug）。
 
 ## Workflow
 
@@ -109,6 +111,10 @@ python scripts/verify.py --strict   # CI 用
 - [references/calibration.md](references/calibration.md) — 校准 schema、判据写法要求、鸣潮 worked example。
 - [references/model-v3-deprecated.md](references/model-v3-deprecated.md) — v3 旧规范，仅供旧记录追溯。
 - [scripts/pai_pan.py](scripts/pai_pan.py) — 排盘 CLI（真太阳时/夏令时/换日可切换/JSON）。
+- [scripts/famous20.py](scripts/famous20.py) — 20 位 A/AA 级名人批量排盘 + 独立参照比对
+  （`--check`）；数据 [data/famous20_times.json](data/famous20_times.json)。
+- [references/famous20-validation.md](references/famous20-validation.md) — 20 人检验报告
+  （20/20 比对、真太阳时口径差异、效果边界）。
 - [scripts/verify.py](scripts/verify.py) — 校准统计与事前性核验。
 - [tests/](tests/) — 不变量测试；`python -m unittest discover -s tests`。
 

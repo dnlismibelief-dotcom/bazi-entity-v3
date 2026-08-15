@@ -522,6 +522,34 @@ class TestChartInvariants(unittest.TestCase):
         self.assertEqual(len(near), 1, "距立春约 33 分钟应恰好一条节气告警")
 
 
+class TestEngineOptimizations(unittest.TestCase):
+    """v7.5 性能重构的等价性护栏。"""
+
+    def test_idx60_precomputed_table_matches(self):
+        """IDX60 查表必须与 60 甲子完全一致。"""
+        for g in pp.GAN:
+            for z in pp.ZHI:
+                if (pp.GAN.index(g) - pp.ZHI.index(z)) % 2 == 0:
+                    self.assertEqual(pp.IDX60[g + z], pp.idx60(g, z))
+
+    def test_jie_list_cached_tuple(self):
+        """jie_list 返回 tuple 且被 lru_cache 命中（同一对象）。"""
+        a = pp.jie_list(2024, 8.0)
+        b = pp.jie_list(2024, 8.0)
+        self.assertIsInstance(a, tuple)
+        self.assertEqual(len(a), 12)
+        self.assertIs(a, b)
+
+    def test_to_true_solar_single_correction_path(self):
+        """to_true_solar 的明细必须与 solar_correction 一致（同一计算路径）。"""
+        dt = datetime(2024, 8, 1, 12, 0)
+        out, detail = pp.to_true_solar(dt, 8.0, 120.0)
+        _, eot, lonc = pp.solar_correction(dt, 8.0, 120.0)
+        self.assertAlmostEqual(detail["eot_min"], round(eot, 4), places=6)
+        self.assertAlmostEqual(detail["lon_correction_min"], round(lonc, 4), places=6)
+        self.assertAlmostEqual((out - dt).total_seconds() / 60.0, eot + lonc, places=3)
+
+
 class TestFixtures(unittest.TestCase):
     """对齐权威万年历（tests/fixtures.csv）。空文件则跳过。"""
 

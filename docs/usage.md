@@ -55,6 +55,22 @@ python scripts/pai_pan.py "2017-03-02 10:00" --lon 116.4 --json
 | `--lucky` / `--years` | 大运步数 / 流年年数 |
 | `--json` | 结构化输出 |
 
+### 20 位名人批量排盘与独立比对（v7.5）
+
+```bash
+python scripts/famous20.py                 # 排盘表
+python scripts/famous20.py --json          # 结构化输出
+python scripts/famous20.py --check         # 与 lunar-javascript 独立参照逐柱比对
+python scripts/famous20.py --sensitivity 乔布斯  # 某人 ±3h 时辰敏感性
+```
+
+数据在 `data/famous20_times.json`：20 位 A/AA 级（自传/新闻 → A，出生证 → AA）
+名人的出生时刻、历史时区（夏令时/战时时间/LMT 已核）、经度、来源 URL 与
+独立参照四柱。检验结论：四柱 80 柱位 20/20 通过；时柱 6 例为"真太阳时 vs
+钟表时刻"口径差异（复算后吻合，非 bug）。**名人回测只证明排盘正确，
+不证明命理有效**；细节见 `references/famous20-validation.md`。
+参照四柱可重生成：`node scripts/famous20_reference.mjs`（需 npm 装 lunar-javascript）。
+
 ### 交给 AI 分析
 
 - 人盘：> 用 BFFT 分析我的八字，出生 1995-06-15 08:30（UTC+8，女，上海），重点看事业和婚姻。
@@ -104,11 +120,12 @@ python scripts/verify.py --strict   # CI 用
 
 ```bash
 python -m unittest discover -s tests -v
+python scripts/famous20.py --check
 ```
 
-42 条不变量测试（节气回代黄经、月柱进位、日柱递增、大运连续性、真太阳时对称性等）。
-想把绝对精度也钉死，往 `tests/fixtures.csv` 填带来源的权威万年历样本，该文件非空时
-对照测试自动生效。
+71 条不变量测试（节气回代黄经、月柱进位、日柱递增、大运连续性、真太阳时对称性、
+famous20 数据与参照比对等）。想把绝对精度也钉死，往 `tests/fixtures.csv` 填
+带来源的权威万年历样本，该文件非空时对照测试自动生效。
 
 ## 8. 中国名人三柱数据集（v7.2 新增）
 
@@ -120,7 +137,7 @@ python -m unittest discover -s tests -v
   排盘正确性冒烟与描述性分布研究，**不是命运拟合，不构成模型验证**。
 - 完整报告见 `references/chinese-1000.md`。
 
-## 8. 已知边界与纪律
+## 9. 已知边界与纪律
 
 - 文化娱乐性质，不作投资／医疗／婚恋决策依据。
 - 节气时刻精度约分钟级；1986—1991 出生者须确认记录是否已扣夏令时。
@@ -128,8 +145,8 @@ python -m unittest discover -s tests -v
 - 门派分歧（六亲、强弱、墓库、换日）并列输出，不作独断。
 - 事件、流水、销量必须引用公开可查来源并注明口径，不虚构。
 
-## 9. 版本
+## 10. 版本
 
-当前 v6（八书贯通），skill 正式命名为 `BFFT`。版本变更见
+当前 v7.5（引擎性能优化 + 20 位明确出生时刻名人独立比对）。版本变更见
 [CHANGELOG.md](../CHANGELOG.md)。
 v3 旧规范保留在 [model-v3-deprecated.md](../references/model-v3-deprecated.md)，仅供旧校准记录追溯。

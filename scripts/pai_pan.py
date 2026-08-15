@@ -169,12 +169,15 @@ def is_yang(gan: str) -> bool:
     return gan in YANG_GAN
 
 
+# 60 甲子序号查表（模块加载时一次算好，idx60 从 O(60) 降为 O(1)）
+IDX60 = {GAN[n % 10] + ZHI[n % 12]: n for n in range(60)}
+
+
 def idx60(gan: str, zhi: str) -> int:
-    gi, zi = GAN.index(gan), ZHI.index(zhi)
-    for n in range(60):
-        if n % 10 == gi and n % 12 == zi:
-            return n
-    raise ValueError(f"invalid pillar {gan}{zhi}")
+    try:
+        return IDX60[gan + zhi]
+    except KeyError:
+        raise ValueError(f"invalid pillar {gan}{zhi}") from None
 
 
 def pillar60(n: int) -> str:
@@ -418,13 +421,16 @@ def term_local(year: int, idx: int, tz_hours: float) -> datetime:
     return jd_to_datetime(term_ut_jd(year, idx) + tz_hours / 24.0)
 
 
+@lru_cache(maxsize=4096)
 def jie_list(year: int, tz_hours: float):
-    """给定公历年的 12 个节（月令边界），当地标准时。"""
-    out = []
-    for idx in JIE_IDX:
-        yy = year + 1 if idx == 0 else year   # 小寒属次年
-        out.append((TERM_NAME[idx], idx, term_local(yy, idx, tz_hours)))
-    return out
+    """给定公历年的 12 个节（月令边界），当地标准时。
+
+    返回 tuple 而非 list：元组可哈希，整函数可被 lru_cache 缓存。
+    一次 calc 会按 (year-1, year, year+1) 多次请求，批量排盘时收益明显。
+    """
+    return tuple((TERM_NAME[idx], idx, term_local(yy, idx, tz_hours))
+                 for idx, yy in ((idx, year + 1 if idx == 0 else year)
+                                 for idx in JIE_IDX))
 
 
 # --------------------------------------------------------------------------
@@ -452,6 +458,21 @@ def dst_offset_hours(dt: datetime, mode: str = "auto",
     return 0.0
 
 
+def solar_correction(dt: datetime, tz_hours: float,
+                     lon: float | None) -> tuple[float, float, float]:
+    """真太阳时修正分量。返回 (jd_ut, eot_min, lon_corr_min)。
+
+    把儒略日、均时差、经度修正三样一次性算好，供 to_solar_time /
+    to_true_solar 共用 —— 旧实现里 to_true_solar 先调 to_solar_time
+    再自己重算一遍 jd/eot，每盘多算一次均时差。
+    """
+    jd_ut = jd_from_gregorian(dt.year, dt.month, dt.day,
+                              dt.hour + dt.minute / 60.0 + dt.second / 3600.0) - tz_hours / 24.0
+    eot = equation_of_time(jd_ut)
+    lon_corr = (lon - tz_hours * 15.0) * 4.0
+    return jd_ut, eot, lon_corr
+
+
 def to_solar_time(dt: datetime, tz_hours: float, lon: float | None) -> datetime:
     """当地标准时 → 真太阳时 datetime（lon 为 None 时原样返回）。
 
@@ -461,10 +482,7 @@ def to_solar_time(dt: datetime, tz_hours: float, lon: float | None) -> datetime:
     """
     if lon is None:
         return dt
-    jd_ut = jd_from_gregorian(dt.year, dt.month, dt.day,
-                              dt.hour + dt.minute / 60.0 + dt.second / 3600.0) - tz_hours / 24.0
-    eot = equation_of_time(jd_ut)
-    lon_corr = (lon - tz_hours * 15.0) * 4.0
+    _, eot, lon_corr = solar_correction(dt, tz_hours, lon)
     return dt + timedelta(minutes=lon_corr + eot)
 
 
@@ -478,11 +496,8 @@ def to_true_solar(dt: datetime, tz_hours: float, lon: float | None):
     }
     if lon is None:
         return dt, detail
-    true_dt = to_solar_time(dt, tz_hours, lon)
-    jd_ut = jd_from_gregorian(dt.year, dt.month, dt.day,
-                              dt.hour + dt.minute / 60.0 + dt.second / 3600.0) - tz_hours / 24.0
-    eot = equation_of_time(jd_ut)
-    lon_corr = (lon - tz_hours * 15.0) * 4.0
+    _, eot, lon_corr = solar_correction(dt, tz_hours, lon)
+    true_dt = dt + timedelta(minutes=lon_corr + eot)
     detail.update({"lon_correction_min": round(lon_corr, 4),
                    "eot_min": round(eot, 4), "applied": True})
     detail["true_solar_time"] = true_dt.strftime("%Y-%m-%d %H:%M:%S")
@@ -649,8 +664,8 @@ def calc(dt: datetime, tz_hours: float = 8.0, gender: str = "male",
     year_gan, year_zhi = GAN[(gy - 4) % 10], ZHI[(gy - 4) % 12]
 
     # ---- 月柱（12 节为界）----
-    jies = jie_list(birth.year - 1, tz_hours) + jie_list(birth.year, tz_hours)
-    jies.sort(key=lambda x: x[2])
+    jies = sorted(jie_list(birth.year - 1, tz_hours) + jie_list(birth.year, tz_hours),
+                  key=lambda x: x[2])
     jies_solar = [(name, idx, to_solar_time(t, tz_hours, lon)) for name, idx, t in jies]
     cur = None
     cur_std_time = None
@@ -713,30 +728,39 @@ def calc(dt: datetime, tz_hours: float = 8.0, gender: str = "male",
             counts[wuxing(g)] += 1
 
     # ---- 神煞 ----
+    # 查表项先归并成局部常量，内层循环不再重复 .index()/.get()
+    tianyi_day = set(TIANYI.get(day_gan, ()))
+    tianyi_year = set(TIANYI.get(year_gan, ()))
+    lu_zhi = ZHI[LU[day_gan]]
+    wenchang_zhi = ZHI[WENCHANG[day_gan]]
+    yangren_zhi = ZHI[YANGREN[day_gan]] if day_gan in YANGREN else None
+    ju_for_zhi = {m: j for members, j in JU.items() for m in members}
     shensha = {}
     for p in pillars:
         tags = []
-        if ZHI.index(p["zhi"]) in TIANYI.get(day_gan, []):
+        zhi = p["zhi"]
+        zhi_i = ZHI.index(zhi)
+        if zhi_i in tianyi_day:
             tags.append("天乙贵人(日)")
-        if ZHI.index(p["zhi"]) in TIANYI.get(year_gan, []):
+        if zhi_i in tianyi_year:
             tags.append("天乙贵人(年)")
-        if p["label"] != "日柱" and p["zhi"] == ZHI[LU[day_gan]]:
+        if p["label"] != "日柱" and zhi == lu_zhi:
             tags.append("禄")
-        if p["zhi"] == ZHI[WENCHANG[day_gan]]:
+        if zhi == wenchang_zhi:
             tags.append("文昌")
-        if day_gan in YANGREN and p["zhi"] == ZHI[YANGREN[day_gan]]:
+        if zhi == yangren_zhi:
             tags.append("羊刃")
-        if p["label"] == "日柱" and (p["gan"] + p["zhi"]) in QUIGANG:
+        if p["label"] == "日柱" and (p["gan"] + zhi) in QUIGANG:
             tags.append("魁罡")
         for base_label, base_zhi in (("日支", day_zhi), ("年支", year_zhi)):
-            for members, j in JU.items():
-                if base_zhi not in members:
-                    continue
-                for name, table in (("桃花", TAOHUA), ("驿马", YIMA),
-                                    ("将星", JIANGXING), ("华盖", HUAGAI),
-                                    ("劫煞", JIESHA), ("亡神", WANGSHEN)):
-                    if p["zhi"] == ZHI[table[j]]:
-                        tags.append(f"{name}({base_label})")
+            j = ju_for_zhi.get(base_zhi)
+            if j is None:
+                continue
+            for name, table in (("桃花", TAOHUA), ("驿马", YIMA),
+                                ("将星", JIANGXING), ("华盖", HUAGAI),
+                                ("劫煞", JIESHA), ("亡神", WANGSHEN)):
+                if zhi == ZHI[table[j]]:
+                    tags.append(f"{name}({base_label})")
         if tags:
             shensha[p["label"]] = list(dict.fromkeys(tags))
 

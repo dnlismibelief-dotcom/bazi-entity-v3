@@ -1,4 +1,4 @@
-# BFFT · 万物命理（v7 · 八书贯通 ＋ 引擎历法修正）
+# BFFT · 万物命理（v7.5 · 八书贯通 ＋ 引擎历法修正 ＋ 20 名人独立比对）
 
 把四柱八字做成一套**可证伪**的分析框架，对象不限于人——`human` / `game` / `product` / `company`
 四类实体共用同一套推演，按各自的寿命尺度缩放读取。游戏用公测时刻当"生辰"，
@@ -40,6 +40,10 @@ python scripts/pai_pan.py "2024-05-23 10:00" --name 鸣潮 --lon 113.3 --json
 # 换日流派存疑时两派都看
 python scripts/pai_pan.py "2001-03-05 23:30" --lon 121.5 --day-boundary midnight
 
+# 20 位明确出生时刻（A/AA 级）名人批量排盘 + 独立参照逐柱比对
+python scripts/famous20.py            # 排盘表
+python scripts/famous20.py --check    # 与 lunar-javascript 参照比对（20/20 通过）
+
 # 自检
 python -m unittest discover -s tests
 python scripts/verify.py
@@ -66,13 +70,17 @@ v7 修了另一类更隐蔽的错：ΔT 公式只覆盖 1900 年以后，往前�
 SKILL.md                          skill 定义（六模块管线、寿命缩放、guardrails）
 CHANGELOG.md                      版本变更（含 v4 遗留 bug 清单）
 scripts/pai_pan.py                排盘 CLI：真太阳时/夏令时/换日可切换/JSON
+scripts/famous20.py               20 位 A/AA 级名人批量排盘 + 独立参照比对
+scripts/famous20_reference.mjs    独立参照生成器（lunar-javascript，可选）
 scripts/verify.py                 校准统计：命中率 + Brier + 技巧分数 + 事前性核验
+data/famous20_times.json          20 人出生时刻/时区/来源/评级/参照四柱
 references/model-v5.md            完整模型规范（六模块 M1—M6、六亲双轨）
+references/famous20-validation.md 20 人检验报告：20/20 比对 + 真太阳时口径差异
 references/human.md               人盘专用（六亲、人生阶段、隐私纪律）
 references/calibration.md         校准档案 schema、判据写法要求、鸣潮 worked example
 references/model-v3-deprecated.md v3 旧规范，仅供旧记录追溯
 predictions/                      预测登记（git 时间戳作事前证明）
-tests/                            42 条测试（含 13 条带来源的权威万年历 fixtures）
+tests/                            71 条测试（含 13 条带来源的权威万年历 fixtures）
 docs/usage.md                     安装与调用说明
 dist/                             打包产物（BFFT.zip，含使用文档）
 ```
@@ -85,6 +93,8 @@ dist/                             打包产物（BFFT.zip，含使用文档）
   23–01 点换日两派、极端经度、闰年），测试全绿；继续追加样本时请按模板写明 `source`。
 - 夏令时日期表（1986—1991）依据公开资料，可能与出生地档案有差异，可用 `--dst off` 覆盖。
 - 门派分歧（六亲、强弱、墓库、换日）一律并列输出，不作独断。
+- `data/famous20_times.json` 只用于排盘正确性检验；名人回测不能证明命理有效，
+  时柱另有"真太阳时 vs 钟表时刻"口径差异（见 `references/famous20-validation.md` §4）。
 
 ## License
 

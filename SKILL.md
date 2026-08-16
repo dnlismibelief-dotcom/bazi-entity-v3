@@ -3,7 +3,7 @@ name: BFFT
 description: Apply Chinese BaZi (四柱八字/命理) to any entity — person, game, product, or company — to read life trajectory, popularity, revenue, and lifespan windows. Use for birth-chart analysis, for a game/product launch date (e.g. 游戏甲(示例), 三角洲行动), or to calibrate past predictions against real events.
 ---
 
-# BFFT · BaZi Entity Analysis (v7) — 万物命理
+# BFFT · 万物命理
 
 ## Overview
 
@@ -12,6 +12,10 @@ v6 = v5 的工程体系 ＋ 第二轮五书贯通
 ＋《协纪辨方书》择吉/历法考据 ＋《果老星宗》平行星命参照），
 并对 v4 已融合的《千里命稿》《子平真诠》《滴天髓》回头复核。
 八书解读、可验证性分级与不采用清单见 [classics-v6.md](references/classics-v6.md)。
+
+v7.18：第二轮精读八书原文，把文档层规则代码化为 `scripts/classics_extra.py`
+（从化判定/支冲地类/清浊/众寡/真神假神/隐显/岁运战冲和好/生克先后/吉凶神破成格/
+小运/太岁，共 14 函数全部 S 级纯干支推导），详见 CHANGELOG v7.18。
 
 层次原则：**强弱 < 格局 < 气象 < 调候**。神煞不作格局成败依据；调候为急可超越中和；
 结论带置信度与条件句。门派分歧并列输出，不作独断。
@@ -121,6 +125,8 @@ python scripts/verify.py --strict   # CI 用
 ## Resources
 
 - [references/classics-v6.md](references/classics-v6.md) — 八部文献逐书解读、现代分层与不采用清单。
+- [references/classics-v7.md](references/classics-v7.md) — 第二轮精读记录：14 个代码级增量函数的原文出处与代码化决策。
+- [scripts/classics_extra.py](scripts/classics_extra.py) — 古籍现代化增量模块（源流/通关/十二长生读法 + 从化判定/支冲地类/清浊/众寡/真神假神/隐显/岁运战冲和好/生克先后/吉凶神破成格/小运/太岁），全部 S 级。
 - [references/integration-v7.12.md](references/integration-v7.12.md) — 外部 skill 生态整合报告（小红书三篇笔记追踪、九仓库审查、吸收/拒绝清单）。
 - [references/model-v6.md](references/model-v6.md) — v6 完整规范（M0—M6 增量、断语三级制）。
 - [references/model-v5.md](references/model-v5.md) — v5 完整规范（六模块、六亲双轨、版本变更）。深度分析必读。

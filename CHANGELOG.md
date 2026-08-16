@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## v7.10 — 2026-08（本体/IP 分层判据 ＋ lunar_python 第二参照融合）
+
+- **J-08/J-09 事前登记**（`predictions/mingchao-ip.json`）：J-06 把"续作接力"算
+  本体大限命中属实体边界错位。J-08 只判本体换代公告（2033-2035，P0.45/base0.35）、
+  J-09 只判 IP 宇宙化衍生作品（2029-2035，P0.55/base0.30）；回填口径：续作公告
+  算 J-08 命中、不算 J-06 命中。窗口起点 2029/2033，提交即事前锚。
+- **verify.py strict 修复**：事前性检查只对 A 级判据执行——B 级回测样本（泰勒
+  1989-2024）提交晚于窗口起点是预期行为，此前把全部 B 级判成 late 导致
+  `--strict` 永远失败（CI 红）。B 级标 info 不计入失败。
+- **lunar_python 交叉验证融合**（`scripts/crosscheck_lunar.py`，可选依赖，不破
+  零依赖）：464 例（大赛 160 + 四实体 + fuzz 300）——年/月柱双参照 100% 一致；
+  日柱差异=23 点换日流派（--align 后 100%）；时柱差异=夏令时口径 + lunar 混合
+  换日流派（日柱午夜换/时柱干子初换，BFFT 更自洽）；**无 BFFT 排盘错误**。
+  至此 BFFT 排盘有三重独立参照：sxtwl+lunar_python（v7）、iztro 160 例（v7.6）、
+  lunar_python 464 例（本次）。
+- **候选模型扫描**（references/lunar-crosscheck.md）：xuziping-bazi/bazi-skill/
+  fortune-skill/horosa-skill 均依赖第三方排盘库或协议不兼容，无可抄代码；
+  行业空白确认——"游戏/IP 寿命预测"无开源先例，J-08/J-09 为本仓库独有。
+- 测试 100 条全绿；stress_test 1000 盘 fuzz + 1201 年扫描 0 异常；verify --strict 通过。
+
 ## v7.9 — 2026-08（地支关系规则修复 ＋ 逐年命盘文档）
 
 逐年命盘生成（`scripts/yearly_reading.py` + `references/yearly-charts-2026-08.md`：

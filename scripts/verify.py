@@ -88,12 +88,21 @@ def check_schema(fname, data):
 
 
 def check_priority(fname, path, data):
-    """事前性: git 首次提交须早于窗口起点。"""
+    """事前性: git 首次提交须早于窗口起点。
+
+    v7.9: 只对 A 级判据检查——B 级是事后回测样本，提交晚于窗口起点是
+    预期行为（此前把全部 B 级判据判成 late，--strict 永远失败）。
+    B 级返回 status="info"，不计入 strict 失败。
+    """
     first = git_first_commit_iso(path)
     rows = []
     for pred in data.get("predictions", []):
+        grade = pred.get("evidence_grade", "B")
         w = pred.get("window") or [None, None]
         start = w[0]
+        if grade != "A":
+            rows.append((pred.get("id"), "info", "B/C 级回测样本，不查事前性"))
+            continue
         if first is None:
             rows.append((pred.get("id"), "unknown", "尚未提交到 git，无法证明事前"))
             continue
@@ -183,7 +192,7 @@ def main():
         print()
         print("— 事前性核验（git 首次提交 vs 窗口起点）—")
         for fname, pid, status, msg in priority:
-            mark = {"ok": "✓", "late": "✗", "unknown": "?"}[status]
+            mark = {"ok": "✓", "late": "✗", "unknown": "?", "info": "·"}[status]
             print(f"  {mark} {pid}: {msg}")
         print()
         if summary["scored"] == 0:
@@ -212,7 +221,7 @@ def main():
                 print(f"  ! {p}")
 
     if args.strict:
-        late = [r for r in priority if r[2] != "ok"]
+        late = [r for r in priority if r[2] not in ("ok", "info")]
         if problems or late:
             print("\nstrict: 存在 schema 问题或事前性未通过", file=sys.stderr)
             return 1

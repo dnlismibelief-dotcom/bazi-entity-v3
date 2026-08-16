@@ -123,6 +123,7 @@ python scripts/verify.py --strict   # CI 用
 - [references/taylor-yearly-v2.md](references/taylor-yearly-v2.md) — 单名人逐年事业回测
   纪律示范：预测先 commit、事实后编译、Brier/技巧分数对照基线。
 - [scripts/verify.py](scripts/verify.py) — 校准统计与事前性核验。
+- [scripts/stress_test.py](scripts/stress_test.py) — 发布前稳定性检查：fuzz/全年代扫描/性能基准。
 - [tests/](tests/) — 不变量测试；`python -m unittest discover -s tests`。
 
 ## Guardrails

@@ -1,5 +1,34 @@
 # CHANGELOG
 
+## v7.17 — 2026-08（紫微斗数平行模块 + 十 skill 审查）
+
+用户清单十个 skill（ziwei-doushu/bazi-skill/bazi-ziwei-skill/vedic-astro-skills/
+mingli-master/taibu/mingyu/horosa-skill/suangua/xuemian-bazi）逐一拉取审查：
+
+- **新增紫微排盘引擎**（scripts/ziwei/paipan.py，自研零依赖，骨架版）：
+  命宫/身宫、十二宫、宫干五虎遁、五行局、紫微五局定位、十四主星、
+  生年四化、昌曲左右魁钺禄存羊陀；农历转换吸收 liuyao-frv 农历表
+  （2025-2086，个人许可，标注来源）
+- **紫微知识库吸收**（references/ziwei/，MIT）：Renhuai123/ziwei-doushu 的
+  patterns(格局库 54KB)/constants/sihua；其排盘依赖 iztro，BFFT 自研实现
+- 审查结论：mingli-master/taibu/mingyu/vedic 均为第三方库封装或多体系壳，
+  无独立算法增量；suangua 八卦推演与已整合六爻模块重叠
+- **名人测试**：fetch_entity 联网取数验证管道后删除缓存，仓库零真实记录
+- 新增 tests/test_ziwei.py 11 条（农历锚点/命身宫规则/五局定位/十四主星
+  各恰一颗/紫微天府轴对称/四化标注/范围守卫）
+- 测试中修正两个错误假设：主星同宫是常态（紫杀等经典组合）、
+  2025 年 1 月属表前腊月需提示缺口
+- 151 测试 ×3 轮 + stress ×3 轮全部通过
+
+## v7.16 — 2026-08（LICENSE 改标准 MIT+附加条款；移除真实实体档案）
+
+- LICENSE：标准 MIT 开头（GitHub 可识别 MIT 徽章）+ 附加条款（保留
+  个人免费/商业授权双轨限制与特色纪律）+ 第三方组件许可表
+- 删除全部真实实体档案：predictions 8 个判据档、data 4 个名人数据、
+  references 8 个实体分析文档、famous20/zh1000 脚本与测试
+- 全仓库匿名化 129 处（游戏甲/游戏乙/虚拟偶像甲/回测样本），
+  build_dist.py 收集 LICENSE 进包
+
 ## v7.15 — 2026-08（六爻平行模块整合 + 双轨许可）
 
 - 整合 xiongdun8/liuyao（MIT）六爻装卦：64 卦表/纳甲/六亲/六神/旬空/旺衰

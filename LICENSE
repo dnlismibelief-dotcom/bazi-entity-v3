@@ -42,5 +42,7 @@ SOFTWARE.
 | 组件 | 来源 | 许可 |
 |---|---|---|
 | 六爻卦表/装卦/旺衰（scripts/liuyao/） | xiongdun8/liuyao | MIT |
-| 六爻格局检测思路 | Seanding1998/liuyao-frv | 个人免费·商业授权（商业使用请联系 Seanding，原文见 scripts/liuyao/LICENSE-liuyao-frv） |
+| 六爻格局检测思路 / 农历数据表 | Seanding1998/liuyao-frv | 个人免费·商业授权（商业使用请联系 Seanding，原文见 scripts/liuyao/LICENSE-liuyao-frv） |
+| 紫微知识库（references/ziwei/） | Renhuai123/ziwei-doushu | MIT |
 | MingLi-Bench 题库（data/mingli_bench/） | DestinyLinker/MingLi-Bench | MIT |
+| 名人出生日期缓存（data/entity_cache/，测试后即删，不入库） | 中文维基百科 | CC BY-SA |

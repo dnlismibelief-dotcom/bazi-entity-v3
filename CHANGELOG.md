@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## v7.15 — 2026-08（六爻平行模块整合 + 双轨许可）
+
+- 整合 xiongdun8/liuyao（MIT）六爻装卦：64 卦表/纳甲/六亲/六神/旬空/旺衰
+  拷贝至 scripts/liuyao/；格局检测（游魂/归魂/六冲/六合/三合三会/伏吟反吟）
+  参照 Seanding1998/liuyao-frv 思路**自写实现**（其许可为个人免费·商业授权，
+  仅限个人使用，原 LICENSE 备查于 scripts/liuyao/LICENSE-liuyao-frv）
+- **关键改造**：月建/日辰改用 BFFT 精确节气引擎（原 liuyao 固定日期表
+  年际可偏 ±1 天，边界日会装错月建）
+- 新增 scripts/liuyao_cli.py（前端 CLI：手动编码/三币随机）+ references/liuyao.md
+- **新增 BFFT 双轨许可证**（仿 liuyao-frv 结构）：个人免费·商业授权，
+  含第三方组件许可表（MIT/个人授权/CC BY-SA 各自生效）
+- 新增 tests/test_liuyao.py 19 条：64 卦全表装卦穷举、动变、六亲、六旬旬空、
+  格局（六冲 10/六合 8/游魂归魂/独发六静）、CLI 非法输入
+- 修复整合中发现的 bug：旬空计算误用 gan*12+zhi 公式（癸亥错判），
+  改用 BFFT idx60 六旬定位
+
 ## v7.14 — 2026-08（一键命理报告模式 + 三盘七维模板纪律化）
 
 用户提供"三盘交叉+七维度"完整报告需求（小红书提示词），按 BFFT 纪律落地：

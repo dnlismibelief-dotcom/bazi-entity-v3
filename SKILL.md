@@ -55,6 +55,10 @@ python scripts/fetch_entity.py --query 毛泽东 --save
 python scripts/report.py --name 示例 --dt "1990-01-01 10:00" --lon 116.4 --gender male --out dist/report
 # 只有现成四柱时（缺出生日期→起运岁数不可算，报告显式标注缺口）
 python scripts/report.py --pillars "庚子 丁亥 庚午 壬午" --gender male --out dist/report
+
+# 六爻平行模块（v7.15：装卦+格局，月建日辰用 BFFT 精确节气；解卦纪律见 references/liuyao.md）
+python scripts/liuyao_cli.py --yao "123121" --dt "2026-08-16 23:00" --subject 问事
+python scripts/liuyao_cli.py --random --dt "2026-08-16 23:00" --json
 ```
 
 读输出时先看三处：`⚠ 警告`（未给经度／逢夏令时／距节气不足 1 小时）、

@@ -38,7 +38,10 @@ spec.loader.exec_module(pp)
 
 
 def chart_from_datetime(args) -> dict:
-    dt = datetime.strptime(args.dt, "%Y-%m-%d %H:%M")
+    try:
+        dt = datetime.strptime(args.dt, "%Y-%m-%d %H:%M")
+    except ValueError:
+        raise SystemExit('时间格式应为 "YYYY-MM-DD HH:MM"')
     r = pp.calc(dt, tz_hours=args.tz, lon=args.lon, gender=args.gender,
                 day_boundary="zi", calendar=args.calendar,
                 lucky_count=args.lucky, years_count=args.years)

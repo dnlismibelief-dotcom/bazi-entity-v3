@@ -46,12 +46,16 @@ class TestReportDatetimeMode(unittest.TestCase):
             self.assertIn("七维度", md)
 
     def test_bad_datetime_rejected(self):
-        out = run_report("--dt", "1990-13-40 25:00", "--out", "x")
-        self.assertNotEqual(out.returncode, 0)
+        with tempfile.TemporaryDirectory() as td:
+            out = run_report("--dt", "1990-13-40 25:00",
+                             "--out", os.path.join(td, "x"))
+            self.assertNotEqual(out.returncode, 0)
 
     def test_bad_lon_rejected(self):
-        out = run_report("--dt", "1990-01-01 10:00", "--lon", "999", "--out", "x")
-        self.assertNotEqual(out.returncode, 0)
+        with tempfile.TemporaryDirectory() as td:
+            out = run_report("--dt", "1990-01-01 10:00", "--lon", "999",
+                             "--out", os.path.join(td, "x"))
+            self.assertNotEqual(out.returncode, 0)
 
 
 class TestReportPillarsMode(unittest.TestCase):
@@ -94,13 +98,16 @@ class TestReportPillarsMode(unittest.TestCase):
 
 class TestReportMutualExclusion(unittest.TestCase):
     def test_dt_and_pillars_conflict(self):
-        out = run_report("--dt", "1990-01-01 10:00",
-                         "--pillars", "庚子 丁亥 庚午 壬午", "--out", "x")
-        self.assertNotEqual(out.returncode, 0)
+        with tempfile.TemporaryDirectory() as td:
+            out = run_report("--dt", "1990-01-01 10:00",
+                             "--pillars", "庚子 丁亥 庚午 壬午",
+                             "--out", os.path.join(td, "x"))
+            self.assertNotEqual(out.returncode, 0)
 
     def test_neither_rejected(self):
-        out = run_report("--out", "x")
-        self.assertNotEqual(out.returncode, 0)
+        with tempfile.TemporaryDirectory() as td:
+            out = run_report("--out", os.path.join(td, "x"))
+            self.assertNotEqual(out.returncode, 0)
 
 
 if __name__ == "__main__":

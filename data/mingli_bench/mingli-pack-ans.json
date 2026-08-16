@@ -1,0 +1,4281 @@
+{
+  "meta": {
+    "count": 20,
+    "seed": 7,
+    "with_answer": true
+  },
+  "items": [
+    {
+      "id": "ftb_0088",
+      "category": "事业",
+      "birth_raw": "男性：生于公元1972年1月8日午时，农历辛亥11月22日午时。于潮汕地区出生。",
+      "question": "命主事业上的特色？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "承继了兄长的畜牧场。"
+        },
+        {
+          "letter": "B",
+          "text": "曾任公务员。但因涉嫌刑事案件，而要提早退休。"
+        },
+        {
+          "letter": "C",
+          "text": "建筑工人。"
+        },
+        {
+          "letter": "D",
+          "text": "成功商人，以零售起家。"
+        }
+      ],
+      "chart": {
+        "four_pillars": "辛亥 辛丑 戊戌 戊午",
+        "day_master": "戊",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "辛亥",
+            "shishen": "伤官",
+            "canggan": [
+              "壬",
+              "甲"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "辛丑",
+            "shishen": "伤官",
+            "canggan": [
+              "己",
+              "癸",
+              "辛"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "戊戌",
+            "shishen": "日主",
+            "canggan": [
+              "戊",
+              "辛",
+              "丁"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "戊午",
+            "shishen": "比肩",
+            "canggan": [
+              "丁",
+              "己"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 1,
+          "火": 2,
+          "土": 5,
+          "金": 4,
+          "水": 2
+        },
+        "changsheng": {
+          "月支": "养",
+          "日支": "墓",
+          "时支": "帝旺"
+        },
+        "dayun_direction": "逆排",
+        "jiao_age": "0年7个月",
+        "lucky": [
+          {
+            "ganzhi": "庚子",
+            "start": "1972-08-30",
+            "age": 0.6
+          },
+          {
+            "ganzhi": "己亥",
+            "start": "1982-08-30",
+            "age": 10.6
+          },
+          {
+            "ganzhi": "戊戌",
+            "start": "1992-08-30",
+            "age": 20.6
+          },
+          {
+            "ganzhi": "丁酉",
+            "start": "2002-08-30",
+            "age": 30.6
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1972,
+            "ganzhi": "壬子"
+          },
+          {
+            "year": 1973,
+            "ganzhi": "癸丑"
+          },
+          {
+            "year": 1974,
+            "ganzhi": "甲寅"
+          },
+          {
+            "year": 1975,
+            "ganzhi": "乙卯"
+          },
+          {
+            "year": 1976,
+            "ganzhi": "丙辰"
+          },
+          {
+            "year": 1977,
+            "ganzhi": "丁巳"
+          },
+          {
+            "year": 1978,
+            "ganzhi": "戊午"
+          },
+          {
+            "year": 1979,
+            "ganzhi": "己未"
+          },
+          {
+            "year": 1980,
+            "ganzhi": "庚申"
+          },
+          {
+            "year": 1981,
+            "ganzhi": "辛酉"
+          },
+          {
+            "year": 1982,
+            "ganzhi": "壬戌"
+          },
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          },
+          {
+            "year": 1984,
+            "ganzhi": "甲子"
+          },
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          }
+        ]
+      },
+      "answer": "D"
+    },
+    {
+      "id": "ftb_0044",
+      "category": "婚姻",
+      "birth_raw": "女命：西历1966年10月18日夜晚23:15香港出生",
+      "question": "此命到现在的婚姻情况如何与及其学历？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "单身，从未结过婚，没有子女。大学毕业"
+        },
+        {
+          "letter": "B",
+          "text": "已婚，有子女，正常普通家庭。大学毕业"
+        },
+        {
+          "letter": "C",
+          "text": "已离婚，没有子女。没有大学毕业"
+        },
+        {
+          "letter": "D",
+          "text": "同性恋，有女朋友，有一养女，没有大学毕业"
+        }
+      ],
+      "chart": {
+        "four_pillars": "丙午 戊戌 辛亥 戊子",
+        "day_master": "辛",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "丙午",
+            "shishen": "正官",
+            "canggan": [
+              "丁",
+              "己"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "戊戌",
+            "shishen": "正印",
+            "canggan": [
+              "戊",
+              "辛",
+              "丁"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "辛亥",
+            "shishen": "日主",
+            "canggan": [
+              "壬",
+              "甲"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "戊子",
+            "shishen": "正印",
+            "canggan": [
+              "癸"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 1,
+          "火": 3,
+          "土": 4,
+          "金": 2,
+          "水": 2
+        },
+        "changsheng": {
+          "月支": "冠带",
+          "日支": "沐浴",
+          "时支": "长生"
+        },
+        "dayun_direction": "逆排",
+        "jiao_age": "3年3个月",
+        "lucky": [
+          {
+            "ganzhi": "丁酉",
+            "start": "1970-02-04",
+            "age": 3.3
+          },
+          {
+            "ganzhi": "丙申",
+            "start": "1980-02-04",
+            "age": 13.3
+          },
+          {
+            "ganzhi": "乙未",
+            "start": "1990-02-04",
+            "age": 23.3
+          },
+          {
+            "ganzhi": "甲午",
+            "start": "2000-02-04",
+            "age": 33.3
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1966,
+            "ganzhi": "丙午"
+          },
+          {
+            "year": 1967,
+            "ganzhi": "丁未"
+          },
+          {
+            "year": 1968,
+            "ganzhi": "戊申"
+          },
+          {
+            "year": 1969,
+            "ganzhi": "己酉"
+          },
+          {
+            "year": 1970,
+            "ganzhi": "庚戌"
+          },
+          {
+            "year": 1971,
+            "ganzhi": "辛亥"
+          },
+          {
+            "year": 1972,
+            "ganzhi": "壬子"
+          },
+          {
+            "year": 1973,
+            "ganzhi": "癸丑"
+          },
+          {
+            "year": 1974,
+            "ganzhi": "甲寅"
+          },
+          {
+            "year": 1975,
+            "ganzhi": "乙卯"
+          },
+          {
+            "year": 1976,
+            "ganzhi": "丙辰"
+          },
+          {
+            "year": 1977,
+            "ganzhi": "丁巳"
+          },
+          {
+            "year": 1978,
+            "ganzhi": "戊午"
+          },
+          {
+            "year": 1979,
+            "ganzhi": "己未"
+          },
+          {
+            "year": 1980,
+            "ganzhi": "庚申"
+          },
+          {
+            "year": 1981,
+            "ganzhi": "辛酉"
+          },
+          {
+            "year": 1982,
+            "ganzhi": "壬戌"
+          },
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          },
+          {
+            "year": 1984,
+            "ganzhi": "甲子"
+          },
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          }
+        ]
+      },
+      "answer": "A"
+    },
+    {
+      "id": "ftb_0107",
+      "category": "婚姻",
+      "birth_raw": "女命：公元1983年3月26日未时，农历1983癸亥年，二月十二日，未时生，北京出世。",
+      "question": "1999年恋爱，2002年分手。",
+      "options": [
+        {
+          "letter": "A",
+          "text": "高富帅，热心体贴。分手原因，命主外遇。"
+        },
+        {
+          "letter": "B",
+          "text": "长相普通，善良。分手原因，家庭反对。"
+        },
+        {
+          "letter": "C",
+          "text": "肥壮，大男子主义。分手原因，控制欲过强。"
+        },
+        {
+          "letter": "D",
+          "text": "瘦高，胆小怕事。分手原因，毕业后异地发展而分手。"
+        }
+      ],
+      "chart": {
+        "four_pillars": "癸亥 乙卯 癸丑 己未",
+        "day_master": "癸",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "癸亥",
+            "shishen": "比肩",
+            "canggan": [
+              "壬",
+              "甲"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "乙卯",
+            "shishen": "食神",
+            "canggan": [
+              "乙"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "癸丑",
+            "shishen": "日主",
+            "canggan": [
+              "己",
+              "癸",
+              "辛"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "己未",
+            "shishen": "七杀",
+            "canggan": [
+              "己",
+              "丁",
+              "乙"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 4,
+          "火": 1,
+          "土": 3,
+          "金": 1,
+          "水": 4
+        },
+        "changsheng": {
+          "月支": "长生",
+          "日支": "冠带",
+          "时支": "墓"
+        },
+        "dayun_direction": "顺排",
+        "jiao_age": "3年4个月",
+        "lucky": [
+          {
+            "ganzhi": "丙辰",
+            "start": "1986-08-14",
+            "age": 3.4
+          },
+          {
+            "ganzhi": "丁巳",
+            "start": "1996-08-14",
+            "age": 13.4
+          },
+          {
+            "ganzhi": "戊午",
+            "start": "2006-08-14",
+            "age": 23.4
+          },
+          {
+            "ganzhi": "己未",
+            "start": "2016-08-14",
+            "age": 33.4
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          },
+          {
+            "year": 1984,
+            "ganzhi": "甲子"
+          },
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          },
+          {
+            "year": 1998,
+            "ganzhi": "戊寅"
+          },
+          {
+            "year": 1999,
+            "ganzhi": "己卯"
+          },
+          {
+            "year": 2000,
+            "ganzhi": "庚辰"
+          },
+          {
+            "year": 2001,
+            "ganzhi": "辛巳"
+          },
+          {
+            "year": 2002,
+            "ganzhi": "壬午"
+          },
+          {
+            "year": 2003,
+            "ganzhi": "癸未"
+          },
+          {
+            "year": 2004,
+            "ganzhi": "甲申"
+          },
+          {
+            "year": 2005,
+            "ganzhi": "乙酉"
+          },
+          {
+            "year": 2006,
+            "ganzhi": "丙戌"
+          },
+          {
+            "year": 2007,
+            "ganzhi": "丁亥"
+          },
+          {
+            "year": 2008,
+            "ganzhi": "戊子"
+          }
+        ]
+      },
+      "answer": "A"
+    },
+    {
+      "id": "ftb_0018",
+      "category": "婚姻",
+      "birth_raw": "女命：公历1977年10月26日11时10分 出生地点：malaysia",
+      "question": "离婚何时？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "2010"
+        },
+        {
+          "letter": "B",
+          "text": "2013"
+        },
+        {
+          "letter": "C",
+          "text": "2016"
+        },
+        {
+          "letter": "D",
+          "text": "2018"
+        }
+      ],
+      "chart": {
+        "four_pillars": "丁巳 庚戌 丙辰 甲午",
+        "day_master": "丙",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "丁巳",
+            "shishen": "劫财",
+            "canggan": [
+              "丙",
+              "庚",
+              "戊"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "庚戌",
+            "shishen": "偏财",
+            "canggan": [
+              "戊",
+              "辛",
+              "丁"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "丙辰",
+            "shishen": "日主",
+            "canggan": [
+              "戊",
+              "乙",
+              "癸"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "甲午",
+            "shishen": "偏印",
+            "canggan": [
+              "丁",
+              "己"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 2,
+          "火": 5,
+          "土": 4,
+          "金": 3,
+          "水": 1
+        },
+        "changsheng": {
+          "月支": "墓",
+          "日支": "冠带",
+          "时支": "帝旺"
+        },
+        "dayun_direction": "顺排",
+        "jiao_age": "4年1个月",
+        "lucky": [
+          {
+            "ganzhi": "辛亥",
+            "start": "1981-12-14",
+            "age": 4.1
+          },
+          {
+            "ganzhi": "壬子",
+            "start": "1991-12-14",
+            "age": 14.1
+          },
+          {
+            "ganzhi": "癸丑",
+            "start": "2001-12-14",
+            "age": 24.1
+          },
+          {
+            "ganzhi": "甲寅",
+            "start": "2011-12-14",
+            "age": 34.1
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1977,
+            "ganzhi": "丁巳"
+          },
+          {
+            "year": 1978,
+            "ganzhi": "戊午"
+          },
+          {
+            "year": 1979,
+            "ganzhi": "己未"
+          },
+          {
+            "year": 1980,
+            "ganzhi": "庚申"
+          },
+          {
+            "year": 1981,
+            "ganzhi": "辛酉"
+          },
+          {
+            "year": 1982,
+            "ganzhi": "壬戌"
+          },
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          },
+          {
+            "year": 1984,
+            "ganzhi": "甲子"
+          },
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          },
+          {
+            "year": 1998,
+            "ganzhi": "戊寅"
+          },
+          {
+            "year": 1999,
+            "ganzhi": "己卯"
+          },
+          {
+            "year": 2000,
+            "ganzhi": "庚辰"
+          },
+          {
+            "year": 2001,
+            "ganzhi": "辛巳"
+          },
+          {
+            "year": 2002,
+            "ganzhi": "壬午"
+          }
+        ]
+      },
+      "answer": "B"
+    },
+    {
+      "id": "ftb_0024",
+      "category": "家庭",
+      "birth_raw": "男命：公历1985年6月29日18时32分（酉时）出生地点：malaysia",
+      "question": "前半年的2022发生什么事情？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "创业并获得巨额融资"
+        },
+        {
+          "letter": "B",
+          "text": "犯下刑事罪被告上法庭"
+        },
+        {
+          "letter": "C",
+          "text": "父亲受伤进医院"
+        },
+        {
+          "letter": "D",
+          "text": "工作上立大功被提拔成管理层"
+        }
+      ],
+      "chart": {
+        "four_pillars": "乙丑 壬午 己亥 癸酉",
+        "day_master": "己",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "乙丑",
+            "shishen": "七杀",
+            "canggan": [
+              "己",
+              "癸",
+              "辛"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "壬午",
+            "shishen": "正财",
+            "canggan": [
+              "丁",
+              "己"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "己亥",
+            "shishen": "日主",
+            "canggan": [
+              "壬",
+              "甲"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "癸酉",
+            "shishen": "偏财",
+            "canggan": [
+              "辛"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 2,
+          "火": 1,
+          "土": 3,
+          "金": 2,
+          "水": 4
+        },
+        "changsheng": {
+          "月支": "临官",
+          "日支": "胎",
+          "时支": "长生"
+        },
+        "dayun_direction": "逆排",
+        "jiao_age": "7年10个月",
+        "lucky": [
+          {
+            "ganzhi": "辛巳",
+            "start": "1993-05-23",
+            "age": 7.9
+          },
+          {
+            "ganzhi": "庚辰",
+            "start": "2003-05-23",
+            "age": 17.9
+          },
+          {
+            "ganzhi": "己卯",
+            "start": "2013-05-23",
+            "age": 27.9
+          },
+          {
+            "ganzhi": "戊寅",
+            "start": "2023-05-23",
+            "age": 37.9
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          },
+          {
+            "year": 1998,
+            "ganzhi": "戊寅"
+          },
+          {
+            "year": 1999,
+            "ganzhi": "己卯"
+          },
+          {
+            "year": 2000,
+            "ganzhi": "庚辰"
+          },
+          {
+            "year": 2001,
+            "ganzhi": "辛巳"
+          },
+          {
+            "year": 2002,
+            "ganzhi": "壬午"
+          },
+          {
+            "year": 2003,
+            "ganzhi": "癸未"
+          },
+          {
+            "year": 2004,
+            "ganzhi": "甲申"
+          },
+          {
+            "year": 2005,
+            "ganzhi": "乙酉"
+          },
+          {
+            "year": 2006,
+            "ganzhi": "丙戌"
+          },
+          {
+            "year": 2007,
+            "ganzhi": "丁亥"
+          },
+          {
+            "year": 2008,
+            "ganzhi": "戊子"
+          },
+          {
+            "year": 2009,
+            "ganzhi": "己丑"
+          },
+          {
+            "year": 2010,
+            "ganzhi": "庚寅"
+          }
+        ]
+      },
+      "answer": "C"
+    },
+    {
+      "id": "ftb_0143",
+      "category": "婚姻",
+      "birth_raw": "乾造：西历1988年1月10日早上8时12分，马来西亚出生",
+      "question": "命主在哪一年结婚？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "2021"
+        },
+        {
+          "letter": "B",
+          "text": "2017"
+        },
+        {
+          "letter": "C",
+          "text": "2022"
+        },
+        {
+          "letter": "D",
+          "text": "2016"
+        }
+      ],
+      "chart": {
+        "four_pillars": "丁卯 癸丑 甲子 戊辰",
+        "day_master": "甲",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "丁卯",
+            "shishen": "伤官",
+            "canggan": [
+              "乙"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "癸丑",
+            "shishen": "正印",
+            "canggan": [
+              "己",
+              "癸",
+              "辛"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "甲子",
+            "shishen": "日主",
+            "canggan": [
+              "癸"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "戊辰",
+            "shishen": "偏财",
+            "canggan": [
+              "戊",
+              "乙",
+              "癸"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 3,
+          "火": 1,
+          "土": 3,
+          "金": 1,
+          "水": 4
+        },
+        "changsheng": {
+          "月支": "冠带",
+          "日支": "沐浴",
+          "时支": "衰"
+        },
+        "dayun_direction": "逆排",
+        "jiao_age": "1年3个月",
+        "lucky": [
+          {
+            "ganzhi": "壬子",
+            "start": "1989-04-26",
+            "age": 1.3
+          },
+          {
+            "ganzhi": "辛亥",
+            "start": "1999-04-26",
+            "age": 11.3
+          },
+          {
+            "ganzhi": "庚戌",
+            "start": "2009-04-26",
+            "age": 21.3
+          },
+          {
+            "ganzhi": "己酉",
+            "start": "2019-04-26",
+            "age": 31.3
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          },
+          {
+            "year": 1998,
+            "ganzhi": "戊寅"
+          },
+          {
+            "year": 1999,
+            "ganzhi": "己卯"
+          },
+          {
+            "year": 2000,
+            "ganzhi": "庚辰"
+          },
+          {
+            "year": 2001,
+            "ganzhi": "辛巳"
+          },
+          {
+            "year": 2002,
+            "ganzhi": "壬午"
+          },
+          {
+            "year": 2003,
+            "ganzhi": "癸未"
+          },
+          {
+            "year": 2004,
+            "ganzhi": "甲申"
+          },
+          {
+            "year": 2005,
+            "ganzhi": "乙酉"
+          },
+          {
+            "year": 2006,
+            "ganzhi": "丙戌"
+          },
+          {
+            "year": 2007,
+            "ganzhi": "丁亥"
+          },
+          {
+            "year": 2008,
+            "ganzhi": "戊子"
+          },
+          {
+            "year": 2009,
+            "ganzhi": "己丑"
+          },
+          {
+            "year": 2010,
+            "ganzhi": "庚寅"
+          },
+          {
+            "year": 2011,
+            "ganzhi": "辛卯"
+          },
+          {
+            "year": 2012,
+            "ganzhi": "壬辰"
+          },
+          {
+            "year": 2013,
+            "ganzhi": "癸巳"
+          }
+        ]
+      },
+      "answer": "D"
+    },
+    {
+      "id": "ftb_0030",
+      "category": "财运",
+      "birth_raw": "男命：公历1983年11月1日（亥时） 出生地点：中国台湾",
+      "question": "命主理财能力如何？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "虽赚的不多，但很会理财，已购置一栋房子"
+        },
+        {
+          "letter": "B",
+          "text": "很没理财观念，赚的钱皆由母亲代为管理"
+        },
+        {
+          "letter": "C",
+          "text": "家境优渥，是个很会乱花钱的富二代"
+        },
+        {
+          "letter": "D",
+          "text": "相当投机，赚的钱几乎都投入股市，但赚少赔多"
+        }
+      ],
+      "chart": {
+        "four_pillars": "癸亥 壬戌 癸巳 癸亥",
+        "day_master": "癸",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "癸亥",
+            "shishen": "比肩",
+            "canggan": [
+              "壬",
+              "甲"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "壬戌",
+            "shishen": "劫财",
+            "canggan": [
+              "戊",
+              "辛",
+              "丁"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "癸巳",
+            "shishen": "日主",
+            "canggan": [
+              "丙",
+              "庚",
+              "戊"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "癸亥",
+            "shishen": "比肩",
+            "canggan": [
+              "壬",
+              "甲"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 2,
+          "火": 2,
+          "土": 2,
+          "金": 2,
+          "水": 6
+        },
+        "changsheng": {
+          "月支": "衰",
+          "日支": "胎",
+          "时支": "帝旺"
+        },
+        "dayun_direction": "逆排",
+        "jiao_age": "7年10个月",
+        "lucky": [
+          {
+            "ganzhi": "辛酉",
+            "start": "1991-09-23",
+            "age": 7.9
+          },
+          {
+            "ganzhi": "庚申",
+            "start": "2001-09-23",
+            "age": 17.9
+          },
+          {
+            "ganzhi": "己未",
+            "start": "2011-09-23",
+            "age": 27.9
+          },
+          {
+            "ganzhi": "戊午",
+            "start": "2021-09-23",
+            "age": 37.9
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          },
+          {
+            "year": 1984,
+            "ganzhi": "甲子"
+          },
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          },
+          {
+            "year": 1998,
+            "ganzhi": "戊寅"
+          },
+          {
+            "year": 1999,
+            "ganzhi": "己卯"
+          },
+          {
+            "year": 2000,
+            "ganzhi": "庚辰"
+          },
+          {
+            "year": 2001,
+            "ganzhi": "辛巳"
+          },
+          {
+            "year": 2002,
+            "ganzhi": "壬午"
+          },
+          {
+            "year": 2003,
+            "ganzhi": "癸未"
+          },
+          {
+            "year": 2004,
+            "ganzhi": "甲申"
+          },
+          {
+            "year": 2005,
+            "ganzhi": "乙酉"
+          },
+          {
+            "year": 2006,
+            "ganzhi": "丙戌"
+          },
+          {
+            "year": 2007,
+            "ganzhi": "丁亥"
+          },
+          {
+            "year": 2008,
+            "ganzhi": "戊子"
+          }
+        ]
+      },
+      "answer": "B"
+    },
+    {
+      "id": "ftb_0099",
+      "category": "婚姻",
+      "birth_raw": "女命：1983年10月28日丑时农历：癸亥年九月二十三丑时。",
+      "question": "命主那一年结束了第一段婚姻？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "2011搬离, 2012结束"
+        },
+        {
+          "letter": "B",
+          "text": "2013搬离,2014结束"
+        },
+        {
+          "letter": "C",
+          "text": "2015搬离,2016结束"
+        },
+        {
+          "letter": "D",
+          "text": "2017搬离,2018结束"
+        }
+      ],
+      "chart": {
+        "four_pillars": "癸亥 壬戌 己丑 乙丑",
+        "day_master": "己",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "癸亥",
+            "shishen": "偏财",
+            "canggan": [
+              "壬",
+              "甲"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "壬戌",
+            "shishen": "正财",
+            "canggan": [
+              "戊",
+              "辛",
+              "丁"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "己丑",
+            "shishen": "日主",
+            "canggan": [
+              "己",
+              "癸",
+              "辛"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "乙丑",
+            "shishen": "七杀",
+            "canggan": [
+              "己",
+              "癸",
+              "辛"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 2,
+          "火": 1,
+          "土": 4,
+          "金": 3,
+          "水": 5
+        },
+        "changsheng": {
+          "月支": "养",
+          "日支": "墓",
+          "时支": "墓"
+        },
+        "dayun_direction": "顺排",
+        "jiao_age": "3年9个月",
+        "lucky": [
+          {
+            "ganzhi": "癸亥",
+            "start": "1987-08-01",
+            "age": 3.8
+          },
+          {
+            "ganzhi": "甲子",
+            "start": "1997-08-01",
+            "age": 13.8
+          },
+          {
+            "ganzhi": "乙丑",
+            "start": "2007-08-01",
+            "age": 23.8
+          },
+          {
+            "ganzhi": "丙寅",
+            "start": "2017-08-01",
+            "age": 33.8
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          },
+          {
+            "year": 1984,
+            "ganzhi": "甲子"
+          },
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          },
+          {
+            "year": 1998,
+            "ganzhi": "戊寅"
+          },
+          {
+            "year": 1999,
+            "ganzhi": "己卯"
+          },
+          {
+            "year": 2000,
+            "ganzhi": "庚辰"
+          },
+          {
+            "year": 2001,
+            "ganzhi": "辛巳"
+          },
+          {
+            "year": 2002,
+            "ganzhi": "壬午"
+          },
+          {
+            "year": 2003,
+            "ganzhi": "癸未"
+          },
+          {
+            "year": 2004,
+            "ganzhi": "甲申"
+          },
+          {
+            "year": 2005,
+            "ganzhi": "乙酉"
+          },
+          {
+            "year": 2006,
+            "ganzhi": "丙戌"
+          },
+          {
+            "year": 2007,
+            "ganzhi": "丁亥"
+          },
+          {
+            "year": 2008,
+            "ganzhi": "戊子"
+          }
+        ]
+      },
+      "answer": "D"
+    },
+    {
+      "id": "ftb_0160",
+      "category": "性格",
+      "birth_raw": "男命：西元1970年7月22日申时，北京出生",
+      "question": "命主一生整体外界对其性格的评价如何？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "重义气有原则，对外应对得体，深受朋友与长官尊敬"
+        },
+        {
+          "letter": "B",
+          "text": "喜欢独处少交际，重视家庭和金钱，家庭稳定"
+        },
+        {
+          "letter": "C",
+          "text": "放荡不羁朋友和桃花多，喜高谈阔论，评价褒贬不一"
+        },
+        {
+          "letter": "D",
+          "text": "脾气暴躁情绪不稳，家人朋友无法沟通"
+        }
+      ],
+      "chart": {
+        "four_pillars": "庚戌 癸未 癸卯 庚申",
+        "day_master": "癸",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "庚戌",
+            "shishen": "正印",
+            "canggan": [
+              "戊",
+              "辛",
+              "丁"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "癸未",
+            "shishen": "比肩",
+            "canggan": [
+              "己",
+              "丁",
+              "乙"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "癸卯",
+            "shishen": "日主",
+            "canggan": [
+              "乙"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "庚申",
+            "shishen": "正印",
+            "canggan": [
+              "庚",
+              "壬",
+              "戊"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 2,
+          "火": 2,
+          "土": 3,
+          "金": 4,
+          "水": 3
+        },
+        "changsheng": {
+          "月支": "墓",
+          "日支": "长生",
+          "时支": "死"
+        },
+        "dayun_direction": "顺排",
+        "jiao_age": "5年6个月",
+        "lucky": [
+          {
+            "ganzhi": "甲申",
+            "start": "1976-02-11",
+            "age": 5.6
+          },
+          {
+            "ganzhi": "乙酉",
+            "start": "1986-02-11",
+            "age": 15.6
+          },
+          {
+            "ganzhi": "丙戌",
+            "start": "1996-02-11",
+            "age": 25.6
+          },
+          {
+            "ganzhi": "丁亥",
+            "start": "2006-02-11",
+            "age": 35.6
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1970,
+            "ganzhi": "庚戌"
+          },
+          {
+            "year": 1971,
+            "ganzhi": "辛亥"
+          },
+          {
+            "year": 1972,
+            "ganzhi": "壬子"
+          },
+          {
+            "year": 1973,
+            "ganzhi": "癸丑"
+          },
+          {
+            "year": 1974,
+            "ganzhi": "甲寅"
+          },
+          {
+            "year": 1975,
+            "ganzhi": "乙卯"
+          },
+          {
+            "year": 1976,
+            "ganzhi": "丙辰"
+          },
+          {
+            "year": 1977,
+            "ganzhi": "丁巳"
+          },
+          {
+            "year": 1978,
+            "ganzhi": "戊午"
+          },
+          {
+            "year": 1979,
+            "ganzhi": "己未"
+          },
+          {
+            "year": 1980,
+            "ganzhi": "庚申"
+          },
+          {
+            "year": 1981,
+            "ganzhi": "辛酉"
+          },
+          {
+            "year": 1982,
+            "ganzhi": "壬戌"
+          },
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          },
+          {
+            "year": 1984,
+            "ganzhi": "甲子"
+          },
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          }
+        ]
+      },
+      "answer": "A"
+    },
+    {
+      "id": "ftb_0020",
+      "category": "家庭",
+      "birth_raw": "女命：公历1977年10月26日11时10分 出生地点：malaysia",
+      "question": "命主在2009年发生什么？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "被打劫"
+        },
+        {
+          "letter": "B",
+          "text": "买产业"
+        },
+        {
+          "letter": "C",
+          "text": "生病住院"
+        },
+        {
+          "letter": "D",
+          "text": "父亲去世"
+        }
+      ],
+      "chart": {
+        "four_pillars": "丁巳 庚戌 丙辰 甲午",
+        "day_master": "丙",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "丁巳",
+            "shishen": "劫财",
+            "canggan": [
+              "丙",
+              "庚",
+              "戊"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "庚戌",
+            "shishen": "偏财",
+            "canggan": [
+              "戊",
+              "辛",
+              "丁"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "丙辰",
+            "shishen": "日主",
+            "canggan": [
+              "戊",
+              "乙",
+              "癸"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "甲午",
+            "shishen": "偏印",
+            "canggan": [
+              "丁",
+              "己"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 2,
+          "火": 5,
+          "土": 4,
+          "金": 3,
+          "水": 1
+        },
+        "changsheng": {
+          "月支": "墓",
+          "日支": "冠带",
+          "时支": "帝旺"
+        },
+        "dayun_direction": "顺排",
+        "jiao_age": "4年1个月",
+        "lucky": [
+          {
+            "ganzhi": "辛亥",
+            "start": "1981-12-14",
+            "age": 4.1
+          },
+          {
+            "ganzhi": "壬子",
+            "start": "1991-12-14",
+            "age": 14.1
+          },
+          {
+            "ganzhi": "癸丑",
+            "start": "2001-12-14",
+            "age": 24.1
+          },
+          {
+            "ganzhi": "甲寅",
+            "start": "2011-12-14",
+            "age": 34.1
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1977,
+            "ganzhi": "丁巳"
+          },
+          {
+            "year": 1978,
+            "ganzhi": "戊午"
+          },
+          {
+            "year": 1979,
+            "ganzhi": "己未"
+          },
+          {
+            "year": 1980,
+            "ganzhi": "庚申"
+          },
+          {
+            "year": 1981,
+            "ganzhi": "辛酉"
+          },
+          {
+            "year": 1982,
+            "ganzhi": "壬戌"
+          },
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          },
+          {
+            "year": 1984,
+            "ganzhi": "甲子"
+          },
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          },
+          {
+            "year": 1998,
+            "ganzhi": "戊寅"
+          },
+          {
+            "year": 1999,
+            "ganzhi": "己卯"
+          },
+          {
+            "year": 2000,
+            "ganzhi": "庚辰"
+          },
+          {
+            "year": 2001,
+            "ganzhi": "辛巳"
+          },
+          {
+            "year": 2002,
+            "ganzhi": "壬午"
+          }
+        ]
+      },
+      "answer": "D"
+    },
+    {
+      "id": "ftb_0135",
+      "category": "家庭",
+      "birth_raw": "男命：西历1983年4月21日上午6-7时，日本宫崎县出生",
+      "question": "2022年命主发生了什么重要事件？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "母亲去世"
+        },
+        {
+          "letter": "B",
+          "text": "外出旅行时遭遇车祸受伤"
+        },
+        {
+          "letter": "C",
+          "text": "染患新冠并引发其他病症，住院治疗四个多月"
+        },
+        {
+          "letter": "D",
+          "text": "事业受阻欠债，只能卖房填补漏洞"
+        }
+      ],
+      "chart": {
+        "four_pillars": "癸亥 丙辰 己卯 丁卯",
+        "day_master": "己",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "癸亥",
+            "shishen": "偏财",
+            "canggan": [
+              "壬",
+              "甲"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "丙辰",
+            "shishen": "正印",
+            "canggan": [
+              "戊",
+              "乙",
+              "癸"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "己卯",
+            "shishen": "日主",
+            "canggan": [
+              "乙"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "丁卯",
+            "shishen": "偏印",
+            "canggan": [
+              "乙"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 4,
+          "火": 2,
+          "土": 2,
+          "金": 0,
+          "水": 3
+        },
+        "changsheng": {
+          "月支": "衰",
+          "日支": "病",
+          "时支": "病"
+        },
+        "dayun_direction": "逆排",
+        "jiao_age": "5年2个月",
+        "lucky": [
+          {
+            "ganzhi": "乙卯",
+            "start": "1988-06-28",
+            "age": 5.2
+          },
+          {
+            "ganzhi": "甲寅",
+            "start": "1998-06-28",
+            "age": 15.2
+          },
+          {
+            "ganzhi": "癸丑",
+            "start": "2008-06-28",
+            "age": 25.2
+          },
+          {
+            "ganzhi": "壬子",
+            "start": "2018-06-28",
+            "age": 35.2
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          },
+          {
+            "year": 1984,
+            "ganzhi": "甲子"
+          },
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          },
+          {
+            "year": 1998,
+            "ganzhi": "戊寅"
+          },
+          {
+            "year": 1999,
+            "ganzhi": "己卯"
+          },
+          {
+            "year": 2000,
+            "ganzhi": "庚辰"
+          },
+          {
+            "year": 2001,
+            "ganzhi": "辛巳"
+          },
+          {
+            "year": 2002,
+            "ganzhi": "壬午"
+          },
+          {
+            "year": 2003,
+            "ganzhi": "癸未"
+          },
+          {
+            "year": 2004,
+            "ganzhi": "甲申"
+          },
+          {
+            "year": 2005,
+            "ganzhi": "乙酉"
+          },
+          {
+            "year": 2006,
+            "ganzhi": "丙戌"
+          },
+          {
+            "year": 2007,
+            "ganzhi": "丁亥"
+          },
+          {
+            "year": 2008,
+            "ganzhi": "戊子"
+          }
+        ]
+      },
+      "answer": "A"
+    },
+    {
+      "id": "ftb_0060",
+      "category": "健康",
+      "birth_raw": "男命，西历1956年3月11日巳时，malaysia出生",
+      "question": "命主身体健康状况？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "2011年血管阻塞，轻微中风"
+        },
+        {
+          "letter": "B",
+          "text": "2013年心脏搭桥手术"
+        },
+        {
+          "letter": "C",
+          "text": "2016年确诊癌症，隔年与世长辞"
+        },
+        {
+          "letter": "D",
+          "text": "2020年确诊新冠，肺部感染死亡"
+        }
+      ],
+      "chart": {
+        "four_pillars": "丙申 辛卯 丁丑 乙巳",
+        "day_master": "丁",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "丙申",
+            "shishen": "劫财",
+            "canggan": [
+              "庚",
+              "壬",
+              "戊"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "辛卯",
+            "shishen": "偏财",
+            "canggan": [
+              "乙"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "丁丑",
+            "shishen": "日主",
+            "canggan": [
+              "己",
+              "癸",
+              "辛"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "乙巳",
+            "shishen": "偏印",
+            "canggan": [
+              "丙",
+              "庚",
+              "戊"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 2,
+          "火": 3,
+          "土": 3,
+          "金": 4,
+          "水": 2
+        },
+        "changsheng": {
+          "月支": "病",
+          "日支": "墓",
+          "时支": "帝旺"
+        },
+        "dayun_direction": "顺排",
+        "jiao_age": "8年3个月",
+        "lucky": [
+          {
+            "ganzhi": "壬辰",
+            "start": "1964-06-13",
+            "age": 8.3
+          },
+          {
+            "ganzhi": "癸巳",
+            "start": "1974-06-13",
+            "age": 18.3
+          },
+          {
+            "ganzhi": "甲午",
+            "start": "1984-06-13",
+            "age": 28.3
+          },
+          {
+            "ganzhi": "乙未",
+            "start": "1994-06-13",
+            "age": 38.3
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1956,
+            "ganzhi": "丙申"
+          },
+          {
+            "year": 1957,
+            "ganzhi": "丁酉"
+          },
+          {
+            "year": 1958,
+            "ganzhi": "戊戌"
+          },
+          {
+            "year": 1959,
+            "ganzhi": "己亥"
+          },
+          {
+            "year": 1960,
+            "ganzhi": "庚子"
+          },
+          {
+            "year": 1961,
+            "ganzhi": "辛丑"
+          },
+          {
+            "year": 1962,
+            "ganzhi": "壬寅"
+          },
+          {
+            "year": 1963,
+            "ganzhi": "癸卯"
+          },
+          {
+            "year": 1964,
+            "ganzhi": "甲辰"
+          },
+          {
+            "year": 1965,
+            "ganzhi": "乙巳"
+          },
+          {
+            "year": 1966,
+            "ganzhi": "丙午"
+          },
+          {
+            "year": 1967,
+            "ganzhi": "丁未"
+          },
+          {
+            "year": 1968,
+            "ganzhi": "戊申"
+          },
+          {
+            "year": 1969,
+            "ganzhi": "己酉"
+          },
+          {
+            "year": 1970,
+            "ganzhi": "庚戌"
+          },
+          {
+            "year": 1971,
+            "ganzhi": "辛亥"
+          },
+          {
+            "year": 1972,
+            "ganzhi": "壬子"
+          },
+          {
+            "year": 1973,
+            "ganzhi": "癸丑"
+          },
+          {
+            "year": 1974,
+            "ganzhi": "甲寅"
+          },
+          {
+            "year": 1975,
+            "ganzhi": "乙卯"
+          },
+          {
+            "year": 1976,
+            "ganzhi": "丙辰"
+          },
+          {
+            "year": 1977,
+            "ganzhi": "丁巳"
+          },
+          {
+            "year": 1978,
+            "ganzhi": "戊午"
+          },
+          {
+            "year": 1979,
+            "ganzhi": "己未"
+          },
+          {
+            "year": 1980,
+            "ganzhi": "庚申"
+          },
+          {
+            "year": 1981,
+            "ganzhi": "辛酉"
+          }
+        ]
+      },
+      "answer": "C"
+    },
+    {
+      "id": "ftb_0010",
+      "category": "家庭",
+      "birth_raw": "女命：阳历1981年5月26日凌晨02:17 出生地点：中国香港",
+      "question": "父母情况？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "1988年父母离异，随母亲成长"
+        },
+        {
+          "letter": "B",
+          "text": "1999年父亲出现婚外情，直至2009年父亲离开母亲，但没有离婚"
+        },
+        {
+          "letter": "C",
+          "text": "2000年父亲出现婚外情，2021年父母离婚"
+        },
+        {
+          "letter": "D",
+          "text": "2003年父母离婚,父亲再婚同年生一子"
+        }
+      ],
+      "chart": {
+        "four_pillars": "辛酉 癸巳 甲辰 乙丑",
+        "day_master": "甲",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "辛酉",
+            "shishen": "正官",
+            "canggan": [
+              "辛"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "癸巳",
+            "shishen": "正印",
+            "canggan": [
+              "丙",
+              "庚",
+              "戊"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "甲辰",
+            "shishen": "日主",
+            "canggan": [
+              "戊",
+              "乙",
+              "癸"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "乙丑",
+            "shishen": "劫财",
+            "canggan": [
+              "己",
+              "癸",
+              "辛"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 3,
+          "火": 1,
+          "土": 3,
+          "金": 4,
+          "水": 3
+        },
+        "changsheng": {
+          "月支": "病",
+          "日支": "衰",
+          "时支": "冠带"
+        },
+        "dayun_direction": "顺排",
+        "jiao_age": "3年8个月",
+        "lucky": [
+          {
+            "ganzhi": "甲午",
+            "start": "1985-01-28",
+            "age": 3.7
+          },
+          {
+            "ganzhi": "乙未",
+            "start": "1995-01-28",
+            "age": 13.7
+          },
+          {
+            "ganzhi": "丙申",
+            "start": "2005-01-28",
+            "age": 23.7
+          },
+          {
+            "ganzhi": "丁酉",
+            "start": "2015-01-28",
+            "age": 33.7
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1981,
+            "ganzhi": "辛酉"
+          },
+          {
+            "year": 1982,
+            "ganzhi": "壬戌"
+          },
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          },
+          {
+            "year": 1984,
+            "ganzhi": "甲子"
+          },
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          },
+          {
+            "year": 1998,
+            "ganzhi": "戊寅"
+          },
+          {
+            "year": 1999,
+            "ganzhi": "己卯"
+          },
+          {
+            "year": 2000,
+            "ganzhi": "庚辰"
+          },
+          {
+            "year": 2001,
+            "ganzhi": "辛巳"
+          },
+          {
+            "year": 2002,
+            "ganzhi": "壬午"
+          },
+          {
+            "year": 2003,
+            "ganzhi": "癸未"
+          },
+          {
+            "year": 2004,
+            "ganzhi": "甲申"
+          },
+          {
+            "year": 2005,
+            "ganzhi": "乙酉"
+          },
+          {
+            "year": 2006,
+            "ganzhi": "丙戌"
+          }
+        ]
+      },
+      "answer": "B"
+    },
+    {
+      "id": "ftb_0028",
+      "category": "财运",
+      "birth_raw": "男命：公历1983年11月1日（亥时） 出生地点：中国台湾",
+      "question": "命主曾被骗钱，请问在何时？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "2014年"
+        },
+        {
+          "letter": "B",
+          "text": "2018年"
+        },
+        {
+          "letter": "C",
+          "text": "2019年"
+        },
+        {
+          "letter": "D",
+          "text": "2021年"
+        }
+      ],
+      "chart": {
+        "four_pillars": "癸亥 壬戌 癸巳 癸亥",
+        "day_master": "癸",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "癸亥",
+            "shishen": "比肩",
+            "canggan": [
+              "壬",
+              "甲"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "壬戌",
+            "shishen": "劫财",
+            "canggan": [
+              "戊",
+              "辛",
+              "丁"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "癸巳",
+            "shishen": "日主",
+            "canggan": [
+              "丙",
+              "庚",
+              "戊"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "癸亥",
+            "shishen": "比肩",
+            "canggan": [
+              "壬",
+              "甲"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 2,
+          "火": 2,
+          "土": 2,
+          "金": 2,
+          "水": 6
+        },
+        "changsheng": {
+          "月支": "衰",
+          "日支": "胎",
+          "时支": "帝旺"
+        },
+        "dayun_direction": "逆排",
+        "jiao_age": "7年10个月",
+        "lucky": [
+          {
+            "ganzhi": "辛酉",
+            "start": "1991-09-23",
+            "age": 7.9
+          },
+          {
+            "ganzhi": "庚申",
+            "start": "2001-09-23",
+            "age": 17.9
+          },
+          {
+            "ganzhi": "己未",
+            "start": "2011-09-23",
+            "age": 27.9
+          },
+          {
+            "ganzhi": "戊午",
+            "start": "2021-09-23",
+            "age": 37.9
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          },
+          {
+            "year": 1984,
+            "ganzhi": "甲子"
+          },
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          },
+          {
+            "year": 1998,
+            "ganzhi": "戊寅"
+          },
+          {
+            "year": 1999,
+            "ganzhi": "己卯"
+          },
+          {
+            "year": 2000,
+            "ganzhi": "庚辰"
+          },
+          {
+            "year": 2001,
+            "ganzhi": "辛巳"
+          },
+          {
+            "year": 2002,
+            "ganzhi": "壬午"
+          },
+          {
+            "year": 2003,
+            "ganzhi": "癸未"
+          },
+          {
+            "year": 2004,
+            "ganzhi": "甲申"
+          },
+          {
+            "year": 2005,
+            "ganzhi": "乙酉"
+          },
+          {
+            "year": 2006,
+            "ganzhi": "丙戌"
+          },
+          {
+            "year": 2007,
+            "ganzhi": "丁亥"
+          },
+          {
+            "year": 2008,
+            "ganzhi": "戊子"
+          }
+        ]
+      },
+      "answer": "D"
+    },
+    {
+      "id": "ftb_0117",
+      "category": "家庭",
+      "birth_raw": "男命：2007年1月31日0900巳时，malaysia出生。",
+      "question": "此命主的出身贫或富？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "贫穷家庭长大"
+        },
+        {
+          "letter": "B",
+          "text": "小康之家出身"
+        },
+        {
+          "letter": "C",
+          "text": "富贵家庭出身"
+        },
+        {
+          "letter": "D",
+          "text": "虽有父母，童年却被养在孤儿院"
+        }
+      ],
+      "chart": {
+        "four_pillars": "丙戌 辛丑 乙丑 辛巳",
+        "day_master": "乙",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "丙戌",
+            "shishen": "伤官",
+            "canggan": [
+              "戊",
+              "辛",
+              "丁"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "辛丑",
+            "shishen": "七杀",
+            "canggan": [
+              "己",
+              "癸",
+              "辛"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "乙丑",
+            "shishen": "日主",
+            "canggan": [
+              "己",
+              "癸",
+              "辛"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "辛巳",
+            "shishen": "七杀",
+            "canggan": [
+              "丙",
+              "庚",
+              "戊"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 1,
+          "火": 3,
+          "土": 4,
+          "金": 6,
+          "水": 2
+        },
+        "changsheng": {
+          "月支": "衰",
+          "日支": "衰",
+          "时支": "沐浴"
+        },
+        "dayun_direction": "顺排",
+        "jiao_age": "1年4个月",
+        "lucky": [
+          {
+            "ganzhi": "壬寅",
+            "start": "2008-06-21",
+            "age": 1.4
+          },
+          {
+            "ganzhi": "癸卯",
+            "start": "2018-06-21",
+            "age": 11.4
+          },
+          {
+            "ganzhi": "甲辰",
+            "start": "2028-06-21",
+            "age": 21.4
+          },
+          {
+            "ganzhi": "乙巳",
+            "start": "2038-06-21",
+            "age": 31.4
+          }
+        ],
+        "liunian": [
+          {
+            "year": 2007,
+            "ganzhi": "丁亥"
+          },
+          {
+            "year": 2008,
+            "ganzhi": "戊子"
+          },
+          {
+            "year": 2009,
+            "ganzhi": "己丑"
+          },
+          {
+            "year": 2010,
+            "ganzhi": "庚寅"
+          },
+          {
+            "year": 2011,
+            "ganzhi": "辛卯"
+          },
+          {
+            "year": 2012,
+            "ganzhi": "壬辰"
+          },
+          {
+            "year": 2013,
+            "ganzhi": "癸巳"
+          },
+          {
+            "year": 2014,
+            "ganzhi": "甲午"
+          },
+          {
+            "year": 2015,
+            "ganzhi": "乙未"
+          },
+          {
+            "year": 2016,
+            "ganzhi": "丙申"
+          },
+          {
+            "year": 2017,
+            "ganzhi": "丁酉"
+          },
+          {
+            "year": 2018,
+            "ganzhi": "戊戌"
+          },
+          {
+            "year": 2019,
+            "ganzhi": "己亥"
+          },
+          {
+            "year": 2020,
+            "ganzhi": "庚子"
+          },
+          {
+            "year": 2021,
+            "ganzhi": "辛丑"
+          },
+          {
+            "year": 2022,
+            "ganzhi": "壬寅"
+          },
+          {
+            "year": 2023,
+            "ganzhi": "癸卯"
+          },
+          {
+            "year": 2024,
+            "ganzhi": "甲辰"
+          },
+          {
+            "year": 2025,
+            "ganzhi": "乙巳"
+          },
+          {
+            "year": 2026,
+            "ganzhi": "丙午"
+          },
+          {
+            "year": 2027,
+            "ganzhi": "丁未"
+          },
+          {
+            "year": 2028,
+            "ganzhi": "戊申"
+          },
+          {
+            "year": 2029,
+            "ganzhi": "己酉"
+          },
+          {
+            "year": 2030,
+            "ganzhi": "庚戌"
+          },
+          {
+            "year": 2031,
+            "ganzhi": "辛亥"
+          },
+          {
+            "year": 2032,
+            "ganzhi": "壬子"
+          }
+        ]
+      },
+      "answer": "C"
+    },
+    {
+      "id": "ftb_0113",
+      "category": "健康",
+      "birth_raw": "女命：1980年9月21日早上11：25午时，出生malaysia",
+      "question": "命主在2017年和2019年發生了什麼事？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "开刀生小孩"
+        },
+        {
+          "letter": "B",
+          "text": "交通意外"
+        },
+        {
+          "letter": "C",
+          "text": "考取文凭失利"
+        },
+        {
+          "letter": "D",
+          "text": "流产"
+        }
+      ],
+      "chart": {
+        "four_pillars": "庚申 乙酉 丁酉 丙午",
+        "day_master": "丁",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "庚申",
+            "shishen": "正财",
+            "canggan": [
+              "庚",
+              "壬",
+              "戊"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "乙酉",
+            "shishen": "偏印",
+            "canggan": [
+              "辛"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "丁酉",
+            "shishen": "日主",
+            "canggan": [
+              "辛"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "丙午",
+            "shishen": "劫财",
+            "canggan": [
+              "丁",
+              "己"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 1,
+          "火": 3,
+          "土": 2,
+          "金": 4,
+          "水": 1
+        },
+        "changsheng": {
+          "月支": "长生",
+          "日支": "长生",
+          "时支": "临官"
+        },
+        "dayun_direction": "逆排",
+        "jiao_age": "4年6个月",
+        "lucky": [
+          {
+            "ganzhi": "甲申",
+            "start": "1985-04-08",
+            "age": 4.6
+          },
+          {
+            "ganzhi": "癸未",
+            "start": "1995-04-08",
+            "age": 14.6
+          },
+          {
+            "ganzhi": "壬午",
+            "start": "2005-04-08",
+            "age": 24.6
+          },
+          {
+            "ganzhi": "辛巳",
+            "start": "2015-04-08",
+            "age": 34.6
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1980,
+            "ganzhi": "庚申"
+          },
+          {
+            "year": 1981,
+            "ganzhi": "辛酉"
+          },
+          {
+            "year": 1982,
+            "ganzhi": "壬戌"
+          },
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          },
+          {
+            "year": 1984,
+            "ganzhi": "甲子"
+          },
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          },
+          {
+            "year": 1998,
+            "ganzhi": "戊寅"
+          },
+          {
+            "year": 1999,
+            "ganzhi": "己卯"
+          },
+          {
+            "year": 2000,
+            "ganzhi": "庚辰"
+          },
+          {
+            "year": 2001,
+            "ganzhi": "辛巳"
+          },
+          {
+            "year": 2002,
+            "ganzhi": "壬午"
+          },
+          {
+            "year": 2003,
+            "ganzhi": "癸未"
+          },
+          {
+            "year": 2004,
+            "ganzhi": "甲申"
+          },
+          {
+            "year": 2005,
+            "ganzhi": "乙酉"
+          }
+        ]
+      },
+      "answer": "D"
+    },
+    {
+      "id": "ftb_0023",
+      "category": "事业",
+      "birth_raw": "男命：公历1985年6月29日18时32分（酉时）出生地点：malaysia",
+      "question": "2009年发生何事？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "和黑道人物的女人发生关系，被追杀"
+        },
+        {
+          "letter": "B",
+          "text": "和朋友创业，被股东诈骗"
+        },
+        {
+          "letter": "C",
+          "text": "中彩票，获得十数万现金"
+        },
+        {
+          "letter": "D",
+          "text": "发生车祸受重伤，在医院数月"
+        }
+      ],
+      "chart": {
+        "four_pillars": "乙丑 壬午 己亥 癸酉",
+        "day_master": "己",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "乙丑",
+            "shishen": "七杀",
+            "canggan": [
+              "己",
+              "癸",
+              "辛"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "壬午",
+            "shishen": "正财",
+            "canggan": [
+              "丁",
+              "己"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "己亥",
+            "shishen": "日主",
+            "canggan": [
+              "壬",
+              "甲"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "癸酉",
+            "shishen": "偏财",
+            "canggan": [
+              "辛"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 2,
+          "火": 1,
+          "土": 3,
+          "金": 2,
+          "水": 4
+        },
+        "changsheng": {
+          "月支": "临官",
+          "日支": "胎",
+          "时支": "长生"
+        },
+        "dayun_direction": "逆排",
+        "jiao_age": "7年10个月",
+        "lucky": [
+          {
+            "ganzhi": "辛巳",
+            "start": "1993-05-23",
+            "age": 7.9
+          },
+          {
+            "ganzhi": "庚辰",
+            "start": "2003-05-23",
+            "age": 17.9
+          },
+          {
+            "ganzhi": "己卯",
+            "start": "2013-05-23",
+            "age": 27.9
+          },
+          {
+            "ganzhi": "戊寅",
+            "start": "2023-05-23",
+            "age": 37.9
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          },
+          {
+            "year": 1998,
+            "ganzhi": "戊寅"
+          },
+          {
+            "year": 1999,
+            "ganzhi": "己卯"
+          },
+          {
+            "year": 2000,
+            "ganzhi": "庚辰"
+          },
+          {
+            "year": 2001,
+            "ganzhi": "辛巳"
+          },
+          {
+            "year": 2002,
+            "ganzhi": "壬午"
+          },
+          {
+            "year": 2003,
+            "ganzhi": "癸未"
+          },
+          {
+            "year": 2004,
+            "ganzhi": "甲申"
+          },
+          {
+            "year": 2005,
+            "ganzhi": "乙酉"
+          },
+          {
+            "year": 2006,
+            "ganzhi": "丙戌"
+          },
+          {
+            "year": 2007,
+            "ganzhi": "丁亥"
+          },
+          {
+            "year": 2008,
+            "ganzhi": "戊子"
+          },
+          {
+            "year": 2009,
+            "ganzhi": "己丑"
+          },
+          {
+            "year": 2010,
+            "ganzhi": "庚寅"
+          }
+        ]
+      },
+      "answer": "B"
+    },
+    {
+      "id": "ftb_0067",
+      "category": "财运",
+      "birth_raw": "女命：西历1958-10-27辰时生  台湾人",
+      "question": "请问以下哪年命主通灵，晚上梦到各路神明来报六合彩号码(台湾早年的地下博弈)她跟她大姐说，她姐赚到上千万台币横发买房?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "1987"
+        },
+        {
+          "letter": "B",
+          "text": "1989"
+        },
+        {
+          "letter": "C",
+          "text": "1990"
+        },
+        {
+          "letter": "D",
+          "text": "1992"
+        }
+      ],
+      "chart": {
+        "four_pillars": "戊戌 壬戌 丁丑 甲辰",
+        "day_master": "丁",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "戊戌",
+            "shishen": "伤官",
+            "canggan": [
+              "戊",
+              "辛",
+              "丁"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "壬戌",
+            "shishen": "正官",
+            "canggan": [
+              "戊",
+              "辛",
+              "丁"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "丁丑",
+            "shishen": "日主",
+            "canggan": [
+              "己",
+              "癸",
+              "辛"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "甲辰",
+            "shishen": "正印",
+            "canggan": [
+              "戊",
+              "乙",
+              "癸"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 2,
+          "火": 3,
+          "土": 5,
+          "金": 3,
+          "水": 3
+        },
+        "changsheng": {
+          "月支": "养",
+          "日支": "墓",
+          "时支": "衰"
+        },
+        "dayun_direction": "逆排",
+        "jiao_age": "6年0个月",
+        "lucky": [
+          {
+            "ganzhi": "辛酉",
+            "start": "1964-11-15",
+            "age": 6.1
+          },
+          {
+            "ganzhi": "庚申",
+            "start": "1974-11-15",
+            "age": 16.1
+          },
+          {
+            "ganzhi": "己未",
+            "start": "1984-11-15",
+            "age": 26.1
+          },
+          {
+            "ganzhi": "戊午",
+            "start": "1994-11-15",
+            "age": 36.1
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1958,
+            "ganzhi": "戊戌"
+          },
+          {
+            "year": 1959,
+            "ganzhi": "己亥"
+          },
+          {
+            "year": 1960,
+            "ganzhi": "庚子"
+          },
+          {
+            "year": 1961,
+            "ganzhi": "辛丑"
+          },
+          {
+            "year": 1962,
+            "ganzhi": "壬寅"
+          },
+          {
+            "year": 1963,
+            "ganzhi": "癸卯"
+          },
+          {
+            "year": 1964,
+            "ganzhi": "甲辰"
+          },
+          {
+            "year": 1965,
+            "ganzhi": "乙巳"
+          },
+          {
+            "year": 1966,
+            "ganzhi": "丙午"
+          },
+          {
+            "year": 1967,
+            "ganzhi": "丁未"
+          },
+          {
+            "year": 1968,
+            "ganzhi": "戊申"
+          },
+          {
+            "year": 1969,
+            "ganzhi": "己酉"
+          },
+          {
+            "year": 1970,
+            "ganzhi": "庚戌"
+          },
+          {
+            "year": 1971,
+            "ganzhi": "辛亥"
+          },
+          {
+            "year": 1972,
+            "ganzhi": "壬子"
+          },
+          {
+            "year": 1973,
+            "ganzhi": "癸丑"
+          },
+          {
+            "year": 1974,
+            "ganzhi": "甲寅"
+          },
+          {
+            "year": 1975,
+            "ganzhi": "乙卯"
+          },
+          {
+            "year": 1976,
+            "ganzhi": "丙辰"
+          },
+          {
+            "year": 1977,
+            "ganzhi": "丁巳"
+          },
+          {
+            "year": 1978,
+            "ganzhi": "戊午"
+          },
+          {
+            "year": 1979,
+            "ganzhi": "己未"
+          },
+          {
+            "year": 1980,
+            "ganzhi": "庚申"
+          },
+          {
+            "year": 1981,
+            "ganzhi": "辛酉"
+          },
+          {
+            "year": 1982,
+            "ganzhi": "壬戌"
+          },
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          }
+        ]
+      },
+      "answer": "A"
+    },
+    {
+      "id": "ftb_0029",
+      "category": "性格",
+      "birth_raw": "男命：公历1983年11月1日（亥时） 出生地点：中国台湾",
+      "question": "命主个性及特色原因？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "精神亢奋常坐不住，像个过动儿"
+        },
+        {
+          "letter": "B",
+          "text": "经常运动，体力好且有强健体魄"
+        },
+        {
+          "letter": "C",
+          "text": "喜好交友，但真心朋友寥寥无几"
+        },
+        {
+          "letter": "D",
+          "text": "待人和善且严以律己，寛以待人"
+        }
+      ],
+      "chart": {
+        "four_pillars": "癸亥 壬戌 癸巳 癸亥",
+        "day_master": "癸",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "癸亥",
+            "shishen": "比肩",
+            "canggan": [
+              "壬",
+              "甲"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "壬戌",
+            "shishen": "劫财",
+            "canggan": [
+              "戊",
+              "辛",
+              "丁"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "癸巳",
+            "shishen": "日主",
+            "canggan": [
+              "丙",
+              "庚",
+              "戊"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "癸亥",
+            "shishen": "比肩",
+            "canggan": [
+              "壬",
+              "甲"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 2,
+          "火": 2,
+          "土": 2,
+          "金": 2,
+          "水": 6
+        },
+        "changsheng": {
+          "月支": "衰",
+          "日支": "胎",
+          "时支": "帝旺"
+        },
+        "dayun_direction": "逆排",
+        "jiao_age": "7年10个月",
+        "lucky": [
+          {
+            "ganzhi": "辛酉",
+            "start": "1991-09-23",
+            "age": 7.9
+          },
+          {
+            "ganzhi": "庚申",
+            "start": "2001-09-23",
+            "age": 17.9
+          },
+          {
+            "ganzhi": "己未",
+            "start": "2011-09-23",
+            "age": 27.9
+          },
+          {
+            "ganzhi": "戊午",
+            "start": "2021-09-23",
+            "age": 37.9
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          },
+          {
+            "year": 1984,
+            "ganzhi": "甲子"
+          },
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          },
+          {
+            "year": 1998,
+            "ganzhi": "戊寅"
+          },
+          {
+            "year": 1999,
+            "ganzhi": "己卯"
+          },
+          {
+            "year": 2000,
+            "ganzhi": "庚辰"
+          },
+          {
+            "year": 2001,
+            "ganzhi": "辛巳"
+          },
+          {
+            "year": 2002,
+            "ganzhi": "壬午"
+          },
+          {
+            "year": 2003,
+            "ganzhi": "癸未"
+          },
+          {
+            "year": 2004,
+            "ganzhi": "甲申"
+          },
+          {
+            "year": 2005,
+            "ganzhi": "乙酉"
+          },
+          {
+            "year": 2006,
+            "ganzhi": "丙戌"
+          },
+          {
+            "year": 2007,
+            "ganzhi": "丁亥"
+          },
+          {
+            "year": 2008,
+            "ganzhi": "戊子"
+          }
+        ]
+      },
+      "answer": "C"
+    },
+    {
+      "id": "ftb_0147",
+      "category": "性格",
+      "birth_raw": "男命：西历1973年8月24日00:35子时，马来西亚出生",
+      "question": "命主喜欢的居家装修风格是？",
+      "options": [
+        {
+          "letter": "A",
+          "text": "炫酷风格，充满高科技设备"
+        },
+        {
+          "letter": "B",
+          "text": "欧式风格，高贵典雅，喜欢收藏古灵精怪摆设"
+        },
+        {
+          "letter": "C",
+          "text": "中式风格，复古，喜欢古董和摆设风水物品"
+        },
+        {
+          "letter": "D",
+          "text": "环保极简风格，不喜太多摆设"
+        }
+      ],
+      "chart": {
+        "four_pillars": "癸丑 庚申 壬辰 庚子",
+        "day_master": "壬",
+        "warnings": [
+          "未提供 --lon，按时区中央经线计算；东八区内经度偏差最大可达 ±2 小时，时柱可能整根错位，人盘务必补经度"
+        ],
+        "pillars": [
+          {
+            "label": "年柱",
+            "ganzhi": "癸丑",
+            "shishen": "劫财",
+            "canggan": [
+              "己",
+              "癸",
+              "辛"
+            ]
+          },
+          {
+            "label": "月柱",
+            "ganzhi": "庚申",
+            "shishen": "偏印",
+            "canggan": [
+              "庚",
+              "壬",
+              "戊"
+            ]
+          },
+          {
+            "label": "日柱",
+            "ganzhi": "壬辰",
+            "shishen": "日主",
+            "canggan": [
+              "戊",
+              "乙",
+              "癸"
+            ]
+          },
+          {
+            "label": "时柱",
+            "ganzhi": "庚子",
+            "shishen": "偏印",
+            "canggan": [
+              "癸"
+            ]
+          }
+        ],
+        "wuxing_counts": {
+          "木": 1,
+          "火": 0,
+          "土": 3,
+          "金": 4,
+          "水": 6
+        },
+        "changsheng": {
+          "月支": "长生",
+          "日支": "墓",
+          "时支": "帝旺"
+        },
+        "dayun_direction": "逆排",
+        "jiao_age": "5年4个月",
+        "lucky": [
+          {
+            "ganzhi": "己未",
+            "start": "1978-12-25",
+            "age": 5.3
+          },
+          {
+            "ganzhi": "戊午",
+            "start": "1988-12-25",
+            "age": 15.3
+          },
+          {
+            "ganzhi": "丁巳",
+            "start": "1998-12-25",
+            "age": 25.3
+          },
+          {
+            "ganzhi": "丙辰",
+            "start": "2008-12-25",
+            "age": 35.3
+          }
+        ],
+        "liunian": [
+          {
+            "year": 1973,
+            "ganzhi": "癸丑"
+          },
+          {
+            "year": 1974,
+            "ganzhi": "甲寅"
+          },
+          {
+            "year": 1975,
+            "ganzhi": "乙卯"
+          },
+          {
+            "year": 1976,
+            "ganzhi": "丙辰"
+          },
+          {
+            "year": 1977,
+            "ganzhi": "丁巳"
+          },
+          {
+            "year": 1978,
+            "ganzhi": "戊午"
+          },
+          {
+            "year": 1979,
+            "ganzhi": "己未"
+          },
+          {
+            "year": 1980,
+            "ganzhi": "庚申"
+          },
+          {
+            "year": 1981,
+            "ganzhi": "辛酉"
+          },
+          {
+            "year": 1982,
+            "ganzhi": "壬戌"
+          },
+          {
+            "year": 1983,
+            "ganzhi": "癸亥"
+          },
+          {
+            "year": 1984,
+            "ganzhi": "甲子"
+          },
+          {
+            "year": 1985,
+            "ganzhi": "乙丑"
+          },
+          {
+            "year": 1986,
+            "ganzhi": "丙寅"
+          },
+          {
+            "year": 1987,
+            "ganzhi": "丁卯"
+          },
+          {
+            "year": 1988,
+            "ganzhi": "戊辰"
+          },
+          {
+            "year": 1989,
+            "ganzhi": "己巳"
+          },
+          {
+            "year": 1990,
+            "ganzhi": "庚午"
+          },
+          {
+            "year": 1991,
+            "ganzhi": "辛未"
+          },
+          {
+            "year": 1992,
+            "ganzhi": "壬申"
+          },
+          {
+            "year": 1993,
+            "ganzhi": "癸酉"
+          },
+          {
+            "year": 1994,
+            "ganzhi": "甲戌"
+          },
+          {
+            "year": 1995,
+            "ganzhi": "乙亥"
+          },
+          {
+            "year": 1996,
+            "ganzhi": "丙子"
+          },
+          {
+            "year": 1997,
+            "ganzhi": "丁丑"
+          },
+          {
+            "year": 1998,
+            "ganzhi": "戊寅"
+          }
+        ]
+      },
+      "answer": "B"
+    }
+  ]
+}

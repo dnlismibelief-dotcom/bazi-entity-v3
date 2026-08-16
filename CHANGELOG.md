@@ -1,5 +1,27 @@
 # CHANGELOG
 
+## v7.6 — 2026-08（MingLi-Bench 大赛题库整合：排盘交叉验证 + 推理盲测）
+
+小红书《算了一辈子命的师傅，可能真要失业了》提及的 Tianfu Agent 本体未开源，
+但其评测基准 [MingLi-Bench](https://github.com/DestinyLinker/MingLi-Bench)（MIT）
+已整合进本仓库——160 道 2022—2025 全球算命师大赛（HKJFMA）官方真题，正好补上
+BFFT 一直缺的"外部可验证基准"。
+
+- 数据：`data/mingli_bench/`（160 题带标准答案 + iztro 预计算盘）。
+- `scripts/mingli_bench_verify.py`：排盘交叉验证——BFFT vs iztro 四柱，
+  160 例**月柱/日柱 100% 一致**；10 例年/时柱差异全部归因于口径
+  （5 例 1990-05-23 夏令时回拨、5 例 iztro 农历年 vs BFFT 立春年流派），
+  无 BFFT 排盘错误。
+- `scripts/mingli_bench_pack.py` / `mingli_bench_score.py`：推理盲测工具
+  （盘面摘要 + 规则摘要 → 四选一，对比 25% 随机基线）。
+- 盲测试点（20 题，seed=7）：准确率 **45%**（随机线 25%，+20% ±9.7% SE，边缘显著；
+  A 组 30% / B 组 60%），落于"通用模型基线 23—40% 之上、Tianfu Agent 50% 之下"，
+  与 Tianfu 报告互相印证：规则函数化承载是推理准确率的关键差距（详见
+  `references/mingli-bench-integration.md`）。
+- 架构差距与路线图见 `references/mingli-bench-integration.md`：
+  BFFT 的 base_rate+技巧分数体系强于 Tianfu 的自评置信度；差距在
+  规则函数化/工具分级/流派置信度加权。
+
 ## v7.5.2 — 2026-08（事业指数模型 rulebook v1 ＋ Taylor 出生→现在逐年回测）
 
 用户指出 v7.5.1 的 album/tour 口径是"过程不是结果"——专辑可能扑街。本版把逐年

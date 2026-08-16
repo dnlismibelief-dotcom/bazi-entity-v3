@@ -1,0 +1,3522 @@
+[
+  {
+    "id": "ftb_0001",
+    "country": "usa",
+    "iztro": [
+      "甲寅",
+      "戊辰",
+      "己亥",
+      "壬申"
+    ],
+    "bfft": [
+      "甲寅",
+      "戊辰",
+      "己亥",
+      "壬申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0002",
+    "country": "usa",
+    "iztro": [
+      "甲寅",
+      "戊辰",
+      "己亥",
+      "壬申"
+    ],
+    "bfft": [
+      "甲寅",
+      "戊辰",
+      "己亥",
+      "壬申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0003",
+    "country": "usa",
+    "iztro": [
+      "甲寅",
+      "戊辰",
+      "己亥",
+      "壬申"
+    ],
+    "bfft": [
+      "甲寅",
+      "戊辰",
+      "己亥",
+      "壬申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0004",
+    "country": "usa",
+    "iztro": [
+      "甲寅",
+      "戊辰",
+      "己亥",
+      "壬申"
+    ],
+    "bfft": [
+      "甲寅",
+      "戊辰",
+      "己亥",
+      "壬申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0005",
+    "country": "usa",
+    "iztro": [
+      "甲寅",
+      "戊辰",
+      "己亥",
+      "壬申"
+    ],
+    "bfft": [
+      "甲寅",
+      "戊辰",
+      "己亥",
+      "壬申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0006",
+    "country": "中国",
+    "iztro": [
+      "辛酉",
+      "癸巳",
+      "甲辰",
+      "乙丑"
+    ],
+    "bfft": [
+      "辛酉",
+      "癸巳",
+      "甲辰",
+      "乙丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0007",
+    "country": "中国",
+    "iztro": [
+      "辛酉",
+      "癸巳",
+      "甲辰",
+      "乙丑"
+    ],
+    "bfft": [
+      "辛酉",
+      "癸巳",
+      "甲辰",
+      "乙丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0008",
+    "country": "中国",
+    "iztro": [
+      "辛酉",
+      "癸巳",
+      "甲辰",
+      "乙丑"
+    ],
+    "bfft": [
+      "辛酉",
+      "癸巳",
+      "甲辰",
+      "乙丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0009",
+    "country": "中国",
+    "iztro": [
+      "辛酉",
+      "癸巳",
+      "甲辰",
+      "乙丑"
+    ],
+    "bfft": [
+      "辛酉",
+      "癸巳",
+      "甲辰",
+      "乙丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0010",
+    "country": "中国",
+    "iztro": [
+      "辛酉",
+      "癸巳",
+      "甲辰",
+      "乙丑"
+    ],
+    "bfft": [
+      "辛酉",
+      "癸巳",
+      "甲辰",
+      "乙丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0011",
+    "country": "中国",
+    "iztro": [
+      "庚午",
+      "辛巳",
+      "戊子",
+      "辛酉"
+    ],
+    "bfft": [
+      "庚午",
+      "辛巳",
+      "戊子",
+      "庚申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      false
+    ]
+  },
+  {
+    "id": "ftb_0012",
+    "country": "中国",
+    "iztro": [
+      "庚午",
+      "辛巳",
+      "戊子",
+      "辛酉"
+    ],
+    "bfft": [
+      "庚午",
+      "辛巳",
+      "戊子",
+      "庚申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      false
+    ]
+  },
+  {
+    "id": "ftb_0013",
+    "country": "中国",
+    "iztro": [
+      "庚午",
+      "辛巳",
+      "戊子",
+      "辛酉"
+    ],
+    "bfft": [
+      "庚午",
+      "辛巳",
+      "戊子",
+      "庚申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      false
+    ]
+  },
+  {
+    "id": "ftb_0014",
+    "country": "中国",
+    "iztro": [
+      "庚午",
+      "辛巳",
+      "戊子",
+      "辛酉"
+    ],
+    "bfft": [
+      "庚午",
+      "辛巳",
+      "戊子",
+      "庚申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      false
+    ]
+  },
+  {
+    "id": "ftb_0015",
+    "country": "中国",
+    "iztro": [
+      "庚午",
+      "辛巳",
+      "戊子",
+      "辛酉"
+    ],
+    "bfft": [
+      "庚午",
+      "辛巳",
+      "戊子",
+      "庚申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      false
+    ]
+  },
+  {
+    "id": "ftb_0016",
+    "country": "malaysia",
+    "iztro": [
+      "丁巳",
+      "庚戌",
+      "丙辰",
+      "甲午"
+    ],
+    "bfft": [
+      "丁巳",
+      "庚戌",
+      "丙辰",
+      "甲午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0017",
+    "country": "malaysia",
+    "iztro": [
+      "丁巳",
+      "庚戌",
+      "丙辰",
+      "甲午"
+    ],
+    "bfft": [
+      "丁巳",
+      "庚戌",
+      "丙辰",
+      "甲午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0018",
+    "country": "malaysia",
+    "iztro": [
+      "丁巳",
+      "庚戌",
+      "丙辰",
+      "甲午"
+    ],
+    "bfft": [
+      "丁巳",
+      "庚戌",
+      "丙辰",
+      "甲午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0019",
+    "country": "malaysia",
+    "iztro": [
+      "丁巳",
+      "庚戌",
+      "丙辰",
+      "甲午"
+    ],
+    "bfft": [
+      "丁巳",
+      "庚戌",
+      "丙辰",
+      "甲午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0020",
+    "country": "malaysia",
+    "iztro": [
+      "丁巳",
+      "庚戌",
+      "丙辰",
+      "甲午"
+    ],
+    "bfft": [
+      "丁巳",
+      "庚戌",
+      "丙辰",
+      "甲午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0021",
+    "country": "malaysia",
+    "iztro": [
+      "乙丑",
+      "壬午",
+      "己亥",
+      "癸酉"
+    ],
+    "bfft": [
+      "乙丑",
+      "壬午",
+      "己亥",
+      "癸酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0022",
+    "country": "malaysia",
+    "iztro": [
+      "乙丑",
+      "壬午",
+      "己亥",
+      "癸酉"
+    ],
+    "bfft": [
+      "乙丑",
+      "壬午",
+      "己亥",
+      "癸酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0023",
+    "country": "malaysia",
+    "iztro": [
+      "乙丑",
+      "壬午",
+      "己亥",
+      "癸酉"
+    ],
+    "bfft": [
+      "乙丑",
+      "壬午",
+      "己亥",
+      "癸酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0024",
+    "country": "malaysia",
+    "iztro": [
+      "乙丑",
+      "壬午",
+      "己亥",
+      "癸酉"
+    ],
+    "bfft": [
+      "乙丑",
+      "壬午",
+      "己亥",
+      "癸酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0025",
+    "country": "malaysia",
+    "iztro": [
+      "乙丑",
+      "壬午",
+      "己亥",
+      "癸酉"
+    ],
+    "bfft": [
+      "乙丑",
+      "壬午",
+      "己亥",
+      "癸酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0026",
+    "country": "中国",
+    "iztro": [
+      "癸亥",
+      "壬戌",
+      "癸巳",
+      "癸亥"
+    ],
+    "bfft": [
+      "癸亥",
+      "壬戌",
+      "癸巳",
+      "癸亥"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0027",
+    "country": "中国",
+    "iztro": [
+      "癸亥",
+      "壬戌",
+      "癸巳",
+      "癸亥"
+    ],
+    "bfft": [
+      "癸亥",
+      "壬戌",
+      "癸巳",
+      "癸亥"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0028",
+    "country": "中国",
+    "iztro": [
+      "癸亥",
+      "壬戌",
+      "癸巳",
+      "癸亥"
+    ],
+    "bfft": [
+      "癸亥",
+      "壬戌",
+      "癸巳",
+      "癸亥"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0029",
+    "country": "中国",
+    "iztro": [
+      "癸亥",
+      "壬戌",
+      "癸巳",
+      "癸亥"
+    ],
+    "bfft": [
+      "癸亥",
+      "壬戌",
+      "癸巳",
+      "癸亥"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0030",
+    "country": "中国",
+    "iztro": [
+      "癸亥",
+      "壬戌",
+      "癸巳",
+      "癸亥"
+    ],
+    "bfft": [
+      "癸亥",
+      "壬戌",
+      "癸巳",
+      "癸亥"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0031",
+    "country": "中国",
+    "iztro": [
+      "甲子",
+      "丙子",
+      "丁丑",
+      "己酉"
+    ],
+    "bfft": [
+      "甲子",
+      "丙子",
+      "丁丑",
+      "己酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0032",
+    "country": "中国",
+    "iztro": [
+      "甲子",
+      "丙子",
+      "丁丑",
+      "己酉"
+    ],
+    "bfft": [
+      "甲子",
+      "丙子",
+      "丁丑",
+      "己酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0033",
+    "country": "中国",
+    "iztro": [
+      "甲子",
+      "丙子",
+      "丁丑",
+      "己酉"
+    ],
+    "bfft": [
+      "甲子",
+      "丙子",
+      "丁丑",
+      "己酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0034",
+    "country": "中国",
+    "iztro": [
+      "甲子",
+      "丙子",
+      "丁丑",
+      "己酉"
+    ],
+    "bfft": [
+      "甲子",
+      "丙子",
+      "丁丑",
+      "己酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0035",
+    "country": "中国",
+    "iztro": [
+      "甲子",
+      "丙子",
+      "丁丑",
+      "己酉"
+    ],
+    "bfft": [
+      "甲子",
+      "丙子",
+      "丁丑",
+      "己酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0036",
+    "country": "中国",
+    "iztro": [
+      "辛酉",
+      "甲午",
+      "丙寅",
+      "戊戌"
+    ],
+    "bfft": [
+      "辛酉",
+      "甲午",
+      "丙寅",
+      "戊戌"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0037",
+    "country": "中国",
+    "iztro": [
+      "辛酉",
+      "甲午",
+      "丙寅",
+      "戊戌"
+    ],
+    "bfft": [
+      "辛酉",
+      "甲午",
+      "丙寅",
+      "戊戌"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0038",
+    "country": "中国",
+    "iztro": [
+      "辛酉",
+      "甲午",
+      "丙寅",
+      "戊戌"
+    ],
+    "bfft": [
+      "辛酉",
+      "甲午",
+      "丙寅",
+      "戊戌"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0039",
+    "country": "中国",
+    "iztro": [
+      "辛酉",
+      "甲午",
+      "丙寅",
+      "戊戌"
+    ],
+    "bfft": [
+      "辛酉",
+      "甲午",
+      "丙寅",
+      "戊戌"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0040",
+    "country": "中国",
+    "iztro": [
+      "辛酉",
+      "甲午",
+      "丙寅",
+      "戊戌"
+    ],
+    "bfft": [
+      "辛酉",
+      "甲午",
+      "丙寅",
+      "戊戌"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0041",
+    "country": "中国",
+    "iztro": [
+      "丙午",
+      "戊戌",
+      "辛亥",
+      "戊子"
+    ],
+    "bfft": [
+      "丙午",
+      "戊戌",
+      "辛亥",
+      "戊子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0042",
+    "country": "中国",
+    "iztro": [
+      "丙午",
+      "戊戌",
+      "辛亥",
+      "戊子"
+    ],
+    "bfft": [
+      "丙午",
+      "戊戌",
+      "辛亥",
+      "戊子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0043",
+    "country": "中国",
+    "iztro": [
+      "丙午",
+      "戊戌",
+      "辛亥",
+      "戊子"
+    ],
+    "bfft": [
+      "丙午",
+      "戊戌",
+      "辛亥",
+      "戊子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0044",
+    "country": "中国",
+    "iztro": [
+      "丙午",
+      "戊戌",
+      "辛亥",
+      "戊子"
+    ],
+    "bfft": [
+      "丙午",
+      "戊戌",
+      "辛亥",
+      "戊子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0045",
+    "country": "中国",
+    "iztro": [
+      "丙午",
+      "戊戌",
+      "辛亥",
+      "戊子"
+    ],
+    "bfft": [
+      "丙午",
+      "戊戌",
+      "辛亥",
+      "戊子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0046",
+    "country": "中国",
+    "iztro": [
+      "壬寅",
+      "丁未",
+      "丙子",
+      "癸巳"
+    ],
+    "bfft": [
+      "壬寅",
+      "丁未",
+      "丙子",
+      "癸巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0047",
+    "country": "中国",
+    "iztro": [
+      "壬寅",
+      "丁未",
+      "丙子",
+      "癸巳"
+    ],
+    "bfft": [
+      "壬寅",
+      "丁未",
+      "丙子",
+      "癸巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0048",
+    "country": "中国",
+    "iztro": [
+      "壬寅",
+      "丁未",
+      "丙子",
+      "癸巳"
+    ],
+    "bfft": [
+      "壬寅",
+      "丁未",
+      "丙子",
+      "癸巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0049",
+    "country": "中国",
+    "iztro": [
+      "壬寅",
+      "丁未",
+      "丙子",
+      "癸巳"
+    ],
+    "bfft": [
+      "壬寅",
+      "丁未",
+      "丙子",
+      "癸巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0050",
+    "country": "中国",
+    "iztro": [
+      "壬寅",
+      "丁未",
+      "丙子",
+      "癸巳"
+    ],
+    "bfft": [
+      "壬寅",
+      "丁未",
+      "丙子",
+      "癸巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0051",
+    "country": "malaysia",
+    "iztro": [
+      "丙寅",
+      "壬辰",
+      "戊戌",
+      "癸亥"
+    ],
+    "bfft": [
+      "丙寅",
+      "壬辰",
+      "戊戌",
+      "癸亥"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0052",
+    "country": "malaysia",
+    "iztro": [
+      "丙寅",
+      "壬辰",
+      "戊戌",
+      "癸亥"
+    ],
+    "bfft": [
+      "丙寅",
+      "壬辰",
+      "戊戌",
+      "癸亥"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0053",
+    "country": "malaysia",
+    "iztro": [
+      "丙寅",
+      "壬辰",
+      "戊戌",
+      "癸亥"
+    ],
+    "bfft": [
+      "丙寅",
+      "壬辰",
+      "戊戌",
+      "癸亥"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0054",
+    "country": "malaysia",
+    "iztro": [
+      "丙寅",
+      "壬辰",
+      "戊戌",
+      "癸亥"
+    ],
+    "bfft": [
+      "丙寅",
+      "壬辰",
+      "戊戌",
+      "癸亥"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0055",
+    "country": "malaysia",
+    "iztro": [
+      "丙寅",
+      "壬辰",
+      "戊戌",
+      "癸亥"
+    ],
+    "bfft": [
+      "丙寅",
+      "壬辰",
+      "戊戌",
+      "癸亥"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0056",
+    "country": "malaysia",
+    "iztro": [
+      "丙申",
+      "辛卯",
+      "丁丑",
+      "乙巳"
+    ],
+    "bfft": [
+      "丙申",
+      "辛卯",
+      "丁丑",
+      "乙巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0057",
+    "country": "malaysia",
+    "iztro": [
+      "丙申",
+      "辛卯",
+      "丁丑",
+      "乙巳"
+    ],
+    "bfft": [
+      "丙申",
+      "辛卯",
+      "丁丑",
+      "乙巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0058",
+    "country": "malaysia",
+    "iztro": [
+      "丙申",
+      "辛卯",
+      "丁丑",
+      "乙巳"
+    ],
+    "bfft": [
+      "丙申",
+      "辛卯",
+      "丁丑",
+      "乙巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0059",
+    "country": "malaysia",
+    "iztro": [
+      "丙申",
+      "辛卯",
+      "丁丑",
+      "乙巳"
+    ],
+    "bfft": [
+      "丙申",
+      "辛卯",
+      "丁丑",
+      "乙巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0060",
+    "country": "malaysia",
+    "iztro": [
+      "丙申",
+      "辛卯",
+      "丁丑",
+      "乙巳"
+    ],
+    "bfft": [
+      "丙申",
+      "辛卯",
+      "丁丑",
+      "乙巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0061",
+    "country": "中国",
+    "iztro": [
+      "戊午",
+      "丙辰",
+      "丁酉",
+      "己酉"
+    ],
+    "bfft": [
+      "戊午",
+      "丙辰",
+      "丁酉",
+      "己酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0062",
+    "country": "中国",
+    "iztro": [
+      "戊午",
+      "丙辰",
+      "丁酉",
+      "己酉"
+    ],
+    "bfft": [
+      "戊午",
+      "丙辰",
+      "丁酉",
+      "己酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0063",
+    "country": "中国",
+    "iztro": [
+      "戊午",
+      "丙辰",
+      "丁酉",
+      "己酉"
+    ],
+    "bfft": [
+      "戊午",
+      "丙辰",
+      "丁酉",
+      "己酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0064",
+    "country": "中国",
+    "iztro": [
+      "戊午",
+      "丙辰",
+      "丁酉",
+      "己酉"
+    ],
+    "bfft": [
+      "戊午",
+      "丙辰",
+      "丁酉",
+      "己酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0065",
+    "country": "中国",
+    "iztro": [
+      "戊午",
+      "丙辰",
+      "丁酉",
+      "己酉"
+    ],
+    "bfft": [
+      "戊午",
+      "丙辰",
+      "丁酉",
+      "己酉"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0066",
+    "country": "中国",
+    "iztro": [
+      "戊戌",
+      "壬戌",
+      "丁丑",
+      "甲辰"
+    ],
+    "bfft": [
+      "戊戌",
+      "壬戌",
+      "丁丑",
+      "甲辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0067",
+    "country": "中国",
+    "iztro": [
+      "戊戌",
+      "壬戌",
+      "丁丑",
+      "甲辰"
+    ],
+    "bfft": [
+      "戊戌",
+      "壬戌",
+      "丁丑",
+      "甲辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0068",
+    "country": "中国",
+    "iztro": [
+      "戊戌",
+      "壬戌",
+      "丁丑",
+      "甲辰"
+    ],
+    "bfft": [
+      "戊戌",
+      "壬戌",
+      "丁丑",
+      "甲辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0069",
+    "country": "中国",
+    "iztro": [
+      "戊戌",
+      "壬戌",
+      "丁丑",
+      "甲辰"
+    ],
+    "bfft": [
+      "戊戌",
+      "壬戌",
+      "丁丑",
+      "甲辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0070",
+    "country": "中国",
+    "iztro": [
+      "戊戌",
+      "壬戌",
+      "丁丑",
+      "甲辰"
+    ],
+    "bfft": [
+      "戊戌",
+      "壬戌",
+      "丁丑",
+      "甲辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0071",
+    "country": "中国",
+    "iztro": [
+      "壬午",
+      "乙巳",
+      "庚子",
+      "庚辰"
+    ],
+    "bfft": [
+      "壬午",
+      "乙巳",
+      "庚子",
+      "庚辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0072",
+    "country": "中国",
+    "iztro": [
+      "壬午",
+      "乙巳",
+      "庚子",
+      "庚辰"
+    ],
+    "bfft": [
+      "壬午",
+      "乙巳",
+      "庚子",
+      "庚辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0073",
+    "country": "中国",
+    "iztro": [
+      "壬午",
+      "乙巳",
+      "庚子",
+      "庚辰"
+    ],
+    "bfft": [
+      "壬午",
+      "乙巳",
+      "庚子",
+      "庚辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0074",
+    "country": "中国",
+    "iztro": [
+      "壬午",
+      "乙巳",
+      "庚子",
+      "庚辰"
+    ],
+    "bfft": [
+      "壬午",
+      "乙巳",
+      "庚子",
+      "庚辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0075",
+    "country": "中国",
+    "iztro": [
+      "壬午",
+      "乙巳",
+      "庚子",
+      "庚辰"
+    ],
+    "bfft": [
+      "壬午",
+      "乙巳",
+      "庚子",
+      "庚辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0076",
+    "country": "中国",
+    "iztro": [
+      "庚申",
+      "癸未",
+      "乙酉",
+      "辛巳"
+    ],
+    "bfft": [
+      "庚申",
+      "癸未",
+      "乙酉",
+      "辛巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0077",
+    "country": "中国",
+    "iztro": [
+      "庚申",
+      "癸未",
+      "乙酉",
+      "辛巳"
+    ],
+    "bfft": [
+      "庚申",
+      "癸未",
+      "乙酉",
+      "辛巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0078",
+    "country": "中国",
+    "iztro": [
+      "庚申",
+      "癸未",
+      "乙酉",
+      "辛巳"
+    ],
+    "bfft": [
+      "庚申",
+      "癸未",
+      "乙酉",
+      "辛巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0079",
+    "country": "中国",
+    "iztro": [
+      "庚申",
+      "癸未",
+      "乙酉",
+      "辛巳"
+    ],
+    "bfft": [
+      "庚申",
+      "癸未",
+      "乙酉",
+      "辛巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0080",
+    "country": "中国",
+    "iztro": [
+      "庚申",
+      "癸未",
+      "乙酉",
+      "辛巳"
+    ],
+    "bfft": [
+      "庚申",
+      "癸未",
+      "乙酉",
+      "辛巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0081",
+    "country": "中国",
+    "iztro": [
+      "庚申",
+      "甲申",
+      "己巳",
+      "壬申"
+    ],
+    "bfft": [
+      "庚申",
+      "甲申",
+      "己巳",
+      "壬申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0082",
+    "country": "中国",
+    "iztro": [
+      "庚申",
+      "甲申",
+      "己巳",
+      "壬申"
+    ],
+    "bfft": [
+      "庚申",
+      "甲申",
+      "己巳",
+      "壬申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0083",
+    "country": "中国",
+    "iztro": [
+      "庚申",
+      "甲申",
+      "己巳",
+      "壬申"
+    ],
+    "bfft": [
+      "庚申",
+      "甲申",
+      "己巳",
+      "壬申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0084",
+    "country": "中国",
+    "iztro": [
+      "庚申",
+      "甲申",
+      "己巳",
+      "壬申"
+    ],
+    "bfft": [
+      "庚申",
+      "甲申",
+      "己巳",
+      "壬申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0085",
+    "country": "中国",
+    "iztro": [
+      "庚申",
+      "甲申",
+      "己巳",
+      "壬申"
+    ],
+    "bfft": [
+      "庚申",
+      "甲申",
+      "己巳",
+      "壬申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0086",
+    "country": "中国",
+    "iztro": [
+      "辛亥",
+      "辛丑",
+      "戊戌",
+      "戊午"
+    ],
+    "bfft": [
+      "辛亥",
+      "辛丑",
+      "戊戌",
+      "戊午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0087",
+    "country": "中国",
+    "iztro": [
+      "辛亥",
+      "辛丑",
+      "戊戌",
+      "戊午"
+    ],
+    "bfft": [
+      "辛亥",
+      "辛丑",
+      "戊戌",
+      "戊午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0088",
+    "country": "中国",
+    "iztro": [
+      "辛亥",
+      "辛丑",
+      "戊戌",
+      "戊午"
+    ],
+    "bfft": [
+      "辛亥",
+      "辛丑",
+      "戊戌",
+      "戊午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0089",
+    "country": "中国",
+    "iztro": [
+      "辛亥",
+      "辛丑",
+      "戊戌",
+      "戊午"
+    ],
+    "bfft": [
+      "辛亥",
+      "辛丑",
+      "戊戌",
+      "戊午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0090",
+    "country": "中国",
+    "iztro": [
+      "辛亥",
+      "辛丑",
+      "戊戌",
+      "戊午"
+    ],
+    "bfft": [
+      "辛亥",
+      "辛丑",
+      "戊戌",
+      "戊午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0091",
+    "country": "中国",
+    "iztro": [
+      "辛丑",
+      "庚子",
+      "丁酉",
+      "辛丑"
+    ],
+    "bfft": [
+      "辛丑",
+      "庚子",
+      "丁酉",
+      "辛丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0092",
+    "country": "中国",
+    "iztro": [
+      "辛丑",
+      "庚子",
+      "丁酉",
+      "辛丑"
+    ],
+    "bfft": [
+      "辛丑",
+      "庚子",
+      "丁酉",
+      "辛丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0093",
+    "country": "中国",
+    "iztro": [
+      "辛丑",
+      "庚子",
+      "丁酉",
+      "辛丑"
+    ],
+    "bfft": [
+      "辛丑",
+      "庚子",
+      "丁酉",
+      "辛丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0094",
+    "country": "中国",
+    "iztro": [
+      "辛丑",
+      "庚子",
+      "丁酉",
+      "辛丑"
+    ],
+    "bfft": [
+      "辛丑",
+      "庚子",
+      "丁酉",
+      "辛丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0095",
+    "country": "中国",
+    "iztro": [
+      "辛丑",
+      "庚子",
+      "丁酉",
+      "辛丑"
+    ],
+    "bfft": [
+      "辛丑",
+      "庚子",
+      "丁酉",
+      "辛丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0096",
+    "country": "中国",
+    "iztro": [
+      "辛丑",
+      "庚子",
+      "丁酉",
+      "辛丑"
+    ],
+    "bfft": [
+      "辛丑",
+      "庚子",
+      "丁酉",
+      "辛丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0097",
+    "country": "中国",
+    "iztro": [
+      "癸亥",
+      "壬戌",
+      "己丑",
+      "乙丑"
+    ],
+    "bfft": [
+      "癸亥",
+      "壬戌",
+      "己丑",
+      "乙丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0098",
+    "country": "中国",
+    "iztro": [
+      "癸亥",
+      "壬戌",
+      "己丑",
+      "乙丑"
+    ],
+    "bfft": [
+      "癸亥",
+      "壬戌",
+      "己丑",
+      "乙丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0099",
+    "country": "中国",
+    "iztro": [
+      "癸亥",
+      "壬戌",
+      "己丑",
+      "乙丑"
+    ],
+    "bfft": [
+      "癸亥",
+      "壬戌",
+      "己丑",
+      "乙丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0100",
+    "country": "中国",
+    "iztro": [
+      "癸亥",
+      "壬戌",
+      "己丑",
+      "乙丑"
+    ],
+    "bfft": [
+      "癸亥",
+      "壬戌",
+      "己丑",
+      "乙丑"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0101",
+    "country": "中国",
+    "iztro": [
+      "辛亥",
+      "壬辰",
+      "丁卯",
+      "戊申"
+    ],
+    "bfft": [
+      "辛亥",
+      "壬辰",
+      "丁卯",
+      "戊申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0102",
+    "country": "中国",
+    "iztro": [
+      "辛亥",
+      "壬辰",
+      "丁卯",
+      "戊申"
+    ],
+    "bfft": [
+      "辛亥",
+      "壬辰",
+      "丁卯",
+      "戊申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0103",
+    "country": "中国",
+    "iztro": [
+      "辛亥",
+      "壬辰",
+      "丁卯",
+      "戊申"
+    ],
+    "bfft": [
+      "辛亥",
+      "壬辰",
+      "丁卯",
+      "戊申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0104",
+    "country": "中国",
+    "iztro": [
+      "辛亥",
+      "壬辰",
+      "丁卯",
+      "戊申"
+    ],
+    "bfft": [
+      "辛亥",
+      "壬辰",
+      "丁卯",
+      "戊申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0105",
+    "country": "中国",
+    "iztro": [
+      "辛亥",
+      "壬辰",
+      "丁卯",
+      "戊申"
+    ],
+    "bfft": [
+      "辛亥",
+      "壬辰",
+      "丁卯",
+      "戊申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0106",
+    "country": "中国",
+    "iztro": [
+      "癸亥",
+      "乙卯",
+      "癸丑",
+      "己未"
+    ],
+    "bfft": [
+      "癸亥",
+      "乙卯",
+      "癸丑",
+      "己未"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0107",
+    "country": "中国",
+    "iztro": [
+      "癸亥",
+      "乙卯",
+      "癸丑",
+      "己未"
+    ],
+    "bfft": [
+      "癸亥",
+      "乙卯",
+      "癸丑",
+      "己未"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0108",
+    "country": "中国",
+    "iztro": [
+      "癸亥",
+      "乙卯",
+      "癸丑",
+      "己未"
+    ],
+    "bfft": [
+      "癸亥",
+      "乙卯",
+      "癸丑",
+      "己未"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0109",
+    "country": "中国",
+    "iztro": [
+      "癸亥",
+      "乙卯",
+      "癸丑",
+      "己未"
+    ],
+    "bfft": [
+      "癸亥",
+      "乙卯",
+      "癸丑",
+      "己未"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0110",
+    "country": "中国",
+    "iztro": [
+      "癸亥",
+      "乙卯",
+      "癸丑",
+      "己未"
+    ],
+    "bfft": [
+      "癸亥",
+      "乙卯",
+      "癸丑",
+      "己未"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0111",
+    "country": "malaysia",
+    "iztro": [
+      "庚申",
+      "乙酉",
+      "丁酉",
+      "丙午"
+    ],
+    "bfft": [
+      "庚申",
+      "乙酉",
+      "丁酉",
+      "丙午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0112",
+    "country": "malaysia",
+    "iztro": [
+      "庚申",
+      "乙酉",
+      "丁酉",
+      "丙午"
+    ],
+    "bfft": [
+      "庚申",
+      "乙酉",
+      "丁酉",
+      "丙午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0113",
+    "country": "malaysia",
+    "iztro": [
+      "庚申",
+      "乙酉",
+      "丁酉",
+      "丙午"
+    ],
+    "bfft": [
+      "庚申",
+      "乙酉",
+      "丁酉",
+      "丙午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0114",
+    "country": "malaysia",
+    "iztro": [
+      "庚申",
+      "乙酉",
+      "丁酉",
+      "丙午"
+    ],
+    "bfft": [
+      "庚申",
+      "乙酉",
+      "丁酉",
+      "丙午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0115",
+    "country": "malaysia",
+    "iztro": [
+      "庚申",
+      "乙酉",
+      "丁酉",
+      "丙午"
+    ],
+    "bfft": [
+      "庚申",
+      "乙酉",
+      "丁酉",
+      "丙午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0116",
+    "country": "malaysia",
+    "iztro": [
+      "丙戌",
+      "辛丑",
+      "乙丑",
+      "辛巳"
+    ],
+    "bfft": [
+      "丙戌",
+      "辛丑",
+      "乙丑",
+      "辛巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0117",
+    "country": "malaysia",
+    "iztro": [
+      "丙戌",
+      "辛丑",
+      "乙丑",
+      "辛巳"
+    ],
+    "bfft": [
+      "丙戌",
+      "辛丑",
+      "乙丑",
+      "辛巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0118",
+    "country": "malaysia",
+    "iztro": [
+      "丙戌",
+      "辛丑",
+      "乙丑",
+      "辛巳"
+    ],
+    "bfft": [
+      "丙戌",
+      "辛丑",
+      "乙丑",
+      "辛巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0119",
+    "country": "malaysia",
+    "iztro": [
+      "丙戌",
+      "辛丑",
+      "乙丑",
+      "辛巳"
+    ],
+    "bfft": [
+      "丙戌",
+      "辛丑",
+      "乙丑",
+      "辛巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0120",
+    "country": "malaysia",
+    "iztro": [
+      "丙戌",
+      "辛丑",
+      "乙丑",
+      "辛巳"
+    ],
+    "bfft": [
+      "丙戌",
+      "辛丑",
+      "乙丑",
+      "辛巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0121",
+    "country": "china",
+    "iztro": [
+      "辛卯",
+      "己亥",
+      "戊午",
+      "丁巳"
+    ],
+    "bfft": [
+      "辛卯",
+      "己亥",
+      "戊午",
+      "丁巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0122",
+    "country": "china",
+    "iztro": [
+      "辛卯",
+      "己亥",
+      "戊午",
+      "丁巳"
+    ],
+    "bfft": [
+      "辛卯",
+      "己亥",
+      "戊午",
+      "丁巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0123",
+    "country": "china",
+    "iztro": [
+      "辛卯",
+      "己亥",
+      "戊午",
+      "丁巳"
+    ],
+    "bfft": [
+      "辛卯",
+      "己亥",
+      "戊午",
+      "丁巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0124",
+    "country": "china",
+    "iztro": [
+      "辛卯",
+      "己亥",
+      "戊午",
+      "丁巳"
+    ],
+    "bfft": [
+      "辛卯",
+      "己亥",
+      "戊午",
+      "丁巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0125",
+    "country": "china",
+    "iztro": [
+      "辛卯",
+      "己亥",
+      "戊午",
+      "丁巳"
+    ],
+    "bfft": [
+      "辛卯",
+      "己亥",
+      "戊午",
+      "丁巳"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0126",
+    "country": "中国",
+    "iztro": [
+      "丁卯",
+      "丙午",
+      "乙卯",
+      "壬午"
+    ],
+    "bfft": [
+      "丁卯",
+      "丙午",
+      "乙卯",
+      "壬午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0127",
+    "country": "中国",
+    "iztro": [
+      "丁卯",
+      "丙午",
+      "乙卯",
+      "壬午"
+    ],
+    "bfft": [
+      "丁卯",
+      "丙午",
+      "乙卯",
+      "壬午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0128",
+    "country": "中国",
+    "iztro": [
+      "丁卯",
+      "丙午",
+      "乙卯",
+      "壬午"
+    ],
+    "bfft": [
+      "丁卯",
+      "丙午",
+      "乙卯",
+      "壬午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0129",
+    "country": "中国",
+    "iztro": [
+      "丁卯",
+      "丙午",
+      "乙卯",
+      "壬午"
+    ],
+    "bfft": [
+      "丁卯",
+      "丙午",
+      "乙卯",
+      "壬午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0130",
+    "country": "中国",
+    "iztro": [
+      "丁卯",
+      "丙午",
+      "乙卯",
+      "壬午"
+    ],
+    "bfft": [
+      "丁卯",
+      "丙午",
+      "乙卯",
+      "壬午"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0131",
+    "country": "japan",
+    "iztro": [
+      "癸亥",
+      "丙辰",
+      "己卯",
+      "丁卯"
+    ],
+    "bfft": [
+      "癸亥",
+      "丙辰",
+      "己卯",
+      "丁卯"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0132",
+    "country": "japan",
+    "iztro": [
+      "癸亥",
+      "丙辰",
+      "己卯",
+      "丁卯"
+    ],
+    "bfft": [
+      "癸亥",
+      "丙辰",
+      "己卯",
+      "丁卯"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0133",
+    "country": "japan",
+    "iztro": [
+      "癸亥",
+      "丙辰",
+      "己卯",
+      "丁卯"
+    ],
+    "bfft": [
+      "癸亥",
+      "丙辰",
+      "己卯",
+      "丁卯"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0134",
+    "country": "japan",
+    "iztro": [
+      "癸亥",
+      "丙辰",
+      "己卯",
+      "丁卯"
+    ],
+    "bfft": [
+      "癸亥",
+      "丙辰",
+      "己卯",
+      "丁卯"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0135",
+    "country": "japan",
+    "iztro": [
+      "癸亥",
+      "丙辰",
+      "己卯",
+      "丁卯"
+    ],
+    "bfft": [
+      "癸亥",
+      "丙辰",
+      "己卯",
+      "丁卯"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0136",
+    "country": "singapore",
+    "iztro": [
+      "癸酉",
+      "丙辰",
+      "庚申",
+      "丙子"
+    ],
+    "bfft": [
+      "癸酉",
+      "丙辰",
+      "庚申",
+      "丙子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0137",
+    "country": "singapore",
+    "iztro": [
+      "癸酉",
+      "丙辰",
+      "庚申",
+      "丙子"
+    ],
+    "bfft": [
+      "癸酉",
+      "丙辰",
+      "庚申",
+      "丙子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0138",
+    "country": "singapore",
+    "iztro": [
+      "癸酉",
+      "丙辰",
+      "庚申",
+      "丙子"
+    ],
+    "bfft": [
+      "癸酉",
+      "丙辰",
+      "庚申",
+      "丙子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0139",
+    "country": "singapore",
+    "iztro": [
+      "癸酉",
+      "丙辰",
+      "庚申",
+      "丙子"
+    ],
+    "bfft": [
+      "癸酉",
+      "丙辰",
+      "庚申",
+      "丙子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0140",
+    "country": "singapore",
+    "iztro": [
+      "癸酉",
+      "丙辰",
+      "庚申",
+      "丙子"
+    ],
+    "bfft": [
+      "癸酉",
+      "丙辰",
+      "庚申",
+      "丙子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0141",
+    "country": "malaysia",
+    "iztro": [
+      "丁卯",
+      "癸丑",
+      "甲子",
+      "戊辰"
+    ],
+    "bfft": [
+      "丁卯",
+      "癸丑",
+      "甲子",
+      "戊辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0142",
+    "country": "malaysia",
+    "iztro": [
+      "丁卯",
+      "癸丑",
+      "甲子",
+      "戊辰"
+    ],
+    "bfft": [
+      "丁卯",
+      "癸丑",
+      "甲子",
+      "戊辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0143",
+    "country": "malaysia",
+    "iztro": [
+      "丁卯",
+      "癸丑",
+      "甲子",
+      "戊辰"
+    ],
+    "bfft": [
+      "丁卯",
+      "癸丑",
+      "甲子",
+      "戊辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0144",
+    "country": "malaysia",
+    "iztro": [
+      "丁卯",
+      "癸丑",
+      "甲子",
+      "戊辰"
+    ],
+    "bfft": [
+      "丁卯",
+      "癸丑",
+      "甲子",
+      "戊辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0145",
+    "country": "malaysia",
+    "iztro": [
+      "丁卯",
+      "癸丑",
+      "甲子",
+      "戊辰"
+    ],
+    "bfft": [
+      "丁卯",
+      "癸丑",
+      "甲子",
+      "戊辰"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0146",
+    "country": "malaysia",
+    "iztro": [
+      "癸丑",
+      "庚申",
+      "壬辰",
+      "庚子"
+    ],
+    "bfft": [
+      "癸丑",
+      "庚申",
+      "壬辰",
+      "庚子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0147",
+    "country": "malaysia",
+    "iztro": [
+      "癸丑",
+      "庚申",
+      "壬辰",
+      "庚子"
+    ],
+    "bfft": [
+      "癸丑",
+      "庚申",
+      "壬辰",
+      "庚子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0148",
+    "country": "malaysia",
+    "iztro": [
+      "癸丑",
+      "庚申",
+      "壬辰",
+      "庚子"
+    ],
+    "bfft": [
+      "癸丑",
+      "庚申",
+      "壬辰",
+      "庚子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0149",
+    "country": "malaysia",
+    "iztro": [
+      "癸丑",
+      "庚申",
+      "壬辰",
+      "庚子"
+    ],
+    "bfft": [
+      "癸丑",
+      "庚申",
+      "壬辰",
+      "庚子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0150",
+    "country": "malaysia",
+    "iztro": [
+      "癸丑",
+      "庚申",
+      "壬辰",
+      "庚子"
+    ],
+    "bfft": [
+      "癸丑",
+      "庚申",
+      "壬辰",
+      "庚子"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0151",
+    "country": "中国",
+    "iztro": [
+      "丁卯",
+      "甲寅",
+      "庚子",
+      "甲申"
+    ],
+    "bfft": [
+      "戊辰",
+      "甲寅",
+      "庚子",
+      "甲申"
+    ],
+    "same": [
+      false,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0152",
+    "country": "中国",
+    "iztro": [
+      "丁卯",
+      "甲寅",
+      "庚子",
+      "甲申"
+    ],
+    "bfft": [
+      "戊辰",
+      "甲寅",
+      "庚子",
+      "甲申"
+    ],
+    "same": [
+      false,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0153",
+    "country": "中国",
+    "iztro": [
+      "丁卯",
+      "甲寅",
+      "庚子",
+      "甲申"
+    ],
+    "bfft": [
+      "戊辰",
+      "甲寅",
+      "庚子",
+      "甲申"
+    ],
+    "same": [
+      false,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0154",
+    "country": "中国",
+    "iztro": [
+      "丁卯",
+      "甲寅",
+      "庚子",
+      "甲申"
+    ],
+    "bfft": [
+      "戊辰",
+      "甲寅",
+      "庚子",
+      "甲申"
+    ],
+    "same": [
+      false,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0155",
+    "country": "中国",
+    "iztro": [
+      "丁卯",
+      "甲寅",
+      "庚子",
+      "甲申"
+    ],
+    "bfft": [
+      "戊辰",
+      "甲寅",
+      "庚子",
+      "甲申"
+    ],
+    "same": [
+      false,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0156",
+    "country": "中国",
+    "iztro": [
+      "庚戌",
+      "癸未",
+      "癸卯",
+      "庚申"
+    ],
+    "bfft": [
+      "庚戌",
+      "癸未",
+      "癸卯",
+      "庚申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0157",
+    "country": "中国",
+    "iztro": [
+      "庚戌",
+      "癸未",
+      "癸卯",
+      "庚申"
+    ],
+    "bfft": [
+      "庚戌",
+      "癸未",
+      "癸卯",
+      "庚申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0158",
+    "country": "中国",
+    "iztro": [
+      "庚戌",
+      "癸未",
+      "癸卯",
+      "庚申"
+    ],
+    "bfft": [
+      "庚戌",
+      "癸未",
+      "癸卯",
+      "庚申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0159",
+    "country": "中国",
+    "iztro": [
+      "庚戌",
+      "癸未",
+      "癸卯",
+      "庚申"
+    ],
+    "bfft": [
+      "庚戌",
+      "癸未",
+      "癸卯",
+      "庚申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "ftb_0160",
+    "country": "中国",
+    "iztro": [
+      "庚戌",
+      "癸未",
+      "癸卯",
+      "庚申"
+    ],
+    "bfft": [
+      "庚戌",
+      "癸未",
+      "癸卯",
+      "庚申"
+    ],
+    "same": [
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+]

@@ -109,6 +109,9 @@ python scripts/verify.py --strict   # CI 用
 - [references/model-v5.md](references/model-v5.md) — v5 完整规范（六模块、六亲双轨、版本变更）。深度分析必读。
 - [references/human.md](references/human.md) — 人盘专用（六亲、人生阶段、隐私）。
 - [references/calibration.md](references/calibration.md) — 校准 schema、判据写法要求、鸣潮 worked example。
+- [references/mingli-bench-integration.md](references/mingli-bench-integration.md) — 全球算命师大赛题库（MingLi-Bench，160 题）整合：排盘交叉验证与推理盲测。
+- [scripts/mingli_bench_verify.py](scripts/mingli_bench_verify.py) — MingLi-Bench 排盘交叉验证（160 例 vs iztro）。
+- [scripts/mingli_bench_pack.py](scripts/mingli_bench_pack.py) / [scripts/mingli_bench_score.py](scripts/mingli_bench_score.py) — 推理盲测包生成与评分。
 - [references/model-v3-deprecated.md](references/model-v3-deprecated.md) — v3 旧规范，仅供旧记录追溯。
 - [scripts/pai_pan.py](scripts/pai_pan.py) — 排盘 CLI（真太阳时/夏令时/换日可切换/JSON）。
 - [scripts/famous20.py](scripts/famous20.py) — 20 位 A/AA 级名人批量排盘 + 独立参照比对

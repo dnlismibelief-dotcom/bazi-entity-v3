@@ -37,12 +37,24 @@ human 用真实性别与**出生地经度**；game/product 默认 male（阳年�
 # 人盘：务必给经度，否则时柱可能整根错
 python scripts/pai_pan.py "1990-01-01 10:00" --lon 116.4 --gender female --lucky 10 --years 12
 
-# 游戏/产品：用公测或上线时刻
-python scripts/pai_pan.py "2024-05-23 10:00" --name 鸣潮 --lon 113.3 --lucky 10 --years 12
+# 游戏/产品：用公测或上线时刻（v7.13 起数据一律运行时提供，不内置案例）
+python scripts/cli.py "2024-05-23 10:00" --name 鸣潮 --lon 113.3 --lucky 10 --years 12
 
 # 换日流派存疑时两派都看
 python scripts/pai_pan.py "2001-03-05 23:30" --lon 121.5 --day-boundary midnight
 python scripts/pai_pan.py "2017-03-02 10:00" --lon 116.4 --json    # 喂后续模块
+```
+
+**实体数据现取（v7.13 前后端分离后，案例不再内置仓库）**：
+
+```bash
+# 联网抓取实体出生/成立时间（维基百科，含来源标注与缓存）
+python scripts/fetch_entity.py --query 毛泽东 --save
+
+# 一键完整报告（v7.14：三盘交叉骨架+七维度模板，按 references/report-template.md 填充）
+python scripts/report.py --name 示例 --dt "1990-01-01 10:00" --lon 116.4 --gender male --out dist/report
+# 只有现成四柱时（缺出生日期→起运岁数不可算，报告显式标注缺口）
+python scripts/report.py --pillars "庚子 丁亥 庚午 壬午" --gender male --out dist/report
 ```
 
 读输出时先看三处：`⚠ 警告`（未给经度／逢夏令时／距节气不足 1 小时）、

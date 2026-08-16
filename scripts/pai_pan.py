@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""四柱八字排盘 (BaZi chart calculator) — BFFT v7.
+"""四柱八字排盘引擎 — BFFT v7.13（后端库，纯 Python 3 标准库，零依赖）。
 
-Pure Python 3 stdlib, no external dependencies.
+v7.13 前后端分离：本文件只保留计算引擎（排盘/关系/人元/大运流年），
+命令行前端已移至 scripts/cli.py；直接运行本文件会转发到 cli.run()。
+库用法（Agent/工具脚本标准入口）:
+
+    import importlib.util, sys
+    spec = importlib.util.spec_from_file_location("pai_pan", "<path>/scripts/pai_pan.py")
+    pp = importlib.util.module_from_spec(spec); spec.loader.exec_module(pp)
+    r = pp.calc(datetime(2024,5,23,10,0), tz_hours=8, lon=113.3)
 
 v7 相对 v6 的变化（全部由 50 人跨年代交叉验证暴露, 参照 sxtwl 与 lunar_python）
 -----------------------------------------------------------------------------
@@ -1033,51 +1040,14 @@ def render(result: dict) -> str:
 
 
 def main():
-    ap = argparse.ArgumentParser(description="四柱八字排盘 (BFFT)")
-    ap.add_argument("datetime", help='当地钟表时间, e.g. "2024-05-23 10:00"')
-    ap.add_argument("--name", default="")
-    ap.add_argument("--tz", type=float, default=8.0, help="UTC 偏移小时, 默认 8")
-    ap.add_argument("--lon", type=float, default=None,
-                    help="出生地经度(东正西负), 用于真太阳时修正; 人盘强烈建议提供")
-    ap.add_argument("--gender", choices=["male", "female"], default="male",
-                    help="大运顺逆用; game/product 默认 male")
-    ap.add_argument("--day-boundary", choices=["zi", "midnight"], default="zi",
-                    help="换日流派: zi=23时换日(默认), midnight=00时换日")
-    ap.add_argument("--dst", choices=["auto", "on", "off"], default="auto",
-                    help="中国 1986—1991 夏令时处理, 默认 auto")
-    ap.add_argument("--calendar", choices=["auto", "julian", "gregorian"],
-                    default="auto",
-                    help="输入日期的历法。auto=1582-10-15 前按儒略历(史料惯例), 默认 auto")
-    ap.add_argument("--lucky", type=int, default=10)
-    ap.add_argument("--years", type=int, default=12)
-    ap.add_argument("--json", action="store_true", help="输出 JSON")
-    args = ap.parse_args()
-
-    if args.lucky < 1 or args.years < 0:
-        ap.error("--lucky 需 >=1, --years 需 >=0")
-    if args.lon is not None and not -180.0 <= args.lon <= 180.0:
-        ap.error("--lon 需在 -180..180")
-
-    try:
-        dt = datetime.strptime(args.datetime, "%Y-%m-%d %H:%M")
-    except ValueError:
-        try:
-            dt = datetime.strptime(args.datetime, "%Y-%m-%d %H:%M:%S")
-        except ValueError:
-            ap.error('时间格式应为 "YYYY-MM-DD HH:MM"')
-
-    result = calc(dt, tz_hours=args.tz, gender=args.gender,
-                  lucky_count=args.lucky, years_count=args.years,
-                  lon=args.lon, day_boundary=args.day_boundary, dst=args.dst,
-                  calendar=args.calendar)
-    if args.name:
-        result["name"] = args.name
-    if args.json:
-        print(json.dumps(result, ensure_ascii=False, indent=2))
-    else:
-        if args.name:
-            print(f"名称: {args.name}")
-        print(render(result))
+    """兼容入口（v7.13 前后端分离：前端 CLI 已移至 scripts/cli.py）。"""
+    import sys as _sys
+    import os as _os
+    _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    if _ROOT not in _sys.path:
+        _sys.path.insert(0, _os.path.join(_ROOT, "scripts"))
+    from cli import run
+    _sys.exit(run())
 
 
 if __name__ == "__main__":

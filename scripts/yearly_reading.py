@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""逐年命盘生成 — BFFT v7.8.
+"""逐年命盘生成 — BFFT v7.13（前后端分离·去硬编码实体）。
 
-对实体逐年输出「原局四柱 + 当年主运 + 流年干支 + 十神关系 + 岁运冲合」，
-供逐年推断使用。复用 yearly_bazi 的岁运关系规则（同一 rulebook，口径一致）。
+v7.13 起不再内置任何实体（原神/鸣潮/泰勒/乃琳等案例数据已从代码中移除，
+示例移至 examples/entities.json 供显式引用）。实体时间必须由调用方提供：
+要么命令行参数现给，要么 --from-json 读实体定义文件，要么用
+scripts/fetch_entity.py 联网现取（数据说话，不依赖仓库内置案例）。
 
 用法:
-  python scripts/yearly_reading.py                # 全部实体 → dist/yearly-reading.json
-  python scripts/yearly_reading.py --md           # 同时输出 Markdown 骨架
+  # 单实体（命令行参数）
+  python scripts/yearly_reading.py --name 鸣潮 --dt "2024-05-23 10:00" \
+      --tz 8 --lon 113.3 --from 2024 --to 2040 --md
+
+  # 批量（实体定义文件，格式见 examples/entities.json）
+  python scripts/yearly_reading.py --from-json examples/entities.json --md
+
+复用 yearly_bazi 的岁运关系规则（同一 rulebook，口径一致）。
 """
 
 from __future__ import annotations
@@ -19,10 +27,7 @@ import os
 import sys
 from datetime import datetime
 
-try:
-    sys.stdout.reconfigure(encoding="utf-8")
-except Exception:
-    pass
+sys.stdout.reconfigure(encoding="utf-8")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -32,34 +37,12 @@ sys.modules["yearly_bazi"] = yb
 spec.loader.exec_module(yb)
 pp = yb.pp
 
-ENTITIES = [
-    {
-        "name": "原神", "dt": "2020-09-28 10:00", "tz": 8.0, "lon": 121.47,
-        "gender": "male", "from": 2020, "to": 2035,
-        "note": "庚子 乙酉 甲戌 己巳 | 甲木日主身弱官杀重，用印比，喜火制杀；丙戌运主程",
-    },
-    {
-        "name": "鸣潮", "dt": "2024-05-23 10:00", "tz": 8.0, "lon": 113.3,
-        "gender": "male", "from": 2024, "to": 2040,
-        "note": "甲辰 己巳 丁亥 乙巳 | 丁火日主帝旺双巳，体旺用财官；巳亥冲为变革引擎",
-    },
-    {
-        "name": "Taylor Swift", "dt": "1989-12-13 08:36", "tz": -5.0, "lon": -75.93,
-        "gender": "female", "from": 1989, "to": 2031,
-        "note": "己巳 丙子 丁未 甲辰 | 丁火日主，月令子水官星；逐年事业高峰规则已回测(+0.224)",
-    },
-    {
-        "name": "乃琳Queen", "dt": "2020-11-23 12:00", "tz": 8.0, "lon": 116.4,
-        "gender": "male", "from": 2020, "to": 2036,
-        "note": "庚子 丁亥 庚午 壬午 | 庚金日主亥月，食神吐秀；时辰为占位(C级)，只论年月+大运",
-    },
-]
-
 
 def build(ent: dict) -> dict:
     dt = datetime.strptime(ent["dt"], "%Y-%m-%d %H:%M")
-    chart = pp.calc(dt, tz_hours=ent["tz"], lon=ent["lon"], gender=ent["gender"],
-                    day_boundary="zi", calendar="auto", lucky_count=10, years_count=0)
+    chart = pp.calc(dt, tz_hours=ent["tz"], lon=ent.get("lon"), gender=ent["gender"],
+                    day_boundary="zi", calendar=ent.get("calendar", "auto"),
+                    lucky_count=10, years_count=0)
     rows = yb.yearly_rows(chart, ent["from"], ent["to"])
     years = []
     for r in rows:
@@ -79,7 +62,8 @@ def build(ent: dict) -> dict:
         "four_pillars": " ".join([chart["year_pillar"], chart["month_pillar"],
                                   chart["day_pillar"], chart["hour_pillar"]]),
         "day_master": chart["day_master"],
-        "note": ent["note"],
+        "note": ent.get("note", ""),
+        "source": ent.get("source", ""),
         "jiao_time": chart["jiao_time"],
         "lucky": [{"ganzhi": l["ganzhi"], "start": l["start"]} for l in chart["lucky"]],
         "years": years,
@@ -90,7 +74,8 @@ def to_md(data: list[dict]) -> str:
     out = []
     for ent in data:
         out.append(f"## {ent['entity']}　{ent['four_pillars']}　{ent['day_master']}日主")
-        out.append(f"> {ent['note']}　交运 {ent['jiao_time']}")
+        out.append(f"> {ent['note']}　交运 {ent['jiao_time']}"
+                   + (f"　来源: {ent['source']}" if ent.get("source") else ""))
         out.append("")
         out.append("| 年 | 流年 | 大运 | 流年干十神 | 流年支vs日支 | 大运支vs日支 | 岁运 | 交运 |")
         out.append("|---|---|---|---|---|---|---|---|")
@@ -105,12 +90,37 @@ def to_md(data: list[dict]) -> str:
 
 
 def main():
-    ap = argparse.ArgumentParser(description="逐年命盘生成")
+    ap = argparse.ArgumentParser(description="逐年命盘生成（实体数据须显式提供）")
+    ap.add_argument("--name", help="实体名（单实体模式）")
+    ap.add_argument("--dt", help='出生/成立时间 "YYYY-MM-DD HH:MM"（单实体模式）')
+    ap.add_argument("--tz", type=float, default=8.0)
+    ap.add_argument("--lon", type=float, default=None)
+    ap.add_argument("--gender", choices=["male", "female"], default="male")
+    ap.add_argument("--calendar", choices=["auto", "julian", "gregorian"], default="auto")
+    ap.add_argument("--from", dest="from_year", type=int, help="起年（单实体模式）")
+    ap.add_argument("--to", dest="to_year", type=int, help="止年（单实体模式）")
+    ap.add_argument("--note", default="", help="实体备注")
+    ap.add_argument("--source", default="", help="数据来源标注（必填鼓励）")
+    ap.add_argument("--from-json", help="实体定义文件（批量模式，格式见 examples/entities.json）")
     ap.add_argument("--md", action="store_true")
     ap.add_argument("--out", default="dist/yearly-reading.json")
     args = ap.parse_args()
 
-    data = [build(e) for e in ENTITIES]
+    if args.from_json:
+        with open(args.from_json, encoding="utf-8") as f:
+            entities = json.load(f)
+    elif args.name and args.dt and args.from_year is not None and args.to_year is not None:
+        entities = [{
+            "name": args.name, "dt": args.dt, "tz": args.tz, "lon": args.lon,
+            "gender": args.gender, "calendar": args.calendar,
+            "from": args.from_year, "to": args.to_year,
+            "note": args.note, "source": args.source,
+        }]
+    else:
+        ap.error("须提供实体数据: --from-json <文件> 或 --name/--dt/--from/--to; "
+                 "示例见 examples/entities.json（也可用 scripts/fetch_entity.py 联网现取）")
+
+    data = [build(e) for e in entities]
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

@@ -156,6 +156,129 @@ CN_DST = [
 DAY_ANCHOR = datetime(2000, 1, 1)   # 2000-01-01 为戊午日
 DAY_ANCHOR_N = 54
 
+# --------------------------------------------------------------------------
+# 完整干支关系表（v7.12 新增，整合自外部四家仓库对照，独立于 yearly_bazi
+# v0 rulebook——后者已冻结，泰勒回测依赖其固定权重，本表只做关系输出）
+# 对照来源: china-testing/bazi(★1466)、reed1898/bazi-tool、
+#           openfate-ai/bazi-engine、yueyuan-bazi(跃渊) 及《三命通会》卷二。
+# --------------------------------------------------------------------------
+
+GAN_HE = {"甲己": "甲己合土", "乙庚": "乙庚合金", "丙辛": "丙辛合水",
+          "丁壬": "丁壬合木", "戊癸": "戊癸合火"}
+GAN_CHONG = {"甲庚": "甲庚冲", "乙辛": "乙辛冲", "丙壬": "丙壬冲",
+             "丁癸": "丁癸冲"}
+
+ZHI_LIUHE = {"子丑": "子丑合土", "寅亥": "寅亥合木", "卯戌": "卯戌合火",
+             "辰酉": "辰酉合金", "巳申": "巳申合水", "午未": "午未合土"}
+ZHI_LIUCHONG = {"子午": "子午冲", "丑未": "丑未冲", "寅申": "寅申冲",
+                "卯酉": "卯酉冲", "辰戌": "辰戌冲", "巳亥": "巳亥冲"}
+ZHI_LIUHAI = {"子未": "子未害", "丑午": "丑午害", "寅巳": "寅巳害",
+              "卯辰": "卯辰害", "申亥": "申亥害", "酉戌": "酉戌害"}
+ZHI_SANHE = {"申子辰": "申子辰合水局", "亥卯未": "亥卯未合木局",
+             "寅午戌": "寅午戌合火局", "巳酉丑": "巳酉丑合金局"}
+ZHI_BANHE = {
+    "申子": "申子半合水", "子辰": "子辰半合水", "申辰": "申辰拱水",
+    "亥卯": "亥卯半合木", "卯未": "卯未半合木", "亥未": "亥未拱木",
+    "寅午": "寅午半合火", "午戌": "午戌半合火", "寅戌": "寅戌拱火",
+    "巳酉": "巳酉半合金", "酉丑": "酉丑半合金", "巳丑": "巳丑拱金",
+}
+ZHI_XING = {"寅巳": "寅巳刑", "巳申": "巳申刑", "寅申": "寅申刑",
+            "丑戌": "丑戌刑", "戌未": "戌未刑", "丑未": "丑未刑",
+            "子卯": "子卯无礼刑"}
+ZHI_ZIXING = {"辰", "午", "酉", "亥"}
+ZHI_PO = {"子酉": "子酉破", "午卯": "午卯破", "辰丑": "辰丑破",
+          "戌未": "戌未破"}  # 巳申、寅亥为合中带破，见 zhi_pair_relations 双标签
+
+
+def _zhi_key(z1: str, z2: str) -> str:
+    """按 ZHI 顺序规范化两地支组合键（不可 sorted：中文 Unicode 码位序≠地支序）。"""
+    i1, i2 = ZHI.index(z1), ZHI.index(z2)
+    return ZHI[min(i1, i2)] + ZHI[max(i1, i2)]
+
+
+def zhi_pair_relations(z1: str, z2: str) -> list[str]:
+    """两地支间的全部关系标签（可多标签，如巳申：六合＋刑＋破）。"""
+    tags = []
+    if z1 == z2:
+        tags.append(f"{z1}{z2}自刑" if z1 in ZHI_ZIXING else "伏吟")
+        return tags
+    k = _zhi_key(z1, z2)
+    if k in ZHI_LIUHE:
+        tags.append(ZHI_LIUHE[k])
+    if k in ZHI_LIUCHONG:
+        tags.append(ZHI_LIUCHONG[k])
+    if k in ZHI_LIUHAI:
+        tags.append(ZHI_LIUHAI[k])
+    if k in ZHI_BANHE:
+        tags.append(ZHI_BANHE[k])
+    if k in ZHI_XING:
+        tags.append(ZHI_XING[k])
+    if k in ZHI_PO:
+        tags.append(ZHI_PO[k])
+    elif k in {"巳申", "寅亥"}:
+        tags.append(ZHI_LIUHE[k] + "（合中带破）")
+    return tags or ["静"]
+
+
+def gan_pair_relations(g1: str, g2: str) -> list[str]:
+    """两天干间的关系标签。"""
+    if g1 == g2:
+        return ["同干"]
+    a, b = g1, g2
+    if GAN.index(a) > GAN.index(b):
+        a, b = b, a
+    k = a + b
+    tags = []
+    if k in GAN_HE:
+        tags.append(GAN_HE[k])
+    if k in GAN_CHONG:
+        tags.append(GAN_CHONG[k])
+    return tags or ["静"]
+
+
+def sanhe_groups(zhi_list: list[str]) -> list[str]:
+    """检测地支列表中的三合局（含重复支也算齐全）。"""
+    found = []
+    for ju, label in ZHI_SANHE.items():
+        if all(z in zhi_list for z in ju):
+            found.append(label)
+    return found
+
+
+# 人元司令分野（《渊海子平》流派表，[SCHOOL] 待核对：各版本天数有出入，
+# 仅作"当月用事之神"定性参考，不进入格局成败判定）
+RENYUAN = {
+    "寅": [("戊", 7), ("丙", 7), ("甲", 16)],
+    "卯": [("甲", 10), ("乙", 20)],
+    "辰": [("乙", 9), ("癸", 3), ("戊", 18)],
+    "巳": [("戊", 7), ("庚", 7), ("丙", 16)],
+    "午": [("丙", 10), ("己", 9), ("丁", 11)],
+    "未": [("丁", 9), ("乙", 3), ("己", 18)],
+    "申": [("戊", 7), ("壬", 7), ("庚", 16)],
+    "酉": [("庚", 10), ("辛", 20)],
+    "戌": [("辛", 9), ("丁", 3), ("戊", 18)],
+    "亥": [("戊", 7), ("甲", 7), ("壬", 16)],
+    "子": [("壬", 10), ("癸", 20)],
+    "丑": [("癸", 9), ("辛", 3), ("己", 18)],
+}
+
+
+def renyuan_shi(birth: datetime, month_zhi: str, jie_time: datetime) -> dict:
+    """人元司令分野：出生日距当月节令第几天、用事之神。"""
+    days = (birth - jie_time).total_seconds() / 86400.0
+    seg = RENYUAN.get(month_zhi, [])
+    acc = 0.0
+    god = None
+    for g, d in seg:
+        acc += d
+        if days < acc:
+            god = g
+            break
+    if god is None and seg:
+        god = seg[-1][0]
+    return {"days_after_jie": round(days, 2), "god": god,
+            "note": "[SCHOOL]人元司令分野,各版本天数有出入,仅作当月用事之神定性参考"}
+
 
 # --------------------------------------------------------------------------
 # 基础换算
@@ -798,6 +921,26 @@ def calc(dt: datetime, tz_hours: float = 8.0, gender: str = "male",
     taiyuan = taiyuan_month_pillar(birth, tz_hours, month_gan + month_zhi, lon)
     minggong_gz = minggong(year_gan, month_zhi_i, hour_zhi)
 
+    # ---- 完整干支关系（v7.12 新增，独立于 yearly_bazi v0 rulebook）----
+    labels = ["年柱", "月柱", "日柱", "时柱"]
+    gan_pairs, zhi_pairs = [], []
+    for i in range(4):
+        for j in range(i + 1, 4):
+            a, b = pillars[i], pillars[j]
+            gr = gan_pair_relations(a["gan"], b["gan"])
+            gan_pairs.append({"a": f"{labels[i]}干{a['gan']}",
+                              "b": f"{labels[j]}干{b['gan']}",
+                              "rel": gr})
+            zr = zhi_pair_relations(a["zhi"], b["zhi"])
+            zhi_pairs.append({"a": f"{labels[i]}支{a['zhi']}",
+                              "b": f"{labels[j]}支{b['zhi']}",
+                              "rel": zr})
+    sanhe = sanhe_groups([p["zhi"] for p in pillars])
+    relations = {"gan_pairs": gan_pairs, "zhi_pairs": zhi_pairs, "sanhe": sanhe}
+
+    # ---- 人元司令分野（[SCHOOL] 低置信定性参考）----
+    ren_yuan = renyuan_shi(birth, month_zhi, cur_solar_time)
+
     return {
         "version": "v7",
         "input": dt.strftime("%Y-%m-%d %H:%M"),
@@ -829,6 +972,8 @@ def calc(dt: datetime, tz_hours: float = 8.0, gender: str = "male",
         "liunian": liunian,
         "taiyuan": taiyuan,
         "minggong": minggong_gz,
+        "relations": relations,
+        "ren_yuan": ren_yuan,
         "warnings": warnings,
     }
 

@@ -105,6 +105,7 @@ python scripts/verify.py --strict   # CI 用
 ## Resources
 
 - [references/classics-v6.md](references/classics-v6.md) — 八部文献逐书解读、现代分层与不采用清单。
+- [references/integration-v7.12.md](references/integration-v7.12.md) — 外部 skill 生态整合报告（小红书三篇笔记追踪、九仓库审查、吸收/拒绝清单）。
 - [references/model-v6.md](references/model-v6.md) — v6 完整规范（M0—M6 增量、断语三级制）。
 - [references/model-v5.md](references/model-v5.md) — v5 完整规范（六模块、六亲双轨、版本变更）。深度分析必读。
 - [references/human.md](references/human.md) — 人盘专用（六亲、人生阶段、隐私）。

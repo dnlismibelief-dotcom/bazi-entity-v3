@@ -225,8 +225,8 @@ class TestDateHelpers(unittest.TestCase):
 class TestChartInvariants(unittest.TestCase):
     """整盘层面的不变量。"""
 
-    def test_known_regression_mingchao(self):
-        """回归锚: 鸣潮公测盘（与 v3/v4 输出一致, 防止重构跑偏）。"""
+    def test_known_regression_game_a(self):
+        """回归锚: 游戏甲(示例)公测盘（与 v3/v4 输出一致, 防止重构跑偏）。"""
         r = pp.calc(datetime(2024, 5, 23, 10, 0), tz_hours=TZ)
         self.assertEqual(r["year_pillar"], "甲辰")
         self.assertEqual(r["month_pillar"], "己巳")
@@ -319,7 +319,7 @@ class TestChartInvariants(unittest.TestCase):
             self.assertAlmostEqual(b - a, 10.0, places=6)
 
     def test_taiyuan_two_schools(self):
-        """胎元两派并列：鸣潮月柱己巳 → 进三位法庚申（主派）/ 300 日法己未（旁证）。"""
+        """胎元两派并列：游戏甲(示例)月柱己巳 → 进三位法庚申（主派）/ 300 日法己未（旁证）。"""
         r = pp.calc(datetime(2024, 5, 23, 10, 0), tz_hours=TZ, lon=113.3)
         self.assertEqual(r["version"], "v7")
         self.assertEqual(r["month_pillar"], "己巳")
@@ -357,8 +357,8 @@ class TestChartInvariants(unittest.TestCase):
         self.assertEqual(r["hour_pillar"], "丙戌")
         self.assertEqual(r["minggong"], "丁卯")
 
-    def test_minggong_mingchao(self):
-        """鸣潮 2024-05-23 巳时 → 命宫辛未（三命通会法）。"""
+    def test_minggong_game_a(self):
+        """游戏甲(示例) 2024-05-23 巳时 → 命宫辛未（三命通会法）。"""
         r = pp.calc(datetime(2024, 5, 23, 10, 0), tz_hours=TZ, lon=113.3)
         self.assertEqual(r["minggong"], "辛未")
 

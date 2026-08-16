@@ -7,10 +7,10 @@
 scripts/cli.py）。抓取结果带来源 URL 与抓取时间，供可复核性纪律使用。
 
 用法:
-  python scripts/fetch_entity.py --query 鸣潮 --limit 5          # 列出候选
-  python scripts/fetch_entity.py --query 乃琳Queen --save        # 保存缓存
-  python scripts/fetch_entity.py --query "Taylor Swift" --lang en --save
-  python scripts/fetch_entity.py --query 原神 --json              # 标准输出
+  python scripts/fetch_entity.py --query 游戏甲(示例) --limit 5          # 列出候选
+  python scripts/fetch_entity.py --query 虚拟偶像甲(示例) --save        # 保存缓存
+  python scripts/fetch_entity.py --query "回测样本" --lang en --save
+  python scripts/fetch_entity.py --query 游戏乙(示例) --json              # 标准输出
 
 注意:
   - 维基数据是二手来源：正式分析前必须与官方公告/一手来源复核（M0 纪律）。

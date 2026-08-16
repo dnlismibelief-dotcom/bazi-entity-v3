@@ -48,7 +48,7 @@ v5 相对 v4 的变化
     （SKILL.md 的 guardrail 要求门派分歧并列，不作独断）
 
 Usage:
-  python pai_pan.py "2024-05-23 10:00" [--name 鸣潮] [--tz 8] [--lon 121.5]
+  python pai_pan.py "2024-05-23 10:00" [--name 游戏甲(示例)] [--tz 8] [--lon 121.5]
                     [--gender male|female] [--day-boundary zi|midnight]
                     [--dst auto|on|off] [--lucky 10] [--years 12] [--json]
 
@@ -165,7 +165,7 @@ DAY_ANCHOR_N = 54
 
 # --------------------------------------------------------------------------
 # 完整干支关系表（v7.12 新增，整合自外部四家仓库对照，独立于 yearly_bazi
-# v0 rulebook——后者已冻结，泰勒回测依赖其固定权重，本表只做关系输出）
+# v0 rulebook——后者已冻结，回测样本回测依赖其固定权重，本表只做关系输出）
 # 对照来源: china-testing/bazi(★1466)、reed1898/bazi-tool、
 #           openfate-ai/bazi-engine、yueyuan-bazi(跃渊) 及《三命通会》卷二。
 # --------------------------------------------------------------------------

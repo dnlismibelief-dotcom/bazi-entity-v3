@@ -35,7 +35,7 @@
 python scripts/pai_pan.py "1990-01-01 10:00" --lon 116.4 --gender female
 
 # 游戏/产品，用公测时刻
-python scripts/pai_pan.py "2024-05-23 10:00" --name 鸣潮 --lon 113.3 --json
+python scripts/pai_pan.py "2024-05-23 10:00" --name 游戏甲(示例) --lon 113.3 --json
 
 # 换日流派存疑时两派都看
 python scripts/pai_pan.py "2001-03-05 23:30" --lon 121.5 --day-boundary midnight
@@ -44,11 +44,11 @@ python scripts/pai_pan.py "2001-03-05 23:30" --lon 121.5 --day-boundary midnight
 python scripts/famous20.py            # 排盘表
 python scripts/famous20.py --check    # 与 lunar-javascript 参照比对（20/20 通过）
 
-# 逐年伪事前回测/事前登记（示例：Taylor Swift，事业结果口径 rulebook v1）
-python scripts/yearly_bazi.py "1989-12-13 08:36" --name "Taylor Swift" \
+# 逐年伪事前回测/事前登记（示例：回测样本，事业结果口径 rulebook v1）
+python scripts/yearly_bazi.py "1989-12-13 08:36" --name "回测样本" \
     --tz -5 --lon -75.93 --gender female --from 1989 --to 2031 \
     --future-from 2026 --birth-year 1989 --career \
-    --write predictions/taylor-v2.json
+    --write predictions/backtest-v2.json
 
 # 自检
 python -m unittest discover -s tests
@@ -81,14 +81,14 @@ scripts/famous20_reference.mjs    独立参照生成器（lunar-javascript，可
 scripts/yearly_bazi.py            逐年岁运判据生成/回填打分（album/tour v0 + 事业指数 v1）
 scripts/verify.py                 校准统计：命中率 + Brier + 技巧分数 + 事前性核验
 data/famous20_times.json          20 人出生时刻/时区/来源/评级/参照四柱
-data/taylor_facts.json            Taylor 逐年事实表（album/tour 回测）
-data/taylor_facts_v2.json         Taylor 1989—2024 逐年事业事实分（rubric 固定）
+data/backtest_facts.json            回测样本 逐年事实表（album/tour 回测）
+data/backtest_facts_v2.json         回测样本 1989—2024 逐年事业事实分（rubric 固定）
 references/model-v5.md            完整模型规范（六模块 M1—M6、六亲双轨）
 references/famous20-validation.md 20 人检验报告：20/20 比对 + 真太阳时口径差异
-references/taylor-yearly.md       Taylor album/tour 回测：−0.104 / +0.047（技巧分数）
-references/taylor-yearly-v2.md    Taylor 事业指数回测：+0.224（技巧分数），1989—2024
+references/backtest-yearly.md       回测样本 album/tour 回测：−0.104 / +0.047（技巧分数）
+references/backtest-yearly-v2.md    回测样本 事业指数回测：+0.224（技巧分数），1989—2024
 references/human.md               人盘专用（六亲、人生阶段、隐私纪律）
-references/calibration.md         校准档案 schema、判据写法要求、鸣潮 worked example
+references/calibration.md         校准档案 schema、判据写法要求、游戏甲(示例) worked example
 references/model-v3-deprecated.md v3 旧规范，仅供旧记录追溯
 predictions/                      预测登记（git 时间戳作事前证明）
 tests/                            80 条测试（含 13 条带来源的权威万年历 fixtures）

@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 """逐年命盘生成 — BFFT v7.13（前后端分离·去硬编码实体）。
 
-v7.13 起不再内置任何实体（原神/鸣潮/泰勒/乃琳等案例数据已从代码中移除，
+v7.13 起不再内置任何实体（游戏乙(示例)/游戏甲(示例)/回测样本/虚拟偶像甲(示例)等案例数据已从代码中移除，
 示例移至 examples/entities.json 供显式引用）。实体时间必须由调用方提供：
 要么命令行参数现给，要么 --from-json 读实体定义文件，要么用
 scripts/fetch_entity.py 联网现取（数据说话，不依赖仓库内置案例）。
 
 用法:
   # 单实体（命令行参数）
-  python scripts/yearly_reading.py --name 鸣潮 --dt "2024-05-23 10:00" \
+  python scripts/yearly_reading.py --name 游戏甲(示例) --dt "2024-05-23 10:00" \
       --tz 8 --lon 113.3 --from 2024 --to 2040 --md
 
   # 批量（实体定义文件，格式见 examples/entities.json）

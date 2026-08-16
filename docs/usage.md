@@ -39,7 +39,7 @@ Claude Code / Codex 一类工具读取根目录的 `SKILL.md`。若 skill 目录
 python scripts/pai_pan.py "1995-06-15 08:30" --lon 121.5 --gender female --lucky 10 --years 12
 
 # 游戏：用公测时刻
-python scripts/pai_pan.py "2024-05-23 10:00" --name 鸣潮 --lon 113.3
+python scripts/pai_pan.py "2024-05-23 10:00" --name 游戏甲(示例) --lon 113.3
 
 # 输出 JSON 供后续模块消费
 python scripts/pai_pan.py "2017-03-02 10:00" --lon 116.4 --json

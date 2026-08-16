@@ -1,6 +1,6 @@
 ---
 name: BFFT
-description: Apply Chinese BaZi (四柱八字/命理) to any entity — person, game, product, or company — to read life trajectory, popularity, revenue, and lifespan windows. Use for birth-chart analysis, for a game/product launch date (e.g. 鸣潮, 三角洲行动), or to calibrate past predictions against real events.
+description: Apply Chinese BaZi (四柱八字/命理) to any entity — person, game, product, or company — to read life trajectory, popularity, revenue, and lifespan windows. Use for birth-chart analysis, for a game/product launch date (e.g. 游戏甲(示例), 三角洲行动), or to calibrate past predictions against real events.
 ---
 
 # BFFT · BaZi Entity Analysis (v7) — 万物命理
@@ -38,7 +38,7 @@ human 用真实性别与**出生地经度**；game/product 默认 male（阳年�
 python scripts/pai_pan.py "1990-01-01 10:00" --lon 116.4 --gender female --lucky 10 --years 12
 
 # 游戏/产品：用公测或上线时刻（v7.13 起数据一律运行时提供，不内置案例）
-python scripts/cli.py "2024-05-23 10:00" --name 鸣潮 --lon 113.3 --lucky 10 --years 12
+python scripts/cli.py "2024-05-23 10:00" --name 游戏甲(示例) --lon 113.3 --lucky 10 --years 12
 
 # 换日流派存疑时两派都看
 python scripts/pai_pan.py "2001-03-05 23:30" --lon 121.5 --day-boundary midnight
@@ -125,7 +125,7 @@ python scripts/verify.py --strict   # CI 用
 - [references/model-v6.md](references/model-v6.md) — v6 完整规范（M0—M6 增量、断语三级制）。
 - [references/model-v5.md](references/model-v5.md) — v5 完整规范（六模块、六亲双轨、版本变更）。深度分析必读。
 - [references/human.md](references/human.md) — 人盘专用（六亲、人生阶段、隐私）。
-- [references/calibration.md](references/calibration.md) — 校准 schema、判据写法要求、鸣潮 worked example。
+- [references/calibration.md](references/calibration.md) — 校准 schema、判据写法要求、游戏甲(示例) worked example。
 - [references/mingli-bench-integration.md](references/mingli-bench-integration.md) — 全球算命师大赛题库（MingLi-Bench，160 题）整合：排盘交叉验证与推理盲测。
 - [scripts/mingli_bench_verify.py](scripts/mingli_bench_verify.py) — MingLi-Bench 排盘交叉验证（160 例 vs iztro）。
 - [scripts/mingli_bench_pack.py](scripts/mingli_bench_pack.py) / [scripts/mingli_bench_score.py](scripts/mingli_bench_score.py) — 推理盲测包生成与评分。
@@ -137,7 +137,7 @@ python scripts/verify.py --strict   # CI 用
   `--career` 模式输出逐年事业指数与显著高峰年概率（rulebook v1，年龄先验）。
 - [references/famous20-validation.md](references/famous20-validation.md) — 20 人检验报告
   （20/20 比对、真太阳时口径差异、效果边界）。
-- [references/taylor-yearly-v2.md](references/taylor-yearly-v2.md) — 单名人逐年事业回测
+- [references/backtest-yearly-v2.md](references/backtest-yearly-v2.md) — 单名人逐年事业回测
   纪律示范：预测先 commit、事实后编译、Brier/技巧分数对照基线。
 - [scripts/verify.py](scripts/verify.py) — 校准统计与事前性核验。
 - [scripts/stress_test.py](scripts/stress_test.py) — 发布前稳定性检查：fuzz/全年代扫描/性能基准。

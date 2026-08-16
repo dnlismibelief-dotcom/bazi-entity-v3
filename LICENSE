@@ -1,41 +1,46 @@
-# BFFT 万物命理引擎 — 个人免费·商业授权许可证
+MIT License
 
 Copyright (c) 2026 dnlismibelief-dotcom
 
-## 个人免费许可
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-特此授予任何自然人免费许可，允许其：
-- 使用、复制、修改本软件用于个人、学习、研究目的
-- 在个人设备上运行本软件
-- 为本软件贡献代码或文档
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-## 商业使用限制
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-以下行为需要取得作者的商业授权许可：
-- 将本软件或其衍生作品用于任何商业目的（含直接盈利、商业服务、SaaS 提供）
-- 任何企业、组织、机构（含非营利机构）在其业务中使用本软件
-- 将本软件作为商业产品或服务的一部分进行分发、销售或再授权
+---
 
-## 商业授权
+## 附加条款（保留原双轨限制与特色，不改变 MIT 授权）
 
-如需商业使用，请通过 GitHub 仓库联系作者获取商业许可证。
+**个人免费**：任何自然人可自由使用、复制、修改本软件用于个人、学习、
+研究目的，无需联系作者。
 
-## 免责声明
+**商业限制**：企业、组织、机构（含非营利机构）在其业务中使用本软件，
+或将本软件及其衍生作品用于商业目的（含商业服务、SaaS、直接盈利），
+或将本软件作为商业产品或服务的一部分进行分发、销售或再授权时，
+需取得作者的商业授权许可（商业使用请联系作者）。
 
-本软件按"现状"提供，不提供任何明示或暗示的担保。作者不对因使用本软件而产生的
-任何索赔、损害或其他责任负责。本软件输出为文化娱乐性质内容，不作为投资、医疗、
-婚恋决策依据。
+**特色与纪律**：本软件输出为文化娱乐性质内容，不作为投资、医疗、
+婚恋决策依据；预测一律事前登记（git 时间戳为证）、命中率与基线并列报告、
+技巧分数 ≤ 0 即视为模型未提供信息——使用者不得将本软件输出包装为
+"科学预测"或据此作出重大决策。
 
-## 第三方组件许可
-
-本软件整合的第三方组件按各自许可独立生效：
+## 第三方组件许可（各自独立生效）
 
 | 组件 | 来源 | 许可 |
 |---|---|---|
 | 六爻卦表/装卦/旺衰（scripts/liuyao/） | xiongdun8/liuyao | MIT |
-| 六爻格局检测思路 | Seanding1998/liuyao-frv | 个人免费·商业授权（商业使用请联系 Seanding） |
-| 名人出生日期数据（data/zh_birthdates.json） | 中文维基百科 | CC BY-SA |
-
-## 其他
-
-上述许可不限制作者以其他许可证分发本软件的权利。
+| 六爻格局检测思路 | Seanding1998/liuyao-frv | 个人免费·商业授权（商业使用请联系 Seanding，原文见 scripts/liuyao/LICENSE-liuyao-frv） |
+| MingLi-Bench 题库（data/mingli_bench/） | DestinyLinker/MingLi-Bench | MIT |

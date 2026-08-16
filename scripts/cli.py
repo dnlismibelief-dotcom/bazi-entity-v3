@@ -6,7 +6,7 @@
 本文件只做参数解析与输出渲染；所有计算走 pai_pan.calc。
 
 用法:
-  python scripts/cli.py "2024-05-23 10:00" --name 鸣潮 --lon 113.3 --json
+  python scripts/cli.py "2024-05-23 10:00" --name 游戏甲(示例) --lon 113.3 --json
   兼容: python scripts/pai_pan.py "2024-05-23 10:00"  # 自动转发到本文件
 """
 

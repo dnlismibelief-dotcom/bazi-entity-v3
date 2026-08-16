@@ -16,12 +16,12 @@
 
 用法:
   python scripts/yearly_bazi.py "1989-12-13 08:36" --tz -5 --lon -75.93 \
-      --gender female --name "Taylor Swift" --from 2006 --to 2031 \
-      --write predictions/taylor.json
+      --gender female --name "回测样本" --from 2006 --to 2031 \
+      --write predictions/backtest.json
 
 打分（在预测 commit 之后，另读事实表）:
-  python scripts/yearly_bazi.py ... --score data/taylor_facts.json \
-      --predictions predictions/taylor.json
+  python scripts/yearly_bazi.py ... --score data/backtest_facts.json \
+      --predictions predictions/backtest.json
 """
 
 from __future__ import annotations
@@ -103,7 +103,7 @@ def suiyun_rel(year_gz: str, luck_gz: str) -> list[str]:
         tags.append("岁运支并临")
     if _pair_sorted(yg, lg, pp.GAN) in GANHE:
         # v7.9 修复：此前拿天干五合对去查地支六合表（LIUHE），永远失配，
-        # "岁运干合" 标签从未出现过（如泰勒 2024 甲己合、鸣潮 2028 丙辛合）
+        # "岁运干合" 标签从未出现过（如回测样本 2024 甲己合、游戏甲(示例) 2028 丙辛合）
         tags.append("岁运干合")
     pair = _pair_sorted(yz, lz, pp.ZHI)
     if pair in LIUCHONG:
@@ -136,7 +136,7 @@ def yearly_rows(chart: dict, start_year: int, end_year: int) -> list[dict]:
         if luck is None:
             # 交运前：起运前的行运即月柱（v7.8 修复——此前退化成 lucky[0]，
             # 把第一步大运错误套到交运前年份，权重偏差最多 ±6 分 raw；
-            # 泰勒交运早且童年先验低所以回测数值恰好未受影响）
+            # 回测样本交运早且童年先验低所以回测数值恰好未受影响）
             luck = {"ganzhi": chart["month_pillar"], "start": ""}
         dayun_change = any(s["start"][:4] == str(y) for s in chart["lucky"])
         tags = suiyun_rel(gz, luck["ganzhi"])
@@ -237,7 +237,7 @@ def build_career_predictions(args, chart, rows) -> dict:
             "probability": p_high,
             "base_rate": CAREER_HIGH_BASE,
             "base_rate_source": "头部流行艺人出生至 36 岁期间约 1/5 年份为显著高峰年（作者先验，事实表编译前固定）",
-            "falsify": f"{r['year']} 年事实评分（data/taylor_facts_v2.json 的 rubric）< 4",
+            "falsify": f"{r['year']} 年事实评分（data/backtest_facts_v2.json 的 rubric）< 4",
             "deadline": f"{r['year'] + 1}-03-31",
             "evidence_grade": "A" if future else "B",
             "verdict": "pending",
@@ -284,7 +284,7 @@ def build_career_predictions(args, chart, rows) -> dict:
         },
         "model": "bazi-entity-v7.5",
         "generated_at": today,
-        "note": "过去年份=B 级回测（verify.py 按 git 首次提交时间标 late）；未来年份=A 级事前登记。本文件取代 taylor.json 中 album/tour 口径：专辑发行是过程，本版预测的是事业结果（高峰/大成功）。",
+        "note": "过去年份=B 级回测（verify.py 按 git 首次提交时间标 late）；未来年份=A 级事前登记。本文件取代 backtest.json 中 album/tour 口径：专辑发行是过程，本版预测的是事业结果（高峰/大成功）。",
         "predictions": preds,
     }
 
@@ -356,7 +356,7 @@ def build_predictions(args, chart, rows) -> dict:
             prob = r[key]
             base = 0.50 if kind == "album" else 0.32
             claim = {
-                "album": "该年发行一张全新录音室专辑（不含 Taylor's Version 重录版）",
+                "album": "该年发行一张全新录音室专辑（不含 回测样本's Version 重录版）",
                 "tour": "该年启动一轮新的全球巡回演唱会（首场举办日落在该年）",
             }[kind]
             item = {

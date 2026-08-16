@@ -23,10 +23,12 @@ class TestBuildDist(unittest.TestCase):
 
     def test_collect_includes_core_and_new_files(self):
         arcs = {arc for _, arc in bd.collect()}
-        for want in ("BFFT/scripts/pai_pan.py", "BFFT/scripts/famous20.py",
-                     "BFFT/scripts/famous20_reference.mjs", "BFFT/scripts/build_dist.py",
-                     "BFFT/data/famous20_times.json", "BFFT/tests/test_famous20.py",
-                     "BFFT/references/famous20-validation.md", "BFFT/SKILL.md"):
+        for want in ("BFFT/scripts/pai_pan.py", "BFFT/scripts/cli.py",
+                     "BFFT/scripts/report.py", "BFFT/scripts/fetch_entity.py",
+                     "BFFT/scripts/liuyao_cli.py", "BFFT/scripts/liuyao/paipan.py",
+                     "BFFT/scripts/build_dist.py", "BFFT/tests/test_liuyao.py",
+                     "BFFT/references/report-template.md", "BFFT/references/liuyao.md",
+                     "BFFT/LICENSE", "BFFT/SKILL.md"):
             self.assertIn(want, arcs, f"打包清单缺少 {want}")
 
     def test_collect_excludes_git_and_dist(self):

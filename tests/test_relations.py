@@ -159,8 +159,8 @@ class TestRenYuan(unittest.TestCase):
             self.assertAlmostEqual(total, 30.0, delta=0.01,
                                    msg=f"{z} 月人元天数应合计 30")
 
-    def test_mingchao_si_month(self):
-        """鸣潮 2024-05-23 立夏后约 18 天 → 巳月丙火用事（戊7+庚7=14）。"""
+    def test_game_a_si_month(self):
+        """游戏甲(示例) 2024-05-23 立夏后约 18 天 → 巳月丙火用事（戊7+庚7=14）。"""
         r = pp.calc(datetime(2024, 5, 23, 10, 0), tz_hours=8, lon=113.3)
         ry = r["ren_yuan"]
         self.assertEqual(ry["god"], "丙")

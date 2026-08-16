@@ -21,20 +21,20 @@ yb = importlib.util.module_from_spec(spec)
 sys.modules["yearly_bazi"] = yb
 spec.loader.exec_module(yb)
 
-TAYLOR = dict(dt="1989-12-13 08:36", tz=-5.0, lon=-75.93, gender="female")
+BACKTEST = dict(dt="1989-12-13 08:36", tz=-5.0, lon=-75.93, gender="female")
 
 
-def taylor_chart():
-    return yb.pp.calc(datetime.strptime(TAYLOR["dt"], "%Y-%m-%d %H:%M"),
-                      tz_hours=TAYLOR["tz"], lon=TAYLOR["lon"],
-                      gender=TAYLOR["gender"], lucky_count=10)
+def backtest_chart():
+    return yb.pp.calc(datetime.strptime(BACKTEST["dt"], "%Y-%m-%d %H:%M"),
+                      tz_hours=BACKTEST["tz"], lon=BACKTEST["lon"],
+                      gender=BACKTEST["gender"], lucky_count=10)
 
 
 class TestYearlyRules(unittest.TestCase):
 
     def test_rules_deterministic_and_bounded(self):
-        a = yb.yearly_rows(taylor_chart(), 2006, 2031)
-        b = yb.yearly_rows(taylor_chart(), 2006, 2031)
+        a = yb.yearly_rows(backtest_chart(), 2006, 2031)
+        b = yb.yearly_rows(backtest_chart(), 2006, 2031)
         self.assertEqual(a, b)
         for r in a:
             self.assertTrue(0.10 <= r["p_album"] <= 0.80)
@@ -42,17 +42,17 @@ class TestYearlyRules(unittest.TestCase):
             self.assertEqual(len(r["liunian"]), 2)
 
     def test_dayun_switches_at_2018_boundary(self):
-        rows = {r["year"]: r for r in yb.yearly_rows(taylor_chart(), 2017, 2018)}
+        rows = {r["year"]: r for r in yb.yearly_rows(backtest_chart(), 2017, 2018)}
         self.assertEqual(rows[2017]["dayun"], "戊寅")
         self.assertEqual(rows[2018]["dayun"], "己卯")
 
     def test_dayun_before_jiao_uses_month_pillar(self):
-        """交运前年份的主运应为月柱（泰勒 1997-08 才交运）。
+        """交运前年份的主运应为月柱（回测样本 1997-08 才交运）。
 
         v7.8 修复：此前退化成 lucky[0]（丁丑），把第一步大运错误套到
         1989—1997 交运前的年份；正确行为是起运前行运即月柱丙子。
         """
-        rows = {r["year"]: r for r in yb.yearly_rows(taylor_chart(), 1989, 1998)}
+        rows = {r["year"]: r for r in yb.yearly_rows(backtest_chart(), 1989, 1998)}
         self.assertEqual(rows[1989]["dayun"], "丙子", "交运前应用月柱")
         self.assertEqual(rows[1989]["dayun_gan_relation"], "劫财")
         self.assertEqual(rows[1989]["dayun_zhi_relation"], "六穿")
@@ -83,7 +83,7 @@ class TestYearlyRules(unittest.TestCase):
                 self.assertEqual(got, expect, f"{z1}{z2} 应{expect} 实{got}")
 
     def test_zhi_rel_key_cases(self):
-        """关键案例：鸣潮巳亥冲/申亥穿、原神辰戌冲、泰勒子丑合/寅亥合。"""
+        """关键案例：游戏甲(示例)巳亥冲/申亥穿、游戏乙(示例)辰戌冲、回测样本子丑合/寅亥合。"""
         self.assertEqual(yb.zhi_rel("巳", "亥"), "六冲")
         self.assertEqual(yb.zhi_rel("申", "亥"), "六穿")
         self.assertEqual(yb.zhi_rel("辰", "戌"), "六冲")
@@ -95,9 +95,9 @@ class TestYearlyRules(unittest.TestCase):
     def test_suiyun_gan_he_detected(self):
         """岁运天干五合必须生效（v7.9 修复：此前查 LIUHE 永远失配）。
 
-        泰勒 2024 甲辰年大运己卯：甲己合 → '岁运干合'。
-        鸣潮 2028 戊申年大运己巳：丙辛合？(戊≠丙) 用 2028 前的己巳运无合；
-        用泰勒案例即可。另测地支：2029 己酉 大运庚辰 → 酉辰六合。
+        回测样本 2024 甲辰年大运己卯：甲己合 → '岁运干合'。
+        游戏甲(示例) 2028 戊申年大运己巳：丙辛合？(戊≠丙) 用 2028 前的己巳运无合；
+        用回测样本案例即可。另测地支：2029 己酉 大运庚辰 → 酉辰六合。
         """
         tags = yb.suiyun_rel("甲辰", "己卯")
         self.assertIn("岁运干合", tags)
@@ -111,10 +111,10 @@ class TestBuildPredictions(unittest.TestCase):
 
     def test_future_grade_and_non_low_info_biz(self):
         import argparse
-        chart = taylor_chart()
+        chart = backtest_chart()
         rows = yb.yearly_rows(chart, 2006, 2031)
-        ns = argparse.Namespace(name="Taylor Swift", datetime=TAYLOR["dt"],
-                                tz=TAYLOR["tz"], lon=TAYLOR["lon"],
+        ns = argparse.Namespace(name="回测样本", datetime=BACKTEST["dt"],
+                                tz=BACKTEST["tz"], lon=BACKTEST["lon"],
                                 future_from=2026, biz_years=[2027, 2029, 2031])
         doc = yb.build_predictions(ns, chart, rows)
         a = [p for p in doc["predictions"] if p["evidence_grade"] == "A"]
@@ -129,10 +129,10 @@ class TestScoring(unittest.TestCase):
     def test_score_fills_only_years_with_facts(self):
         import argparse
         with tempfile.TemporaryDirectory() as d:
-            chart = taylor_chart()
+            chart = backtest_chart()
             rows = yb.yearly_rows(chart, 2006, 2027)
-            ns = argparse.Namespace(name="T", datetime=TAYLOR["dt"],
-                                    tz=TAYLOR["tz"], lon=TAYLOR["lon"],
+            ns = argparse.Namespace(name="T", datetime=BACKTEST["dt"],
+                                    tz=BACKTEST["tz"], lon=BACKTEST["lon"],
                                     future_from=9999, biz_years=[])
             doc = yb.build_predictions(ns, chart, rows)
             pred_path = os.path.join(d, "p.json")
@@ -157,7 +157,7 @@ class TestCareerModel(unittest.TestCase):
     """rulebook v1：事业指数与显著高峰年判据。"""
 
     def test_career_index_age_prior(self):
-        rows = yb.yearly_rows(taylor_chart(), 1989, 2024)
+        rows = yb.yearly_rows(backtest_chart(), 1989, 2024)
         by = {r["year"]: r for r in rows}
         idx_1989, p_1989, _ = yb.career_index(by[1989], 1989)
         idx_2024, p_2024, _ = yb.career_index(by[2024], 1989)
@@ -167,10 +167,10 @@ class TestCareerModel(unittest.TestCase):
 
     def test_career_predictions_grades(self):
         import argparse
-        chart = taylor_chart()
+        chart = backtest_chart()
         rows = yb.yearly_rows(chart, 1989, 2031)
-        ns = argparse.Namespace(name="T", datetime=TAYLOR["dt"], tz=TAYLOR["tz"],
-                                lon=TAYLOR["lon"], future_from=2026, birth_year=1989)
+        ns = argparse.Namespace(name="T", datetime=BACKTEST["dt"], tz=BACKTEST["tz"],
+                                lon=BACKTEST["lon"], future_from=2026, birth_year=1989)
         doc = yb.build_career_predictions(ns, chart, rows)
         a = [p for p in doc["predictions"] if p["evidence_grade"] == "A"]
         self.assertEqual(len(a), 5)
@@ -180,10 +180,10 @@ class TestCareerModel(unittest.TestCase):
     def test_score_career_keeps_missing_years_pending(self):
         import argparse
         with tempfile.TemporaryDirectory() as d:
-            chart = taylor_chart()
+            chart = backtest_chart()
             rows = yb.yearly_rows(chart, 1989, 2027)
-            ns = argparse.Namespace(name="T", datetime=TAYLOR["dt"], tz=TAYLOR["tz"],
-                                    lon=TAYLOR["lon"], future_from=9999, birth_year=1989)
+            ns = argparse.Namespace(name="T", datetime=BACKTEST["dt"], tz=BACKTEST["tz"],
+                                    lon=BACKTEST["lon"], future_from=9999, birth_year=1989)
             doc = yb.build_career_predictions(ns, chart, rows)
             pred_path = os.path.join(d, "p.json")
             facts_path = os.path.join(d, "f.json")

@@ -21,6 +21,7 @@ EXCLUDE_DIRS = {".git", ".github", "dist", "__pycache__", ".pytest_cache",
                 "node_modules"}
 EXCLUDE_FILES = {".DS_Store"}
 INCLUDE_SUFFIXES = (".py", ".mjs", ".md", ".json", ".csv", ".yaml")
+INCLUDE_NAMES = {"LICENSE"}
 
 
 def collect() -> list[tuple[str, str]]:
@@ -28,7 +29,9 @@ def collect() -> list[tuple[str, str]]:
     for dirpath, dirnames, filenames in os.walk(ROOT):
         dirnames[:] = sorted(d for d in dirnames if d not in EXCLUDE_DIRS)
         for fn in sorted(filenames):
-            if fn in EXCLUDE_FILES or not fn.endswith(INCLUDE_SUFFIXES):
+            if fn in EXCLUDE_FILES:
+                continue
+            if not (fn.endswith(INCLUDE_SUFFIXES) or fn in INCLUDE_NAMES):
                 continue
             full = os.path.join(dirpath, fn)
             rel = os.path.relpath(full, ROOT)

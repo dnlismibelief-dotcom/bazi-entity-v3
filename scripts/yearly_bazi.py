@@ -62,13 +62,25 @@ LIUHE = {"子丑", "寅亥", "卯戌", "辰酉", "巳申", "午未"}
 LIUCHONG = {"子午", "丑未", "寅申", "卯酉", "辰戌", "巳亥"}
 LIUHAI = {"子未", "丑午", "寅巳", "卯辰", "申亥", "酉戌"}
 BANHE = {"卯未": "亥卯未木局", "亥卯": "亥卯未木局", "亥未": "亥卯未木局"}
+GANHE = {"甲己", "乙庚", "丙辛", "丁壬", "戊癸"}
+
+
+def _pair_sorted(c1: str, c2: str, order: str) -> str:
+    """按干支表顺序规范化两字组合。
+
+    不能直接 sorted()：中文字符按 Unicode 码位排序（'申'U+7533 > '亥'U+4EA5
+    → '亥申'），与手写表键序（'申亥'）失配。v7.9 修复前 7/66 地支对静默失效
+    （子丑合/寅亥合/子午冲/辰戌冲/巳亥冲/申亥穿/酉戌穿全部判成'静'）。
+    """
+    i1, i2 = order.index(c1), order.index(c2)
+    return order[min(i1, i2)] + order[max(i1, i2)]
 
 
 def zhi_rel(z1: str, z2: str) -> str:
     """z1（流年支）相对 z2（日支）的关系标签。"""
     if z1 == z2:
         return "伏吟"
-    pair = "".join(sorted((z1, z2)))
+    pair = _pair_sorted(z1, z2, pp.ZHI)
     if pair in LIUHE:
         return "六合"
     if pair in LIUCHONG:
@@ -89,9 +101,11 @@ def suiyun_rel(year_gz: str, luck_gz: str) -> list[str]:
         tags.append("岁运干并临")
     if yz == lz:
         tags.append("岁运支并临")
-    if "".join(sorted(yg + lg)) in LIUHE:
+    if _pair_sorted(yg, lg, pp.GAN) in GANHE:
+        # v7.9 修复：此前拿天干五合对去查地支六合表（LIUHE），永远失配，
+        # "岁运干合" 标签从未出现过（如泰勒 2024 甲己合、鸣潮 2028 丙辛合）
         tags.append("岁运干合")
-    pair = "".join(sorted((yz, lz)))
+    pair = _pair_sorted(yz, lz, pp.ZHI)
     if pair in LIUCHONG:
         tags.append("岁运支冲")
     elif pair in LIUHE:

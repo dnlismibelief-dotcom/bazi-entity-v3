@@ -61,6 +61,51 @@ class TestYearlyRules(unittest.TestCase):
         self.assertTrue(rows[1997]["dayun_change"], "1997 为交运年")
         self.assertEqual(rows[1998]["dayun"], "丁丑", "交运后进入第一步大运")
 
+    def test_zhi_rel_all_pairs_match_tables(self):
+        """66 地支对穷举：zhi_rel 输出必须与六合/六冲/六穿/半合/刑表完全一致。
+
+        v7.9 修复：sorted() 按 Unicode 码位排序（'申亥'→'亥申'）与表键序
+        失配，7/66 对静默失效（子丑合/寅亥合/子午冲/辰戌冲/巳亥冲/申亥穿/
+        酉戌穿）。修复后逐对校验，任何失配立即报出。
+        """
+        ZHI = yb.pp.ZHI
+        for i in range(12):
+            for j in range(i + 1, 12):
+                z1, z2 = ZHI[i], ZHI[j]
+                got = yb.zhi_rel(z1, z2) or "静"
+                pair = ZHI[i] + ZHI[j]  # 表键序
+                expect = "静"
+                if pair in yb.LIUHE: expect = "六合"
+                elif pair in yb.LIUCHONG: expect = "六冲"
+                elif pair in yb.LIUHAI: expect = "六穿"
+                elif pair in yb.BANHE: expect = "半合"
+                elif pair in {"丑戌", "戌未"}: expect = "刑"
+                self.assertEqual(got, expect, f"{z1}{z2} 应{expect} 实{got}")
+
+    def test_zhi_rel_key_cases(self):
+        """关键案例：鸣潮巳亥冲/申亥穿、原神辰戌冲、泰勒子丑合/寅亥合。"""
+        self.assertEqual(yb.zhi_rel("巳", "亥"), "六冲")
+        self.assertEqual(yb.zhi_rel("申", "亥"), "六穿")
+        self.assertEqual(yb.zhi_rel("辰", "戌"), "六冲")
+        self.assertEqual(yb.zhi_rel("子", "丑"), "六合")
+        self.assertEqual(yb.zhi_rel("寅", "亥"), "六合")
+        self.assertEqual(yb.zhi_rel("子", "未"), "六穿")
+        self.assertEqual(yb.zhi_rel("午", "未"), "六合")
+
+    def test_suiyun_gan_he_detected(self):
+        """岁运天干五合必须生效（v7.9 修复：此前查 LIUHE 永远失配）。
+
+        泰勒 2024 甲辰年大运己卯：甲己合 → '岁运干合'。
+        鸣潮 2028 戊申年大运己巳：丙辛合？(戊≠丙) 用 2028 前的己巳运无合；
+        用泰勒案例即可。另测地支：2029 己酉 大运庚辰 → 酉辰六合。
+        """
+        tags = yb.suiyun_rel("甲辰", "己卯")
+        self.assertIn("岁运干合", tags)
+        tags2 = yb.suiyun_rel("己酉", "庚辰")
+        self.assertIn("岁运支合", tags2)
+        tags3 = yb.suiyun_rel("丙午", "己巳")
+        self.assertNotIn("岁运干合", tags3)
+
 
 class TestBuildPredictions(unittest.TestCase):
 

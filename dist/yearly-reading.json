@@ -1,0 +1,1309 @@
+[
+  {
+    "entity": "原神",
+    "four_pillars": "庚子 乙酉 甲戌 己巳",
+    "day_master": "甲",
+    "note": "庚子 乙酉 甲戌 己巳 | 甲木日主身弱官杀重，用印比，喜火制杀；丙戌运主程",
+    "jiao_time": "2023-12-28",
+    "lucky": [
+      {
+        "ganzhi": "丙戌",
+        "start": "2023-12-28"
+      },
+      {
+        "ganzhi": "丁亥",
+        "start": "2033-12-28"
+      },
+      {
+        "ganzhi": "戊子",
+        "start": "2043-12-28"
+      },
+      {
+        "ganzhi": "己丑",
+        "start": "2053-12-28"
+      },
+      {
+        "ganzhi": "庚寅",
+        "start": "2063-12-28"
+      },
+      {
+        "ganzhi": "辛卯",
+        "start": "2073-12-28"
+      },
+      {
+        "ganzhi": "壬辰",
+        "start": "2083-12-28"
+      },
+      {
+        "ganzhi": "癸巳",
+        "start": "2093-12-28"
+      },
+      {
+        "ganzhi": "甲午",
+        "start": "2103-12-28"
+      },
+      {
+        "ganzhi": "乙未",
+        "start": "2113-12-28"
+      }
+    ],
+    "years": [
+      {
+        "year": 2020,
+        "liunian": "庚子",
+        "liunian_gan_relation": "七杀",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "乙酉",
+        "dayun_gan_relation": "劫财",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干合"
+        ]
+      },
+      {
+        "year": 2021,
+        "liunian": "辛丑",
+        "liunian_gan_relation": "正官",
+        "liunian_zhi_vs_dayzhi": "刑",
+        "dayun": "乙酉",
+        "dayun_gan_relation": "劫财",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2022,
+        "liunian": "壬寅",
+        "liunian_gan_relation": "偏印",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "乙酉",
+        "dayun_gan_relation": "劫财",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2023,
+        "liunian": "癸卯",
+        "liunian_gan_relation": "正印",
+        "liunian_zhi_vs_dayzhi": "六合",
+        "dayun": "乙酉",
+        "dayun_gan_relation": "劫财",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": true,
+        "suiyun": [
+          "岁运支冲"
+        ]
+      },
+      {
+        "year": 2024,
+        "liunian": "甲辰",
+        "liunian_gan_relation": "比肩",
+        "liunian_zhi_vs_dayzhi": "六冲",
+        "dayun": "丙戌",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "伏吟",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支冲"
+        ]
+      },
+      {
+        "year": 2025,
+        "liunian": "乙巳",
+        "liunian_gan_relation": "劫财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丙戌",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "伏吟",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2026,
+        "liunian": "丙午",
+        "liunian_gan_relation": "食神",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丙戌",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "伏吟",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干并临"
+        ]
+      },
+      {
+        "year": 2027,
+        "liunian": "丁未",
+        "liunian_gan_relation": "伤官",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丙戌",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "伏吟",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2028,
+        "liunian": "戊申",
+        "liunian_gan_relation": "偏财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丙戌",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "伏吟",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2029,
+        "liunian": "己酉",
+        "liunian_gan_relation": "正财",
+        "liunian_zhi_vs_dayzhi": "六穿",
+        "dayun": "丙戌",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "伏吟",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2030,
+        "liunian": "庚戌",
+        "liunian_gan_relation": "七杀",
+        "liunian_zhi_vs_dayzhi": "伏吟",
+        "dayun": "丙戌",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "伏吟",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支并临"
+        ]
+      },
+      {
+        "year": 2031,
+        "liunian": "辛亥",
+        "liunian_gan_relation": "正官",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丙戌",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "伏吟",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干合"
+        ]
+      },
+      {
+        "year": 2032,
+        "liunian": "壬子",
+        "liunian_gan_relation": "偏印",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丙戌",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "伏吟",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2033,
+        "liunian": "癸丑",
+        "liunian_gan_relation": "正印",
+        "liunian_zhi_vs_dayzhi": "刑",
+        "dayun": "丙戌",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "伏吟",
+        "dayun_change": true,
+        "suiyun": []
+      },
+      {
+        "year": 2034,
+        "liunian": "甲寅",
+        "liunian_gan_relation": "比肩",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丁亥",
+        "dayun_gan_relation": "伤官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支合"
+        ]
+      },
+      {
+        "year": 2035,
+        "liunian": "乙卯",
+        "liunian_gan_relation": "劫财",
+        "liunian_zhi_vs_dayzhi": "六合",
+        "dayun": "丁亥",
+        "dayun_gan_relation": "伤官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      }
+    ]
+  },
+  {
+    "entity": "鸣潮",
+    "four_pillars": "甲辰 己巳 丁亥 乙巳",
+    "day_master": "丁",
+    "note": "甲辰 己巳 丁亥 乙巳 | 丁火日主帝旺双巳，体旺用财官；巳亥冲为变革引擎",
+    "jiao_time": "2028-10-03",
+    "lucky": [
+      {
+        "ganzhi": "庚午",
+        "start": "2028-10-03"
+      },
+      {
+        "ganzhi": "辛未",
+        "start": "2038-10-03"
+      },
+      {
+        "ganzhi": "壬申",
+        "start": "2048-10-03"
+      },
+      {
+        "ganzhi": "癸酉",
+        "start": "2058-10-03"
+      },
+      {
+        "ganzhi": "甲戌",
+        "start": "2068-10-03"
+      },
+      {
+        "ganzhi": "乙亥",
+        "start": "2078-10-03"
+      },
+      {
+        "ganzhi": "丙子",
+        "start": "2088-10-03"
+      },
+      {
+        "ganzhi": "丁丑",
+        "start": "2098-10-03"
+      },
+      {
+        "ganzhi": "戊寅",
+        "start": "2108-10-03"
+      },
+      {
+        "ganzhi": "己卯",
+        "start": "2118-10-03"
+      }
+    ],
+    "years": [
+      {
+        "year": 2024,
+        "liunian": "甲辰",
+        "liunian_gan_relation": "正印",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "己巳",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干合"
+        ]
+      },
+      {
+        "year": 2025,
+        "liunian": "乙巳",
+        "liunian_gan_relation": "偏印",
+        "liunian_zhi_vs_dayzhi": "六冲",
+        "dayun": "己巳",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支并临"
+        ]
+      },
+      {
+        "year": 2026,
+        "liunian": "丙午",
+        "liunian_gan_relation": "劫财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "己巳",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2027,
+        "liunian": "丁未",
+        "liunian_gan_relation": "比肩",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "己巳",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2028,
+        "liunian": "戊申",
+        "liunian_gan_relation": "伤官",
+        "liunian_zhi_vs_dayzhi": "六穿",
+        "dayun": "己巳",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": true,
+        "suiyun": [
+          "岁运支合"
+        ]
+      },
+      {
+        "year": 2029,
+        "liunian": "己酉",
+        "liunian_gan_relation": "食神",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "庚午",
+        "dayun_gan_relation": "正财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2030,
+        "liunian": "庚戌",
+        "liunian_gan_relation": "正财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "庚午",
+        "dayun_gan_relation": "正财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干并临"
+        ]
+      },
+      {
+        "year": 2031,
+        "liunian": "辛亥",
+        "liunian_gan_relation": "偏财",
+        "liunian_zhi_vs_dayzhi": "伏吟",
+        "dayun": "庚午",
+        "dayun_gan_relation": "正财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2032,
+        "liunian": "壬子",
+        "liunian_gan_relation": "正官",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "庚午",
+        "dayun_gan_relation": "正财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支冲"
+        ]
+      },
+      {
+        "year": 2033,
+        "liunian": "癸丑",
+        "liunian_gan_relation": "七杀",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "庚午",
+        "dayun_gan_relation": "正财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2034,
+        "liunian": "甲寅",
+        "liunian_gan_relation": "正印",
+        "liunian_zhi_vs_dayzhi": "六合",
+        "dayun": "庚午",
+        "dayun_gan_relation": "正财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2035,
+        "liunian": "乙卯",
+        "liunian_gan_relation": "偏印",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "庚午",
+        "dayun_gan_relation": "正财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干合"
+        ]
+      },
+      {
+        "year": 2036,
+        "liunian": "丙辰",
+        "liunian_gan_relation": "劫财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "庚午",
+        "dayun_gan_relation": "正财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2037,
+        "liunian": "丁巳",
+        "liunian_gan_relation": "比肩",
+        "liunian_zhi_vs_dayzhi": "六冲",
+        "dayun": "庚午",
+        "dayun_gan_relation": "正财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2038,
+        "liunian": "戊午",
+        "liunian_gan_relation": "伤官",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "庚午",
+        "dayun_gan_relation": "正财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": true,
+        "suiyun": [
+          "岁运支并临"
+        ]
+      },
+      {
+        "year": 2039,
+        "liunian": "己未",
+        "liunian_gan_relation": "食神",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "辛未",
+        "dayun_gan_relation": "偏财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支并临"
+        ]
+      },
+      {
+        "year": 2040,
+        "liunian": "庚申",
+        "liunian_gan_relation": "正财",
+        "liunian_zhi_vs_dayzhi": "六穿",
+        "dayun": "辛未",
+        "dayun_gan_relation": "偏财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      }
+    ]
+  },
+  {
+    "entity": "Taylor Swift",
+    "four_pillars": "己巳 丙子 丁未 甲辰",
+    "day_master": "丁",
+    "note": "己巳 丙子 丁未 甲辰 | 丁火日主，月令子水官星；逐年事业高峰规则已回测(+0.224)",
+    "jiao_time": "1997-08-17",
+    "lucky": [
+      {
+        "ganzhi": "丁丑",
+        "start": "1997-08-17"
+      },
+      {
+        "ganzhi": "戊寅",
+        "start": "2007-08-17"
+      },
+      {
+        "ganzhi": "己卯",
+        "start": "2017-08-17"
+      },
+      {
+        "ganzhi": "庚辰",
+        "start": "2027-08-17"
+      },
+      {
+        "ganzhi": "辛巳",
+        "start": "2037-08-17"
+      },
+      {
+        "ganzhi": "壬午",
+        "start": "2047-08-17"
+      },
+      {
+        "ganzhi": "癸未",
+        "start": "2057-08-17"
+      },
+      {
+        "ganzhi": "甲申",
+        "start": "2067-08-17"
+      },
+      {
+        "ganzhi": "乙酉",
+        "start": "2077-08-17"
+      },
+      {
+        "ganzhi": "丙戌",
+        "start": "2087-08-17"
+      }
+    ],
+    "years": [
+      {
+        "year": 1989,
+        "liunian": "己巳",
+        "liunian_gan_relation": "食神",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丙子",
+        "dayun_gan_relation": "劫财",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 1990,
+        "liunian": "庚午",
+        "liunian_gan_relation": "正财",
+        "liunian_zhi_vs_dayzhi": "六合",
+        "dayun": "丙子",
+        "dayun_gan_relation": "劫财",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支冲"
+        ]
+      },
+      {
+        "year": 1991,
+        "liunian": "辛未",
+        "liunian_gan_relation": "偏财",
+        "liunian_zhi_vs_dayzhi": "伏吟",
+        "dayun": "丙子",
+        "dayun_gan_relation": "劫财",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干合"
+        ]
+      },
+      {
+        "year": 1992,
+        "liunian": "壬申",
+        "liunian_gan_relation": "正官",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丙子",
+        "dayun_gan_relation": "劫财",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 1993,
+        "liunian": "癸酉",
+        "liunian_gan_relation": "七杀",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丙子",
+        "dayun_gan_relation": "劫财",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 1994,
+        "liunian": "甲戌",
+        "liunian_gan_relation": "正印",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丙子",
+        "dayun_gan_relation": "劫财",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 1995,
+        "liunian": "乙亥",
+        "liunian_gan_relation": "偏印",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丙子",
+        "dayun_gan_relation": "劫财",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 1996,
+        "liunian": "丙子",
+        "liunian_gan_relation": "劫财",
+        "liunian_zhi_vs_dayzhi": "六穿",
+        "dayun": "丙子",
+        "dayun_gan_relation": "劫财",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干并临",
+          "岁运支并临"
+        ]
+      },
+      {
+        "year": 1997,
+        "liunian": "丁丑",
+        "liunian_gan_relation": "比肩",
+        "liunian_zhi_vs_dayzhi": "六冲",
+        "dayun": "丙子",
+        "dayun_gan_relation": "劫财",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": true,
+        "suiyun": [
+          "岁运支合"
+        ]
+      },
+      {
+        "year": 1998,
+        "liunian": "戊寅",
+        "liunian_gan_relation": "伤官",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丁丑",
+        "dayun_gan_relation": "比肩",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 1999,
+        "liunian": "己卯",
+        "liunian_gan_relation": "食神",
+        "liunian_zhi_vs_dayzhi": "半合",
+        "dayun": "丁丑",
+        "dayun_gan_relation": "比肩",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2000,
+        "liunian": "庚辰",
+        "liunian_gan_relation": "正财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丁丑",
+        "dayun_gan_relation": "比肩",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2001,
+        "liunian": "辛巳",
+        "liunian_gan_relation": "偏财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丁丑",
+        "dayun_gan_relation": "比肩",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2002,
+        "liunian": "壬午",
+        "liunian_gan_relation": "正官",
+        "liunian_zhi_vs_dayzhi": "六合",
+        "dayun": "丁丑",
+        "dayun_gan_relation": "比肩",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干合"
+        ]
+      },
+      {
+        "year": 2003,
+        "liunian": "癸未",
+        "liunian_gan_relation": "七杀",
+        "liunian_zhi_vs_dayzhi": "伏吟",
+        "dayun": "丁丑",
+        "dayun_gan_relation": "比肩",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支冲"
+        ]
+      },
+      {
+        "year": 2004,
+        "liunian": "甲申",
+        "liunian_gan_relation": "正印",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丁丑",
+        "dayun_gan_relation": "比肩",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2005,
+        "liunian": "乙酉",
+        "liunian_gan_relation": "偏印",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丁丑",
+        "dayun_gan_relation": "比肩",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2006,
+        "liunian": "丙戌",
+        "liunian_gan_relation": "劫财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丁丑",
+        "dayun_gan_relation": "比肩",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2007,
+        "liunian": "丁亥",
+        "liunian_gan_relation": "比肩",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丁丑",
+        "dayun_gan_relation": "比肩",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": true,
+        "suiyun": [
+          "岁运干并临"
+        ]
+      },
+      {
+        "year": 2008,
+        "liunian": "戊子",
+        "liunian_gan_relation": "伤官",
+        "liunian_zhi_vs_dayzhi": "六穿",
+        "dayun": "戊寅",
+        "dayun_gan_relation": "伤官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干并临"
+        ]
+      },
+      {
+        "year": 2009,
+        "liunian": "己丑",
+        "liunian_gan_relation": "食神",
+        "liunian_zhi_vs_dayzhi": "六冲",
+        "dayun": "戊寅",
+        "dayun_gan_relation": "伤官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2010,
+        "liunian": "庚寅",
+        "liunian_gan_relation": "正财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "戊寅",
+        "dayun_gan_relation": "伤官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支并临"
+        ]
+      },
+      {
+        "year": 2011,
+        "liunian": "辛卯",
+        "liunian_gan_relation": "偏财",
+        "liunian_zhi_vs_dayzhi": "半合",
+        "dayun": "戊寅",
+        "dayun_gan_relation": "伤官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2012,
+        "liunian": "壬辰",
+        "liunian_gan_relation": "正官",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "戊寅",
+        "dayun_gan_relation": "伤官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2013,
+        "liunian": "癸巳",
+        "liunian_gan_relation": "七杀",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "戊寅",
+        "dayun_gan_relation": "伤官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干合"
+        ]
+      },
+      {
+        "year": 2014,
+        "liunian": "甲午",
+        "liunian_gan_relation": "正印",
+        "liunian_zhi_vs_dayzhi": "六合",
+        "dayun": "戊寅",
+        "dayun_gan_relation": "伤官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2015,
+        "liunian": "乙未",
+        "liunian_gan_relation": "偏印",
+        "liunian_zhi_vs_dayzhi": "伏吟",
+        "dayun": "戊寅",
+        "dayun_gan_relation": "伤官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2016,
+        "liunian": "丙申",
+        "liunian_gan_relation": "劫财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "戊寅",
+        "dayun_gan_relation": "伤官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支冲"
+        ]
+      },
+      {
+        "year": 2017,
+        "liunian": "丁酉",
+        "liunian_gan_relation": "比肩",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "戊寅",
+        "dayun_gan_relation": "伤官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": true,
+        "suiyun": []
+      },
+      {
+        "year": 2018,
+        "liunian": "戊戌",
+        "liunian_gan_relation": "伤官",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "己卯",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "半合",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支合"
+        ]
+      },
+      {
+        "year": 2019,
+        "liunian": "己亥",
+        "liunian_gan_relation": "食神",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "己卯",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "半合",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干并临"
+        ]
+      },
+      {
+        "year": 2020,
+        "liunian": "庚子",
+        "liunian_gan_relation": "正财",
+        "liunian_zhi_vs_dayzhi": "六穿",
+        "dayun": "己卯",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "半合",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2021,
+        "liunian": "辛丑",
+        "liunian_gan_relation": "偏财",
+        "liunian_zhi_vs_dayzhi": "六冲",
+        "dayun": "己卯",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "半合",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2022,
+        "liunian": "壬寅",
+        "liunian_gan_relation": "正官",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "己卯",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "半合",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2023,
+        "liunian": "癸卯",
+        "liunian_gan_relation": "七杀",
+        "liunian_zhi_vs_dayzhi": "半合",
+        "dayun": "己卯",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "半合",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支并临"
+        ]
+      },
+      {
+        "year": 2024,
+        "liunian": "甲辰",
+        "liunian_gan_relation": "正印",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "己卯",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "半合",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干合"
+        ]
+      },
+      {
+        "year": 2025,
+        "liunian": "乙巳",
+        "liunian_gan_relation": "偏印",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "己卯",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "半合",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2026,
+        "liunian": "丙午",
+        "liunian_gan_relation": "劫财",
+        "liunian_zhi_vs_dayzhi": "六合",
+        "dayun": "己卯",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "半合",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2027,
+        "liunian": "丁未",
+        "liunian_gan_relation": "比肩",
+        "liunian_zhi_vs_dayzhi": "伏吟",
+        "dayun": "己卯",
+        "dayun_gan_relation": "食神",
+        "dayun_zhi_relation": "半合",
+        "dayun_change": true,
+        "suiyun": [
+          "岁运支半合"
+        ]
+      },
+      {
+        "year": 2028,
+        "liunian": "戊申",
+        "liunian_gan_relation": "伤官",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "庚辰",
+        "dayun_gan_relation": "正财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2029,
+        "liunian": "己酉",
+        "liunian_gan_relation": "食神",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "庚辰",
+        "dayun_gan_relation": "正财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支合"
+        ]
+      },
+      {
+        "year": 2030,
+        "liunian": "庚戌",
+        "liunian_gan_relation": "正财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "庚辰",
+        "dayun_gan_relation": "正财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干并临",
+          "岁运支冲"
+        ]
+      },
+      {
+        "year": 2031,
+        "liunian": "辛亥",
+        "liunian_gan_relation": "偏财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "庚辰",
+        "dayun_gan_relation": "正财",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      }
+    ]
+  },
+  {
+    "entity": "乃琳Queen",
+    "four_pillars": "庚子 丁亥 庚午 壬午",
+    "day_master": "庚",
+    "note": "庚子 丁亥 庚午 壬午 | 庚金日主亥月，食神吐秀；时辰为占位(C级)，只论年月+大运",
+    "jiao_time": "2025-05-23",
+    "lucky": [
+      {
+        "ganzhi": "戊子",
+        "start": "2025-05-23"
+      },
+      {
+        "ganzhi": "己丑",
+        "start": "2035-05-23"
+      },
+      {
+        "ganzhi": "庚寅",
+        "start": "2045-05-23"
+      },
+      {
+        "ganzhi": "辛卯",
+        "start": "2055-05-23"
+      },
+      {
+        "ganzhi": "壬辰",
+        "start": "2065-05-23"
+      },
+      {
+        "ganzhi": "癸巳",
+        "start": "2075-05-23"
+      },
+      {
+        "ganzhi": "甲午",
+        "start": "2085-05-23"
+      },
+      {
+        "ganzhi": "乙未",
+        "start": "2095-05-23"
+      },
+      {
+        "ganzhi": "丙申",
+        "start": "2105-05-23"
+      },
+      {
+        "ganzhi": "丁酉",
+        "start": "2115-05-23"
+      }
+    ],
+    "years": [
+      {
+        "year": 2020,
+        "liunian": "庚子",
+        "liunian_gan_relation": "比肩",
+        "liunian_zhi_vs_dayzhi": "六冲",
+        "dayun": "丁亥",
+        "dayun_gan_relation": "正官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2021,
+        "liunian": "辛丑",
+        "liunian_gan_relation": "劫财",
+        "liunian_zhi_vs_dayzhi": "六穿",
+        "dayun": "丁亥",
+        "dayun_gan_relation": "正官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2022,
+        "liunian": "壬寅",
+        "liunian_gan_relation": "食神",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丁亥",
+        "dayun_gan_relation": "正官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干合",
+          "岁运支合"
+        ]
+      },
+      {
+        "year": 2023,
+        "liunian": "癸卯",
+        "liunian_gan_relation": "伤官",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丁亥",
+        "dayun_gan_relation": "正官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2024,
+        "liunian": "甲辰",
+        "liunian_gan_relation": "偏财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "丁亥",
+        "dayun_gan_relation": "正官",
+        "dayun_zhi_relation": "静",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2025,
+        "liunian": "乙巳",
+        "liunian_gan_relation": "正财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "戊子",
+        "dayun_gan_relation": "偏印",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": true,
+        "suiyun": []
+      },
+      {
+        "year": 2026,
+        "liunian": "丙午",
+        "liunian_gan_relation": "七杀",
+        "liunian_zhi_vs_dayzhi": "伏吟",
+        "dayun": "戊子",
+        "dayun_gan_relation": "偏印",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支冲"
+        ]
+      },
+      {
+        "year": 2027,
+        "liunian": "丁未",
+        "liunian_gan_relation": "正官",
+        "liunian_zhi_vs_dayzhi": "六合",
+        "dayun": "戊子",
+        "dayun_gan_relation": "偏印",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2028,
+        "liunian": "戊申",
+        "liunian_gan_relation": "偏印",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "戊子",
+        "dayun_gan_relation": "偏印",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干并临"
+        ]
+      },
+      {
+        "year": 2029,
+        "liunian": "己酉",
+        "liunian_gan_relation": "正印",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "戊子",
+        "dayun_gan_relation": "偏印",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2030,
+        "liunian": "庚戌",
+        "liunian_gan_relation": "比肩",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "戊子",
+        "dayun_gan_relation": "偏印",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2031,
+        "liunian": "辛亥",
+        "liunian_gan_relation": "劫财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "戊子",
+        "dayun_gan_relation": "偏印",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2032,
+        "liunian": "壬子",
+        "liunian_gan_relation": "食神",
+        "liunian_zhi_vs_dayzhi": "六冲",
+        "dayun": "戊子",
+        "dayun_gan_relation": "偏印",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运支并临"
+        ]
+      },
+      {
+        "year": 2033,
+        "liunian": "癸丑",
+        "liunian_gan_relation": "伤官",
+        "liunian_zhi_vs_dayzhi": "六穿",
+        "dayun": "戊子",
+        "dayun_gan_relation": "偏印",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": [
+          "岁运干合",
+          "岁运支合"
+        ]
+      },
+      {
+        "year": 2034,
+        "liunian": "甲寅",
+        "liunian_gan_relation": "偏财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "戊子",
+        "dayun_gan_relation": "偏印",
+        "dayun_zhi_relation": "六冲",
+        "dayun_change": false,
+        "suiyun": []
+      },
+      {
+        "year": 2035,
+        "liunian": "乙卯",
+        "liunian_gan_relation": "正财",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "己丑",
+        "dayun_gan_relation": "正印",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": true,
+        "suiyun": []
+      },
+      {
+        "year": 2036,
+        "liunian": "丙辰",
+        "liunian_gan_relation": "七杀",
+        "liunian_zhi_vs_dayzhi": "静",
+        "dayun": "己丑",
+        "dayun_gan_relation": "正印",
+        "dayun_zhi_relation": "六穿",
+        "dayun_change": false,
+        "suiyun": []
+      }
+    ]
+  }
+]

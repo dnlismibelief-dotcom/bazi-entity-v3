@@ -115,10 +115,15 @@ def yearly_rows(chart: dict, start_year: int, end_year: int) -> list[dict]:
         zrel = zhi_rel(gz[1], day_zhi)
         # 当年主运：以年中 6 月 30 日为界（交运日跨年时以该日归属为准）
         mid = f"{y}-06-30"
-        luck = chart["lucky"][0]
+        luck = None
         for step in chart["lucky"]:
             if step["start"] <= mid:
                 luck = step
+        if luck is None:
+            # 交运前：起运前的行运即月柱（v7.8 修复——此前退化成 lucky[0]，
+            # 把第一步大运错误套到交运前年份，权重偏差最多 ±6 分 raw；
+            # 泰勒交运早且童年先验低所以回测数值恰好未受影响）
+            luck = {"ganzhi": chart["month_pillar"], "start": ""}
         dayun_change = any(s["start"][:4] == str(y) for s in chart["lucky"])
         tags = suiyun_rel(gz, luck["ganzhi"])
         a_w = GAN_W.get(gan_rel, (0.0, 0.0))[0] + ZHI_W.get(zrel, (0.0, 0.0))[0]

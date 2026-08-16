@@ -43,7 +43,7 @@
         "career_index": 3,
         "p_high": 0.03,
         "components": {
-          "raw": 62.0,
+          "raw": 56.0,
           "age_factor": 0.05,
           "index": 3,
           "p_high": 0.03
@@ -51,7 +51,7 @@
         "liunian": "己巳",
         "liunian_gan_relation": "食神",
         "day_zhi_relation": "静",
-        "dayun": "丁丑",
+        "dayun": "丙子",
         "dayun_change": false,
         "suiyun": []
       }
@@ -75,7 +75,7 @@
         "career_index": 3,
         "p_high": 0.03,
         "components": {
-          "raw": 68.0,
+          "raw": 62.0,
           "age_factor": 0.05,
           "index": 3,
           "p_high": 0.03
@@ -83,7 +83,7 @@
         "liunian": "庚午",
         "liunian_gan_relation": "正财",
         "day_zhi_relation": "六合",
-        "dayun": "丁丑",
+        "dayun": "丙子",
         "dayun_change": false,
         "suiyun": []
       }
@@ -107,7 +107,7 @@
         "career_index": 3,
         "p_high": 0.03,
         "components": {
-          "raw": 66.0,
+          "raw": 58.0,
           "age_factor": 0.05,
           "index": 3,
           "p_high": 0.03
@@ -115,11 +115,9 @@
         "liunian": "辛未",
         "liunian_gan_relation": "偏财",
         "day_zhi_relation": "伏吟",
-        "dayun": "丁丑",
+        "dayun": "丙子",
         "dayun_change": false,
-        "suiyun": [
-          "岁运支冲"
-        ]
+        "suiyun": []
       }
     },
     {
@@ -141,7 +139,7 @@
         "career_index": 3,
         "p_high": 0.03,
         "components": {
-          "raw": 61.0,
+          "raw": 55.0,
           "age_factor": 0.05,
           "index": 3,
           "p_high": 0.03
@@ -149,7 +147,7 @@
         "liunian": "壬申",
         "liunian_gan_relation": "正官",
         "day_zhi_relation": "静",
-        "dayun": "丁丑",
+        "dayun": "丙子",
         "dayun_change": false,
         "suiyun": []
       }
@@ -173,7 +171,7 @@
         "career_index": 3,
         "p_high": 0.03,
         "components": {
-          "raw": 61.0,
+          "raw": 55.0,
           "age_factor": 0.05,
           "index": 3,
           "p_high": 0.03
@@ -181,7 +179,7 @@
         "liunian": "癸酉",
         "liunian_gan_relation": "七杀",
         "day_zhi_relation": "静",
-        "dayun": "丁丑",
+        "dayun": "丙子",
         "dayun_change": false,
         "suiyun": []
       }
@@ -205,7 +203,7 @@
         "career_index": 3,
         "p_high": 0.03,
         "components": {
-          "raw": 61.0,
+          "raw": 55.0,
           "age_factor": 0.05,
           "index": 3,
           "p_high": 0.03
@@ -213,7 +211,7 @@
         "liunian": "甲戌",
         "liunian_gan_relation": "正印",
         "day_zhi_relation": "刑",
-        "dayun": "丁丑",
+        "dayun": "丙子",
         "dayun_change": false,
         "suiyun": []
       }
@@ -234,18 +232,18 @@
       "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
-        "career_index": 4,
+        "career_index": 3,
         "p_high": 0.03,
         "components": {
-          "raw": 70.0,
+          "raw": 64.0,
           "age_factor": 0.05,
-          "index": 4,
+          "index": 3,
           "p_high": 0.03
         },
         "liunian": "乙亥",
         "liunian_gan_relation": "偏印",
         "day_zhi_relation": "半合",
-        "dayun": "丁丑",
+        "dayun": "丙子",
         "dayun_change": false,
         "suiyun": []
       }
@@ -269,7 +267,7 @@
         "career_index": 3,
         "p_high": 0.03,
         "components": {
-          "raw": 54.0,
+          "raw": 56.0,
           "age_factor": 0.05,
           "index": 3,
           "p_high": 0.03
@@ -277,9 +275,12 @@
         "liunian": "丙子",
         "liunian_gan_relation": "劫财",
         "day_zhi_relation": "六穿",
-        "dayun": "丁丑",
+        "dayun": "丙子",
         "dayun_change": false,
-        "suiyun": []
+        "suiyun": [
+          "岁运干并临",
+          "岁运支并临"
+        ]
       }
     },
     {
@@ -298,23 +299,20 @@
       "verdict": "miss",
       "grade_note": "A=事前登记（git 首次提交早于窗口起点）；B=事后回测样本，不计入技巧分数",
       "rule_notes": {
-        "career_index": 15,
+        "career_index": 12,
         "p_high": 0.03,
         "components": {
-          "raw": 73.0,
+          "raw": 59.0,
           "age_factor": 0.2,
-          "index": 15,
+          "index": 12,
           "p_high": 0.03
         },
         "liunian": "丁丑",
         "liunian_gan_relation": "比肩",
         "day_zhi_relation": "六冲",
-        "dayun": "丁丑",
+        "dayun": "丙子",
         "dayun_change": true,
-        "suiyun": [
-          "岁运干并临",
-          "岁运支并临"
-        ]
+        "suiyun": []
       }
     },
     {

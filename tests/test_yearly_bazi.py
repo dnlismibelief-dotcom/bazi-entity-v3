@@ -46,6 +46,21 @@ class TestYearlyRules(unittest.TestCase):
         self.assertEqual(rows[2017]["dayun"], "戊寅")
         self.assertEqual(rows[2018]["dayun"], "己卯")
 
+    def test_dayun_before_jiao_uses_month_pillar(self):
+        """交运前年份的主运应为月柱（泰勒 1997-08 才交运）。
+
+        v7.8 修复：此前退化成 lucky[0]（丁丑），把第一步大运错误套到
+        1989—1997 交运前的年份；正确行为是起运前行运即月柱丙子。
+        """
+        rows = {r["year"]: r for r in yb.yearly_rows(taylor_chart(), 1989, 1998)}
+        self.assertEqual(rows[1989]["dayun"], "丙子", "交运前应用月柱")
+        self.assertEqual(rows[1989]["dayun_gan_relation"], "劫财")
+        self.assertEqual(rows[1989]["dayun_zhi_relation"], "六穿")
+        self.assertFalse(rows[1989]["dayun_change"])
+        self.assertEqual(rows[1996]["dayun"], "丙子")
+        self.assertTrue(rows[1997]["dayun_change"], "1997 为交运年")
+        self.assertEqual(rows[1998]["dayun"], "丁丑", "交运后进入第一步大运")
+
 
 class TestBuildPredictions(unittest.TestCase):
 

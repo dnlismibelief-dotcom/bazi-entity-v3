@@ -36,11 +36,14 @@ pp = importlib.util.module_from_spec(spec)
 sys.modules["pai_pan"] = pp
 spec.loader.exec_module(pp)
 
+sys.path.insert(0, os.path.join(ROOT, "scripts"))
+from mingli_clues import build_clues
+
 # 已知口径差异案例（夏令时/农历年流派），盲测时排除，避免把口径差异算成推理错误
 SKIP_IDS = {f"ftb_{i:04d}" for i in range(11, 16)} | {f"ftb_{i:04d}" for i in range(151, 156)}
 
 
-def chart_summary(q: dict) -> dict:
+def chart_summary(q: dict) -> tuple[dict, dict]:
     b = q["birth_info"]
     dt = datetime(b["year"], b["month"], b["day"], b["hour"], b["minute"])
     r = pp.calc(dt, tz_hours=8.0, lon=None, gender="male" if b["gender"] == "男" else "female",
@@ -60,7 +63,7 @@ def chart_summary(q: dict) -> dict:
         "jiao_age": r["jiao_age"],
         "lucky": [{"ganzhi": l["ganzhi"], "start": l["start"], "age": l["age"]} for l in r["lucky"]],
         "liunian": [{"year": x["year"], "ganzhi": x["ganzhi"]} for x in r["liunian"]],
-    }
+    }, r
 
 
 def main():
@@ -80,13 +83,16 @@ def main():
 
     pack = []
     for q in sample:
+        summary, r = chart_summary(q)
         item = {
             "id": q["id"],
             "category": q["category"],
             "birth_raw": q["birth_info"]["raw"],
             "question": q["question"],
             "options": [{"letter": o["letter"], "text": o["text"]} for o in q["options"]],
-            "chart": chart_summary(q),
+            "chart": summary,
+            "clues": build_clues(r, gender="male" if q["birth_info"]["gender"] == "男" else "female",
+                                 question=q["question"]),
         }
         if args.with_answer:
             item["answer"] = q["answer"]

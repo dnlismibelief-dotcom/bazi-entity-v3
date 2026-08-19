@@ -1,0 +1,1273 @@
+{
+  "label": "bfft-150-historical",
+  "mode": "依据审计（分数仅趋势参考，不为调参目标）",
+  "model": "deepseek-chat",
+  "n": 150,
+  "correct": 48,
+  "accuracy": 0.32,
+  "random_baseline": 0.25,
+  "by_category": {
+    "事业": {
+      "ok": 11,
+      "n": 22,
+      "acc": 0.5
+    },
+    "婚姻": {
+      "ok": 12,
+      "n": 42,
+      "acc": 0.2857
+    },
+    "家庭": {
+      "ok": 5,
+      "n": 20,
+      "acc": 0.25
+    },
+    "财运": {
+      "ok": 3,
+      "n": 13,
+      "acc": 0.2308
+    },
+    "健康": {
+      "ok": 6,
+      "n": 17,
+      "acc": 0.3529
+    },
+    "性格": {
+      "ok": 5,
+      "n": 13,
+      "acc": 0.3846
+    },
+    "子女": {
+      "ok": 3,
+      "n": 6,
+      "acc": 0.5
+    },
+    "学业": {
+      "ok": 2,
+      "n": 10,
+      "acc": 0.2
+    },
+    "官非": {
+      "ok": 1,
+      "n": 1,
+      "acc": 1.0
+    },
+    "外貌": {
+      "ok": 0,
+      "n": 2,
+      "acc": 0.0
+    },
+    "灾劫": {
+      "ok": 0,
+      "n": 2,
+      "acc": 0.0
+    },
+    "运势": {
+      "ok": 0,
+      "n": 2,
+      "acc": 0.0
+    }
+  },
+  "detail": [
+    {
+      "id": "ftb_0088",
+      "cat": "事业",
+      "answer": "A",
+      "truth": "D",
+      "correct": false,
+      "reason": "月令用神建禄/月劫，比劫重重夺财，财星弱而受制，事业多与合伙、竞争或依赖他人资源相关。"
+    },
+    {
+      "id": "ftb_0044",
+      "cat": "婚姻",
+      "answer": "C",
+      "truth": "A",
+      "correct": false,
+      "reason": "官杀混杂且夫星多现，夫妻宫亥水无冲合，印格真神得用主贵，但财星弱而比劫分夺，婚姻多波折。"
+    },
+    {
+      "id": "ftb_0107",
+      "cat": "婚姻",
+      "answer": "A",
+      "truth": "A",
+      "correct": true,
+      "reason": "官杀混杂，比劫夺财，1999年官星透而战，2002年比劫助身，外缘致情变。"
+    },
+    {
+      "id": "ftb_0018",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "夫妻宫辰冲戌，比劫重夺财，水官星孤现，逢水旺年应期。"
+    },
+    {
+      "id": "ftb_0024",
+      "cat": "家庭",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "财星众水4见，流年2022壬寅，财旺生杀攻身，且日支亥为财，流年寅亥合动夫妻宫，主因财致祸。"
+    },
+    {
+      "id": "ftb_0143",
+      "cat": "婚姻",
+      "answer": "A",
+      "truth": "D",
+      "correct": false,
+      "reason": "夫妻宫子丑合动，财星透干逢流年引动，2021辛丑合入妻宫。"
+    },
+    {
+      "id": "ftb_0030",
+      "cat": "财运",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "比劫6见夺财，财星2见虚浮，月令官杀格，真神不照，假神乱真。"
+    },
+    {
+      "id": "ftb_0099",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "D",
+      "correct": false,
+      "reason": "夫妻宫丑戌相刑，夫星官杀透干，比劫重夺财，刑动应期在刑合之岁运。"
+    },
+    {
+      "id": "ftb_0020",
+      "cat": "家庭",
+      "answer": "B",
+      "truth": "D",
+      "correct": false,
+      "reason": "大运流年引动夫妻宫辰戌冲，且财星受比劫争夺，应期在土旺之年。"
+    },
+    {
+      "id": "ftb_0135",
+      "cat": "家庭",
+      "answer": "C",
+      "truth": "A",
+      "correct": false,
+      "reason": "2022壬寅年，流年与命局卯木成三会木局，财星极旺，且日主己土无金泄秀，木旺克土，主健康重创。"
+    },
+    {
+      "id": "ftb_0060",
+      "cat": "健康",
+      "answer": "A",
+      "truth": "C",
+      "correct": false,
+      "reason": "五行最弱水2，岁运冲旺克弱为应期，水主血，2011辛卯年冲克水。"
+    },
+    {
+      "id": "ftb_0010",
+      "cat": "家庭",
+      "answer": "C",
+      "truth": "B",
+      "correct": false,
+      "reason": "官杀混杂且金旺，财星透干，夫妻宫辰酉合，主父母感情多变，应期在官杀旺年。"
+    },
+    {
+      "id": "ftb_0028",
+      "cat": "财运",
+      "answer": "B",
+      "truth": "D",
+      "correct": false,
+      "reason": "比劫重重夺财，财星虚浮，逢比劫旺或财星受克之年应灾。"
+    },
+    {
+      "id": "ftb_0117",
+      "cat": "家庭",
+      "answer": "A",
+      "truth": "C",
+      "correct": false,
+      "reason": "财星四见且透干，月令财格，但丑戌相刑，财多身弱，富屋贫人。"
+    },
+    {
+      "id": "ftb_0113",
+      "cat": "健康",
+      "answer": "D",
+      "truth": "D",
+      "correct": true,
+      "reason": "财格身弱，夫星藏而财旺，2017丁酉、2019己亥冲克夫星及子女宫，应期在弱极之病。"
+    },
+    {
+      "id": "ftb_0023",
+      "cat": "事业",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "财星四见透干，流年己丑与年柱乙丑天干战，财多身弱，比劫夺财，应劫财之象。"
+    },
+    {
+      "id": "ftb_0067",
+      "cat": "财运",
+      "answer": "B",
+      "truth": "A",
+      "correct": false,
+      "reason": "财星3见、比劫3见，通灵之象应于财星透干流年。"
+    },
+    {
+      "id": "ftb_0029",
+      "cat": "性格",
+      "answer": "A",
+      "truth": "C",
+      "correct": false,
+      "reason": "五行水6众，比劫重夺财；真神假神乱真，精神亢奋难安。"
+    },
+    {
+      "id": "ftb_0114",
+      "cat": "子女",
+      "answer": "D",
+      "truth": "D",
+      "correct": true,
+      "reason": "财星众而比劫争，子女星官杀藏，以时柱丙午合动子女宫，断生育流年。"
+    },
+    {
+      "id": "ftb_0021",
+      "cat": "性格",
+      "answer": "A",
+      "truth": "A",
+      "correct": true,
+      "reason": "五行水众土孤，财多身弱，印星透干但被财围，主思虑多而行动犹豫。"
+    },
+    {
+      "id": "ftb_0037",
+      "cat": "婚姻",
+      "answer": "A",
+      "truth": "C",
+      "correct": false,
+      "reason": "夫妻宫无冲合刑，财星三现但比劫四见重夺财，源流火土无金水润局。"
+    },
+    {
+      "id": "ftb_0063",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "夫星癸水藏辰，辰酉合引动夫妻宫，2007丁亥年官星透出合身。"
+    },
+    {
+      "id": "ftb_0136",
+      "cat": "家庭",
+      "answer": "A",
+      "truth": "C",
+      "correct": false,
+      "reason": "财星明现乙木藏于辰，比劫三见克财，父缘浅；印星透干，母护身。"
+    },
+    {
+      "id": "ftb_0079",
+      "cat": "性格",
+      "answer": "A",
+      "truth": "B",
+      "correct": false,
+      "reason": "五行金旺（5金）且日主乙木弱，金克木，身弱财旺，性格易受压抑，但印星水透出主仁善。"
+    },
+    {
+      "id": "ftb_0080",
+      "cat": "财运",
+      "answer": "C",
+      "truth": "D",
+      "correct": false,
+      "reason": "财格用神，丙戌运火土并旺，财星透干，但比劫暗藏，先成后败。"
+    },
+    {
+      "id": "ftb_0056",
+      "cat": "性格",
+      "answer": "D",
+      "truth": "C",
+      "correct": false,
+      "reason": "五行火旺金强，日主丁火得令，真神透干，性格刚烈外向。"
+    },
+    {
+      "id": "ftb_0007",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "官杀众现，夫星明透，夫妻宫辰酉合，财星透干，婚缘应期在官杀旺地。"
+    },
+    {
+      "id": "ftb_0034",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "夫妻宫子丑合，官杀三现，2005年动情，合动婚宫应期在合旺之年。"
+    },
+    {
+      "id": "ftb_0006",
+      "cat": "学业",
+      "answer": "A",
+      "truth": "B",
+      "correct": false,
+      "reason": "真神不照，假神乱真，月令食神格，学历难高。"
+    },
+    {
+      "id": "ftb_0077",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "夫妻宫酉金无冲合，财星三见，流年逢合动婚宫或财星透干应期。"
+    },
+    {
+      "id": "ftb_0115",
+      "cat": "事业",
+      "answer": "B",
+      "truth": "D",
+      "correct": false,
+      "reason": "财格用神，真神不照，假神乱真，财多身弱，取比劫帮身。"
+    },
+    {
+      "id": "ftb_0140",
+      "cat": "健康",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "木1最弱，火2次弱；岁运冲旺克弱为应期，木弱逢金克水泛为病。"
+    },
+    {
+      "id": "ftb_0043",
+      "cat": "家庭",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "月令印格，真神得用，然土重埋金，财星孤寡，叔缘应于比劫宫位，大运流年冲克应期。"
+    },
+    {
+      "id": "ftb_0059",
+      "cat": "事业",
+      "answer": "A",
+      "truth": "C",
+      "correct": false,
+      "reason": "真神乙木透干得用，印星生身，主贵；然财星四见，印星受制，流年丁丑伏吟日支，财印交战，主因财致祸。"
+    },
+    {
+      "id": "ftb_0156",
+      "cat": "学业",
+      "answer": "C",
+      "truth": "C",
+      "correct": true,
+      "reason": "真神假神混杂，提纲不照，假神透干党多乱真，主学业困顿。"
+    },
+    {
+      "id": "ftb_0075",
+      "cat": "事业",
+      "answer": "A",
+      "truth": "A",
+      "correct": true,
+      "reason": "岁运并临（流年=大运壬寅），且流年与年柱天干并，官杀格逢印比，忌神受制，主吉庆。"
+    },
+    {
+      "id": "ftb_0133",
+      "cat": "学业",
+      "answer": "A",
+      "truth": "D",
+      "correct": false,
+      "reason": "木旺火相，印星透干，学历高；2013癸巳年财星合身，转行入职。"
+    },
+    {
+      "id": "ftb_0132",
+      "cat": "性格",
+      "answer": "A",
+      "truth": "B",
+      "correct": false,
+      "reason": "木旺水相，木多克土，日主身弱；木主仁，水主智，木旺则性情偏执，水旺则多才艺。"
+    },
+    {
+      "id": "ftb_0045",
+      "cat": "健康",
+      "answer": "C",
+      "truth": "D",
+      "correct": false,
+      "reason": "旺极而折、弱极而病，岁运冲旺克弱为应期；土众木孤，去寡成众，以月令定去留。"
+    },
+    {
+      "id": "ftb_0126",
+      "cat": "健康",
+      "answer": "B",
+      "truth": "D",
+      "correct": false,
+      "reason": "五行最弱金0、水1，岁运冲旺克弱为应期，水弱受克主肾水及血液系统之疾。"
+    },
+    {
+      "id": "ftb_0110",
+      "cat": "婚姻",
+      "answer": "C",
+      "truth": "B",
+      "correct": false,
+      "reason": "月令食伤格，真神乙木透干，夫星三现而财星孤弱，比劫重重夺财，夫妻宫逢冲。"
+    },
+    {
+      "id": "ftb_0093",
+      "cat": "官非",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "金旺成势，官杀混杂攻身，假神透干，中年金运助杀，官非刑祸应期。"
+    },
+    {
+      "id": "ftb_0138",
+      "cat": "事业",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "月令印格，真神癸透，水势众且源流汇水，主流动、隐秘、水相关行业。"
+    },
+    {
+      "id": "ftb_0019",
+      "cat": "健康",
+      "answer": "A",
+      "truth": "A",
+      "correct": true,
+      "reason": "水为最弱，2016丙申流年申金生水，冲克旺火，弱极逢生而应事；比劫重夺财，财星受制。"
+    },
+    {
+      "id": "ftb_0131",
+      "cat": "家庭",
+      "answer": "A",
+      "truth": "B",
+      "correct": false,
+      "reason": "财星三见透干，比劫两见，父星受克，年月柱水木旺而土弱，主早年丧母或父业。"
+    },
+    {
+      "id": "ftb_0118",
+      "cat": "外貌",
+      "answer": "C",
+      "truth": "A",
+      "correct": false,
+      "reason": "五行金旺6且火土成势，木弱无强根，金克木主筋骨清瘦，火土晦暗主肤色偏黄。"
+    },
+    {
+      "id": "ftb_0087",
+      "cat": "婚姻",
+      "answer": "D",
+      "truth": "C",
+      "correct": false,
+      "reason": "财星两现而比劫五重，妻星弱且夫妻宫无冲合，财星藏于丑库，妻缘迟显。"
+    },
+    {
+      "id": "ftb_0149",
+      "cat": "事业",
+      "answer": "C",
+      "truth": "D",
+      "correct": false,
+      "reason": "大运流年引动印星，财星不显，印重克财，应于母丧。"
+    },
+    {
+      "id": "ftb_0053",
+      "cat": "财运",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "比劫重重夺财，财星虚浮无根，月令建禄身旺，财被群劫争夺。"
+    },
+    {
+      "id": "ftb_0157",
+      "cat": "事业",
+      "answer": "A",
+      "truth": "A",
+      "correct": true,
+      "reason": "官杀格，真神不照假神乱真，源流金旺，财星两见比劫三见，主事业多阻但终有根基。"
+    },
+    {
+      "id": "ftb_0076",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "财星3见，月令财格，真神透干，夫妻宫无冲合，流年引动财星合入日主。"
+    },
+    {
+      "id": "ftb_0097",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "A",
+      "correct": false,
+      "reason": "夫妻宫丑戌相刑，夫星甲乙透干，财多比劫夺，婚期看官星合动。"
+    },
+    {
+      "id": "ftb_0009",
+      "cat": "外貌",
+      "answer": "C",
+      "truth": "D",
+      "correct": false,
+      "reason": "五行计数金4最旺，木3受克，土3耗木，火1孤立，木势弱且无强根，主瘦削；金旺克木，木主身高，受制则不高，故矮小。"
+    },
+    {
+      "id": "ftb_0078",
+      "cat": "事业",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "财格用神，金重成势，源流汇金，主商贾流通之业。"
+    },
+    {
+      "id": "ftb_0008",
+      "cat": "子女",
+      "answer": "B",
+      "truth": "A",
+      "correct": false,
+      "reason": "官杀多现，夫星混杂，子女星看官杀生印，结合大运流年引动子女宫。"
+    },
+    {
+      "id": "ftb_0085",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "夫妻宫巳申刑合，官星甲木孤弱，财星被比劫争夺，2022壬寅年财官透而刑冲并见。"
+    },
+    {
+      "id": "ftb_0032",
+      "cat": "家庭",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "真神不照，假神乱真；财星被合，父星应期在土金流年。"
+    },
+    {
+      "id": "ftb_0069",
+      "cat": "财运",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "财星3见，比劫3见，财旺身弱，逢比劫帮身之岁运得财。"
+    },
+    {
+      "id": "ftb_0137",
+      "cat": "灾劫",
+      "answer": "C",
+      "truth": "D",
+      "correct": false,
+      "reason": "流年辛巳，巳申相刑动夫妻宫，且水众火寡，火受制，主健康或意外之事。"
+    },
+    {
+      "id": "ftb_0074",
+      "cat": "婚姻",
+      "answer": "D",
+      "truth": "D",
+      "correct": true,
+      "reason": "夫妻宫子午冲，2022壬寅岁运并临，财生杀旺，官星受冲，姻缘动荡。"
+    },
+    {
+      "id": "ftb_0145",
+      "cat": "性格",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "五行水旺木相，真神癸透，财格比劫众，子卯刑，财星三见。"
+    },
+    {
+      "id": "ftb_0046",
+      "cat": "家庭",
+      "answer": "B",
+      "truth": "A",
+      "correct": false,
+      "reason": "财星庚金孤悬，比劫重重夺财，印星未透，早年家庭根基不稳，有离祖之象。"
+    },
+    {
+      "id": "ftb_0065",
+      "cat": "子女",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "食伤旺而印暗滋，假从儿格，土众金泄，子息星官杀弱且藏，主女胎。"
+    },
+    {
+      "id": "ftb_0111",
+      "cat": "学业",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "真神不照，假神乱真，财多身弱，学业难成。"
+    },
+    {
+      "id": "ftb_0064",
+      "cat": "子女",
+      "answer": "C",
+      "truth": "B",
+      "correct": false,
+      "reason": "食伤格真神得用，子女星为食伤，逢合化之年应期。"
+    },
+    {
+      "id": "ftb_0052",
+      "cat": "子女",
+      "answer": "D",
+      "truth": "D",
+      "correct": true,
+      "reason": "财星4见被比劫4见争夺，子星宫逢冲，子息缘应期在财星受制、比劫得势之年。"
+    },
+    {
+      "id": "ftb_0159",
+      "cat": "健康",
+      "answer": "A",
+      "truth": "C",
+      "correct": false,
+      "reason": "五行最弱火2，旺极而折、弱极而病，岁运冲克为应期。"
+    },
+    {
+      "id": "ftb_0146",
+      "cat": "性格",
+      "answer": "A",
+      "truth": "A",
+      "correct": true,
+      "reason": "五行水金主导，真神透干得用，印格身强，财星不见，比劫林立。"
+    },
+    {
+      "id": "ftb_0141",
+      "cat": "事业",
+      "answer": "D",
+      "truth": "D",
+      "correct": true,
+      "reason": "财格真神透干得用，财星三见，比劫三见，众寡相持，以月令定去留。"
+    },
+    {
+      "id": "ftb_0160",
+      "cat": "性格",
+      "answer": "A",
+      "truth": "A",
+      "correct": true,
+      "reason": "五行金旺土相，官杀格透印，清而不浊，源流归金，主有原则受敬。"
+    },
+    {
+      "id": "ftb_0016",
+      "cat": "事业",
+      "answer": "C",
+      "truth": "A",
+      "correct": false,
+      "reason": "食伤格透干，比劫重夺财，官星暗藏，财星被劫，主自主经营。"
+    },
+    {
+      "id": "ftb_0125",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "月令财格，比劫重夺财，1993癸酉年伤官见官，夫星受损，夫妻宫午火被冲。"
+    },
+    {
+      "id": "ftb_0089",
+      "cat": "家庭",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "财星2见（壬/癸）而比劫5见，比劫重夺财，财星受克，应期在财星受制或入墓之年。"
+    },
+    {
+      "id": "ftb_0073",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "官杀格，夫星丙丁明现，2019己亥年亥冲巳动官杀，且亥子丑会水局引动夫妻宫。"
+    },
+    {
+      "id": "ftb_0098",
+      "cat": "婚姻",
+      "answer": "D",
+      "truth": "A",
+      "correct": false,
+      "reason": "夫妻宫丑戌相刑，官杀两现，财多比劫重，婚姻动机受环境逼迫。"
+    },
+    {
+      "id": "ftb_0049",
+      "cat": "健康",
+      "answer": "A",
+      "truth": "D",
+      "correct": false,
+      "reason": "财星1见（庚）被比劫5重克，2014甲午年木火旺极，比劫夺财应于妻宫。"
+    },
+    {
+      "id": "ftb_0134",
+      "cat": "婚姻",
+      "answer": "A",
+      "truth": "C",
+      "correct": false,
+      "reason": "夫妻宫无冲合，财星三现而比劫两见，婚恋多波折；2011辛卯年合动夫妻宫，2014甲午年子女星动。"
+    },
+    {
+      "id": "ftb_0042",
+      "cat": "事业",
+      "answer": "C",
+      "truth": "C",
+      "correct": true,
+      "reason": "印格真神透干得用，土重金埋，宜木疏土，然木孤寡，取用需调停。"
+    },
+    {
+      "id": "ftb_0144",
+      "cat": "家庭",
+      "answer": "D",
+      "truth": "A",
+      "correct": false,
+      "reason": "夫妻宫子水被刑合，财星三现而比劫亦三现，子息星受制，源流全水。"
+    },
+    {
+      "id": "ftb_0119",
+      "cat": "家庭",
+      "answer": "C",
+      "truth": "D",
+      "correct": false,
+      "reason": "夫妻宫丑戌相刑，财星四见，流年丙申并年柱，金旺克木，应于六亲宫位。"
+    },
+    {
+      "id": "ftb_0071",
+      "cat": "家庭",
+      "answer": "C",
+      "truth": "B",
+      "correct": false,
+      "reason": "月令官杀格，真神庚金透干得用，财星两见，源流土金水相生，格局清纯，主中上之家。"
+    },
+    {
+      "id": "ftb_0122",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "D",
+      "correct": false,
+      "reason": "官杀2见明现，夫妻宫无冲合刑，比劫重夺财，夫星不显于时柱。"
+    },
+    {
+      "id": "ftb_0027",
+      "cat": "学业",
+      "answer": "A",
+      "truth": "D",
+      "correct": false,
+      "reason": "真神假神混杂，比劫重重夺财，官星被冲，格局困顿。"
+    },
+    {
+      "id": "ftb_0092",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "A",
+      "correct": false,
+      "reason": "财星六见强众敌寡，夫星不显，夫妻宫无冲合，晚婚之象。"
+    },
+    {
+      "id": "ftb_0025",
+      "cat": "学业",
+      "answer": "A",
+      "truth": "B",
+      "correct": false,
+      "reason": "印格真神透干得用，清而不浊，主学业有成。"
+    },
+    {
+      "id": "ftb_0068",
+      "cat": "事业",
+      "answer": "C",
+      "truth": "C",
+      "correct": true,
+      "reason": "食伤格真神透干，夫星官杀混杂，夫妻宫刑动，流年引动伤官见官。"
+    },
+    {
+      "id": "ftb_0096",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "财星六见，比劫仅一，妻星极旺而身弱，官杀格，夫妻宫无冲合，主多婚之象。"
+    },
+    {
+      "id": "ftb_0003",
+      "cat": "健康",
+      "answer": "C",
+      "truth": "C",
+      "correct": true,
+      "reason": "弱极而病，岁运冲旺克弱为应期；火、金最弱，2008戊子年子水冲克弱火。"
+    },
+    {
+      "id": "ftb_0139",
+      "cat": "婚姻",
+      "answer": "A",
+      "truth": "A",
+      "correct": true,
+      "reason": "夫妻宫无冲合刑，财星仅1见且藏于时支，比劫3见，感情多竞争且不稳定。"
+    },
+    {
+      "id": "ftb_0048",
+      "cat": "婚姻",
+      "answer": "A",
+      "truth": "B",
+      "correct": false,
+      "reason": "夫妻宫无冲合刑，但财星仅1见且比劫5见重夺财，婚姻易波折。"
+    },
+    {
+      "id": "ftb_0005",
+      "cat": "健康",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "旺极而折、弱极而病，岁运冲旺克弱为应期；火1最弱，2020庚子年子水冲克午火（原局无午，但大运流年引动），火受重伤。"
+    },
+    {
+      "id": "ftb_0054",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "财星四见而比劫亦四见，比劫夺财，夫妻宫逢冲，婚姻难稳。"
+    },
+    {
+      "id": "ftb_0041",
+      "cat": "性格",
+      "answer": "C",
+      "truth": "B",
+      "correct": false,
+      "reason": "土火旺，印旺身强，真神得用，性刚固执，喜掌权。"
+    },
+    {
+      "id": "ftb_0102",
+      "cat": "婚姻",
+      "answer": "D",
+      "truth": "A",
+      "correct": false,
+      "reason": "官杀混杂且水势众，夫星多现，婚姻易变；夫妻宫无冲合，离婚信号弱。"
+    },
+    {
+      "id": "ftb_0130",
+      "cat": "家庭",
+      "answer": "A",
+      "truth": "B",
+      "correct": false,
+      "reason": "财星两见藏于火土，印星暗藏，父缘浅而母缘近，家境富足。"
+    },
+    {
+      "id": "ftb_0058",
+      "cat": "婚姻",
+      "answer": "A",
+      "truth": "A",
+      "correct": true,
+      "reason": "夫妻宫无冲合刑，财星四见而比劫三见，印格透用，婚姻稳定但子息缘弱。"
+    },
+    {
+      "id": "ftb_0026",
+      "cat": "婚姻",
+      "answer": "A",
+      "truth": "A",
+      "correct": true,
+      "reason": "夫妻宫巳亥冲，比劫重重夺财，财星虚浮，感情根基不稳。"
+    },
+    {
+      "id": "ftb_0082",
+      "cat": "学业",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "真神透干得用，食伤格，土金成势，学历看印星与食伤，印星孤寡且火弱，故学历不高。"
+    },
+    {
+      "id": "ftb_0050",
+      "cat": "事业",
+      "answer": "B",
+      "truth": "D",
+      "correct": false,
+      "reason": "比劫重重夺财，财星孤悬，月令伤官泄秀，官星受制，故有刑克官非之象。"
+    },
+    {
+      "id": "ftb_0150",
+      "cat": "健康",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "五行最弱火0、木1，岁运冲旺克弱为应期；木主肝胆筋骨，弱极受克。"
+    },
+    {
+      "id": "ftb_0083",
+      "cat": "婚姻",
+      "answer": "A",
+      "truth": "D",
+      "correct": false,
+      "reason": "夫妻宫巳申合水刑并见，夫星甲木孤悬，财多比劫夺，官星无力。"
+    },
+    {
+      "id": "ftb_0086",
+      "cat": "性格",
+      "answer": "B",
+      "truth": "D",
+      "correct": false,
+      "reason": "五行土金重，比劫众，真神辛透，土金相生，性刚直而近顽。"
+    },
+    {
+      "id": "ftb_0123",
+      "cat": "事业",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "月令财格，比劫重重夺财，真神不照，假神乱真，主困顿劳碌。"
+    },
+    {
+      "id": "ftb_0035",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "官杀三现透干，夫星多现而杂，夫妻宫子丑合土，财星被合，感情多波折。"
+    },
+    {
+      "id": "ftb_0104",
+      "cat": "财运",
+      "answer": "A",
+      "truth": "B",
+      "correct": false,
+      "reason": "财星2见，比劫1见，身弱财旺，财星透干有根。"
+    },
+    {
+      "id": "ftb_0127",
+      "cat": "性格",
+      "answer": "D",
+      "truth": "B",
+      "correct": false,
+      "reason": "真神丁火透干得用，食伤格身弱从儿，聪敏能读但印星暗藏受制。"
+    },
+    {
+      "id": "ftb_0124",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "A",
+      "correct": false,
+      "reason": "大运流年引动比劫夺财，且财星受克，主破财或意外。"
+    },
+    {
+      "id": "ftb_0036",
+      "cat": "家庭",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "财星三见而比劫四见，比劫夺财，且水弱火炎，财源受制。"
+    },
+    {
+      "id": "ftb_0051",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "D",
+      "correct": false,
+      "reason": "财星四见而比劫亦重，夫星坐禄，流年合动妻星或冲开夫妻宫者应期。"
+    },
+    {
+      "id": "ftb_0004",
+      "cat": "家庭",
+      "answer": "C",
+      "truth": "C",
+      "correct": true,
+      "reason": "比劫重重夺财，财星为父，比劫克财应期在土旺之年。"
+    },
+    {
+      "id": "ftb_0120",
+      "cat": "财运",
+      "answer": "C",
+      "truth": "C",
+      "correct": true,
+      "reason": "财星4见且透干，比劫仅1见，财强身弱，财为父星，父缘厚但身弱难担，然真神得用，格局清贵。"
+    },
+    {
+      "id": "ftb_0062",
+      "cat": "事业",
+      "answer": "A",
+      "truth": "C",
+      "correct": false,
+      "reason": "2009年己丑，流年土旺，食伤生财，财星透干，主利求财置业，但印星暗藏，不利考学。"
+    },
+    {
+      "id": "ftb_0128",
+      "cat": "财运",
+      "answer": "D",
+      "truth": "D",
+      "correct": true,
+      "reason": "真神丁火透干得用，食伤格身弱从儿不真，财星弱而比劫旺，财来财去。"
+    },
+    {
+      "id": "ftb_0121",
+      "cat": "家庭",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "月令财格，比劫重重夺财，真神不照，假神乱真，主贫。"
+    },
+    {
+      "id": "ftb_0108",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "官杀三现夫星杂，日支丑未冲，比劫重夺财，食伤旺而夫宫动荡。"
+    },
+    {
+      "id": "ftb_0061",
+      "cat": "事业",
+      "answer": "D",
+      "truth": "B",
+      "correct": false,
+      "reason": "2011辛卯年，流年卯与日支酉冲，且卯为印星，冲夫妻宫及财星之根，主变动。"
+    },
+    {
+      "id": "ftb_0002",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "财星四现而比劫五重，劫财夺财，需待财星得地之流年，2002壬午财星透干且妻宫逢合。"
+    },
+    {
+      "id": "ftb_0090",
+      "cat": "财运",
+      "answer": "C",
+      "truth": "A",
+      "correct": false,
+      "reason": "比劫重夺财，财星虚浮，田宅运逢比劫争财之象。"
+    },
+    {
+      "id": "ftb_0040",
+      "cat": "财运",
+      "answer": "A",
+      "truth": "B",
+      "correct": false,
+      "reason": "比劫重夺财，财星虚浮无根，2020庚子、2021辛丑财透但比劫更旺，财来财去。"
+    },
+    {
+      "id": "ftb_0057",
+      "cat": "学业",
+      "answer": "D",
+      "truth": "A",
+      "correct": false,
+      "reason": "真神乙木透干得用，印格清纯，源流金水相生，学历主贵。"
+    },
+    {
+      "id": "ftb_0142",
+      "cat": "学业",
+      "answer": "B",
+      "truth": "A",
+      "correct": false,
+      "reason": "流年甲申，申子辰合水局，水势更旺，印旺夺食，且申金七杀冲寅（大运）引发金木战。"
+    },
+    {
+      "id": "ftb_0094",
+      "cat": "灾劫",
+      "answer": "C",
+      "truth": "A",
+      "correct": false,
+      "reason": "强众敌寡，金6克木，木为印星受制，木绝则凶现于木旺之岁运。"
+    },
+    {
+      "id": "ftb_0105",
+      "cat": "健康",
+      "answer": "C",
+      "truth": "B",
+      "correct": false,
+      "reason": "五行最弱火1，岁运冲旺克弱为应期，2018戊戌伤官见官且火弱极。"
+    },
+    {
+      "id": "ftb_0039",
+      "cat": "事业",
+      "answer": "D",
+      "truth": "A",
+      "correct": false,
+      "reason": "建禄格，比劫重重夺财，财星虚浮无根，主劳碌奔波求财。"
+    },
+    {
+      "id": "ftb_0129",
+      "cat": "婚姻",
+      "answer": "B",
+      "truth": "D",
+      "correct": false,
+      "reason": "夫妻宫无冲合刑，官杀夫星全无，财星生官无力，比劫争夫，食伤旺克官。"
+    },
+    {
+      "id": "ftb_0084",
+      "cat": "子女",
+      "answer": "A",
+      "truth": "C",
+      "correct": false,
+      "reason": "食伤格，伤官旺，子息星受制，比劫重夺财，子息缘薄。"
+    },
+    {
+      "id": "ftb_0116",
+      "cat": "健康",
+      "answer": "A",
+      "truth": "B",
+      "correct": false,
+      "reason": "五行最弱木1，弱极而病，金旺克木，木主肝，肝开窍于目，应期在岁运冲克。"
+    },
+    {
+      "id": "ftb_0047",
+      "cat": "家庭",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "财星1见且比劫5见，比劫重夺财，财星受损，主克父；日支子水无冲合，母星印星得水势。"
+    },
+    {
+      "id": "ftb_0101",
+      "cat": "婚姻",
+      "answer": "C",
+      "truth": "B",
+      "correct": false,
+      "reason": "官杀众而身弱，假化木需岁运助化，逢木旺火透之年成婚。"
+    },
+    {
+      "id": "ftb_0106",
+      "cat": "婚姻",
+      "answer": "A",
+      "truth": "B",
+      "correct": false,
+      "reason": "官杀混杂，流年戊癸合引动，比劫夺财，夫星受制。"
+    },
+    {
+      "id": "ftb_0081",
+      "cat": "家庭",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "财星四现但比劫五重夺财，月令食伤生财却劫刃争财，源流土金无木疏，出身仅足温饱。"
+    },
+    {
+      "id": "ftb_0033",
+      "cat": "健康",
+      "answer": "B",
+      "truth": "A",
+      "correct": false,
+      "reason": "旺极而折，岁运冲克弱神为应期；木最弱，2007丁亥冲巳克木。"
+    },
+    {
+      "id": "ftb_0070",
+      "cat": "健康",
+      "answer": "C",
+      "truth": "D",
+      "correct": false,
+      "reason": "五行最弱木2，弱极而病，岁运冲克为应期；2016丙申，申冲寅木，木气尽绝。"
+    },
+    {
+      "id": "ftb_0066",
+      "cat": "事业",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "食伤格真神得用，伤官生财，成名于技艺；1984甲子年，印星透干生身，子辰合水润局，伤官吐秀，名声大噪。"
+    },
+    {
+      "id": "ftb_0147",
+      "cat": "性格",
+      "answer": "D",
+      "truth": "B",
+      "correct": false,
+      "reason": "五行水金主导，水6众强，金4生水，喜简洁流动，忌繁杂土克。"
+    },
+    {
+      "id": "ftb_0031",
+      "cat": "性格",
+      "answer": "D",
+      "truth": "D",
+      "correct": true,
+      "reason": "水旺火弱，官杀重而身轻，假神透干，心性受制。"
+    },
+    {
+      "id": "ftb_0103",
+      "cat": "事业",
+      "answer": "D",
+      "truth": "C",
+      "correct": false,
+      "reason": "真神得用透干，食伤格生财，格局清纯，主贵且富。"
+    },
+    {
+      "id": "ftb_0091",
+      "cat": "运势",
+      "answer": "D",
+      "truth": "B",
+      "correct": false,
+      "reason": "强众敌寡，金势专旺，火弱受制，中年金运助势，困顿难伸。"
+    },
+    {
+      "id": "ftb_0072",
+      "cat": "学业",
+      "answer": "A",
+      "truth": "D",
+      "correct": false,
+      "reason": "真神透干得用，官杀格，清纯无破，主学业有成。"
+    },
+    {
+      "id": "ftb_0055",
+      "cat": "事业",
+      "answer": "D",
+      "truth": "D",
+      "correct": true,
+      "reason": "真神戊癸透干得用，生平贵；比劫重夺财，财星透干，主技艺谋财。"
+    },
+    {
+      "id": "ftb_0112",
+      "cat": "婚姻",
+      "answer": "C",
+      "truth": "D",
+      "correct": false,
+      "reason": "夫妻宫酉自刑，官杀仅1见且藏于时支，财星众而比劫争，婚姻多波折。"
+    },
+    {
+      "id": "ftb_0038",
+      "cat": "健康",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "五行最弱水0，2014甲午年火旺克水，水主肾，但选项无肾，取水弱极而病，水又主耳、骨，结合手术，取脑部（水主骨、脑）。"
+    },
+    {
+      "id": "ftb_0100",
+      "cat": "婚姻",
+      "answer": "A",
+      "truth": "A",
+      "correct": true,
+      "reason": "夫妻宫丑戌相刑，官杀混杂，比劫夺财，夫星受制。"
+    },
+    {
+      "id": "ftb_0017",
+      "cat": "婚姻",
+      "answer": "D",
+      "truth": "A",
+      "correct": false,
+      "reason": "夫妻宫辰冲戌，官杀癸水独现受制，比劫夺财，流年戊子合绊。"
+    },
+    {
+      "id": "ftb_0022",
+      "cat": "婚姻",
+      "answer": "D",
+      "truth": "B",
+      "correct": false,
+      "reason": "夫妻宫亥无冲合，财星四见且水势众，以月令午火定去留，财旺需比劫制衡，婚期在财星受制之年。"
+    },
+    {
+      "id": "ftb_0158",
+      "cat": "运势",
+      "answer": "B",
+      "truth": "D",
+      "correct": false,
+      "reason": "真神假神透干党多乱真，月令官杀格，搬迁应验于财星透出且合动夫妻宫之岁运。"
+    },
+    {
+      "id": "ftb_0148",
+      "cat": "事业",
+      "answer": "B",
+      "truth": "B",
+      "correct": true,
+      "reason": "丙辰大限，2017丁酉年，流年酉金合动辰土夫妻宫，且印星生身，应儿童培训领域。"
+    },
+    {
+      "id": "ftb_0001",
+      "cat": "健康",
+      "answer": "B",
+      "truth": "A",
+      "correct": false,
+      "reason": "财星四见比劫重，丙子年子水财星被旺土所克，财来财去，且子水为财星应期，但比劫夺财，故非财非灾，结合夫妻宫亥水逢子水旺，主婚缘。"
+    },
+    {
+      "id": "ftb_0095",
+      "cat": "财运",
+      "answer": "B",
+      "truth": "C",
+      "correct": false,
+      "reason": "财星6见党众，比劫1见势孤，强众敌寡，财多身弱，行比劫运稍助，行财官运更弱，破财最重。"
+    },
+    {
+      "id": "ftb_0109",
+      "cat": "财运",
+      "answer": "B",
+      "truth": "D",
+      "correct": false,
+      "reason": "比劫重夺财，财星孤悬，假从儿格，遇桃花（财星）为救应。"
+    }
+  ]
+}

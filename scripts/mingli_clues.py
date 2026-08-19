@@ -105,11 +105,21 @@ def _wealth_clue(day_gan: str, pillars: list[dict], tally: dict) -> str:
         f"，比劫{bijie}见" + (f"，{rob}" if rob else "")
 
 
+def _day_gz(r: dict) -> str:
+    """日柱干支；缺失时安全返回空串（判据缺省，不让生成器崩）。"""
+    if r.get("day_pillar"):
+        return r["day_pillar"]
+    pillars = r.get("pillars") or []
+    if len(pillars) < 3:
+        return ""
+    return pillars[2].get("gan", "") + pillars[2].get("zhi", "")
+
+
 def _year_clue(r: dict, question: str) -> str:
     years = re.findall(r"(19\d\d|20\d\d)\s*年", question or "")
     clues = []
-    day_gz = r.get("day_pillar") or (r.get("pillars") or [])[2].get("gan") + (r.get("pillars") or [])[2].get("zhi")
-    day_zhi = (r.get("pillars") or [])[2].get("zhi")
+    day_gz = _day_gz(r)
+    day_zhi = day_gz[1:] if len(day_gz) == 2 else ""
     for y in sorted(set(years)):
         for x in r.get("liunian", []):
             if str(x.get("year")) != y:
@@ -125,12 +135,13 @@ def _year_clue(r: dict, question: str) -> str:
                 dz = ce.suiyun_relation(x["ganzhi"], day_gz)
                 if dz.get("read") and ("战" in dz["read"] or "冲" in dz["read"]):
                     parts.append(f"流年{x['ganzhi']}对日柱{day_gz}: {dz['read'][:24]}")
-            # 流年 vs 夫妻宫
-            pair = x["ganzhi"][1] + day_zhi
-            if pair in XING_ZHI:
-                parts.append(XING_ZHI[pair] + "(动夫妻宫)")
-            if frozenset((x["ganzhi"][1], day_zhi)) in ce.CHONG_PAIRS:
-                parts.append(f"流年支{x['ganzhi'][1]}冲夫妻宫{day_zhi}")
+            # 流年 vs 夫妻宫（日支缺省时跳过）
+            if day_zhi:
+                pair = x["ganzhi"][1] + day_zhi
+                if pair in XING_ZHI:
+                    parts.append(XING_ZHI[pair] + "(动夫妻宫)")
+                if frozenset((x["ganzhi"][1], day_zhi)) in ce.CHONG_PAIRS:
+                    parts.append(f"流年支{x['ganzhi'][1]}冲夫妻宫{day_zhi}")
             # 岁运并临（流年=大运）
             for lu in r.get("lucky", []):
                 if lu.get("ganzhi") == x["ganzhi"]:

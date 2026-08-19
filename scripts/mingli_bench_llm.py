@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""MingLi-Bench LLM 自动评测 — v7.19。
+"""MingLi-Bench LLM 依据审计 — BFFT v7.19.
 
-用 OpenAI 兼容接口（DeepSeek）对 dist/mingli-pack.json（带 clues）逐题作答，
-与 data.json 标准答案对比，输出 results/mingli-pack-ans.<label>.json 与分类成绩。
+不再只记 ABCD：每题输出"依据 + 答案"，供人工复盘判据用得对不对。
+分数仅作趋势参考，不作为调参目标（项目定位：可证伪的事前预测，
+MingLi-Bench 选择题只是弱信号）。
 
-凭据：优先环境变量 DEEPSEEK_API_KEY；否则读 $DSH_HOME/.credentials.yaml
-（DSH_HOME 默认 E:\\data\\DeepSeekHarness\\home，可用环境变量覆盖）。
+凭据：环境变量 DEEPSEEK_API_KEY；否则读 $DSH_HOME/.credentials.yaml。
 
 用法:
-    python scripts/mingli_bench_llm.py --label bfft-20-clues
-    python scripts/mingli_bench_llm.py --label bfft-a-clues --limit 10
+    python scripts/mingli_bench_llm.py --label audit-001 --limit 5
+    python scripts/mingli_bench_llm.py --label audit-001 --model deepseek-chat
 """
 
 from __future__ import annotations
@@ -30,10 +30,6 @@ TRUTH_PATH = os.path.join(ROOT, "data", "mingli_bench", "data.json")
 RESULT_DIR = os.path.join(ROOT, "data", "mingli_bench", "results")
 DSH_HOME = os.environ.get("DSH_HOME", r"E:\data\DeepSeekHarness\home")
 
-API_URL = os.environ.get("BFFT_LLM_URL", "https://api.deepseek.com/chat/completions")
-MODEL = os.environ.get("BFFT_LLM_MODEL", "deepseek-chat")
-EFFORT = os.environ.get("BFFT_LLM_EFFORT", "")
-
 
 def api_key() -> str:
     if os.environ.get("DEEPSEEK_API_KEY"):
@@ -47,12 +43,13 @@ def api_key() -> str:
     raise SystemExit("未找到 DEEPSEEK_API_KEY（环境变量或 .credentials.yaml）")
 
 
-def ask_one(item: dict) -> str | None:
+def ask_one(item: dict, base_url: str, model: str, effort: str) -> tuple[str | None, str]:
+    """返回 (答案字母或 None, 依据文本)。"""
     options = "\n".join(f"{o['letter']}. {o['text']}" for o in item["options"])
     prompt = (
-        "你是资深命理师。基于四柱盘面与 BFFT 判据（clues）答题。\n"
-        "要求：先写一行依据（不超过30字），再输出最终答案，格式严格如下：\n"
-        "依据：<你的判断>\n"
+        "你是资深命理师。基于四柱盘面与 BFFT 判据（clues）推演。\n"
+        "格式严格如下，先依据后答案：\n"
+        "依据：<30字内，点名所据判据>\n"
         "答案：<A/B/C/D>\n\n"
         f"题目：{item['question']}\n"
         f"选项：\n{options}\n\n"
@@ -60,37 +57,43 @@ def ask_one(item: dict) -> str | None:
         f"日主：{item['chart']['day_master']}\n\n"
         f"判据：{item.get('clues', '')}"
     )
-    body = json.dumps({
-        "model": MODEL,
+    payload = {
+        "model": model,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0,
         "max_tokens": 4000,
-        **({"reasoning_effort": EFFORT} if EFFORT else {}),
-    }).encode()
-    req = urllib.request.Request(API_URL, data=body, headers={
+    }
+    if effort:
+        payload["reasoning_effort"] = effort
+    req = urllib.request.Request(base_url, data=json.dumps(payload).encode(), headers={
         "Content-Type": "application/json",
         "Authorization": f"Bearer {api_key()}",
     })
-    with urllib.request.urlopen(req, timeout=120) as resp:
+    with urllib.request.urlopen(req, timeout=180) as resp:
         data = json.loads(resp.read())
-    text = data["choices"][0]["message"]["content"].strip()
+    text = (data["choices"][0]["message"].get("content") or "").strip()
+    reason = ""
+    m = re.search(r"依据\s*[:：]\s*(.+)", text)
+    if m:
+        reason = m.group(1).split("答案")[0].strip()[:200]
+    ans = None
     m = re.search(r"答案\s*[:：]\s*([A-Da-d])", text)
     if m:
-        return m.group(1).upper()
-    m = re.search(r"\b([A-D])\b", text)
-    return m.group(1).upper() if m else None
+        ans = m.group(1).upper()
+    else:
+        m = re.search(r"\b([A-D])\b", text)
+        ans = m.group(1).upper() if m else None
+    return ans, reason
 
 
-def main():
-    global API_URL, MODEL, EFFORT
+def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--label", default="bfft-20-clues")
+    ap.add_argument("--label", default="audit-001")
     ap.add_argument("--limit", type=int, default=0)
-    ap.add_argument("--base-url", default=API_URL)
-    ap.add_argument("--model", default=MODEL)
-    ap.add_argument("--effort", default=EFFORT, help="reasoning_effort（如 low），空=不传")
+    ap.add_argument("--base-url", default=os.environ.get("BFFT_LLM_URL", "https://api.deepseek.com/chat/completions"))
+    ap.add_argument("--model", default=os.environ.get("BFFT_LLM_MODEL", "deepseek-chat"))
+    ap.add_argument("--effort", default=os.environ.get("BFFT_LLM_EFFORT", ""))
     args = ap.parse_args()
-    API_URL, MODEL, EFFORT = args.base_url, args.model, args.effort
 
     pack = json.load(open(PACK_PATH, encoding="utf-8"))
     truth = {q["id"]: q["answer"] for q in json.load(open(TRUTH_PATH, encoding="utf-8"))["questions"]}
@@ -98,11 +101,12 @@ def main():
 
     detail = []
     for i, it in enumerate(items, 1):
-        ans = ask_one(it)
+        ans, reason = ask_one(it, args.base_url, args.model, args.effort)
         ok = ans == truth.get(it["id"])
         detail.append({"id": it["id"], "cat": it["category"], "answer": ans,
-                       "truth": truth.get(it["id"]), "correct": ok})
-        print(f"[{i}/{len(items)}] {it['id']} [{it['category']}] 答 {ans} / 真 {truth.get(it['id'])} {'✓' if ok else '✗'}", flush=True)
+                       "truth": truth.get(it["id"]), "correct": ok, "reason": reason})
+        print(f"[{i}/{len(items)}] {it['id']} [{it['category']}] 答 {ans or '-'} / 真 {truth.get(it['id'])} "
+              f"{'✓' if ok else '✗'}  依据: {reason[:40]}", flush=True)
 
     n = len(detail)
     correct = sum(1 for d in detail if d["correct"])
@@ -115,22 +119,22 @@ def main():
 
     out = {
         "label": args.label,
-        "model": MODEL,
+        "mode": "依据审计（分数仅趋势参考，不为调参目标）",
+        "model": args.model,
         "n": n,
         "correct": correct,
         "accuracy": round(correct / n, 4) if n else 0,
         "random_baseline": 0.25,
-        "by_category": {k: {"ok": v["ok"], "n": v["n"],
-                            "acc": round(v["ok"] / v["n"], 4)} for k, v in by_cat.items()},
+        "by_category": {k: {"ok": v["ok"], "n": v["n"], "acc": round(v["ok"] / v["n"], 4)}
+                        for k, v in by_cat.items()},
         "detail": detail,
     }
     os.makedirs(RESULT_DIR, exist_ok=True)
     path = os.path.join(RESULT_DIR, f"mingli-pack-ans.{args.label}.json")
     json.dump(out, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-    print(f"\n=== {args.label} === 总 {correct}/{n} ({correct/n:.0%})  旧 bfft-20: 9/20 (45%)", flush=True)
+    print(f"\n{args.label}: {correct}/{n}（趋势参考）  → 审计明细 {path}", flush=True)
     for k, v in sorted(by_cat.items(), key=lambda kv: kv[1]["ok"] / max(kv[1]["n"], 1)):
-        print(f"  {k}: {v['ok']}/{v['n']} ({v['ok']/v['n']:.0%})", flush=True)
-    print(f"写盘 {path}", flush=True)
+        print(f"  {k}: {v['ok']}/{v['n']}", flush=True)
 
 
 if __name__ == "__main__":

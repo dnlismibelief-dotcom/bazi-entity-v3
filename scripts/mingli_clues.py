@@ -108,12 +108,75 @@ def _wealth_clue(day_gan: str, pillars: list[dict], tally: dict) -> str:
 def _year_clue(r: dict, question: str) -> str:
     years = re.findall(r"(19\d\d|20\d\d)\s*年", question or "")
     clues = []
-    for y in set(years):
+    day_gz = r.get("day_pillar") or (r.get("pillars") or [])[2].get("gan") + (r.get("pillars") or [])[2].get("zhi")
+    day_zhi = (r.get("pillars") or [])[2].get("zhi")
+    for y in sorted(set(years)):
         for x in r.get("liunian", []):
-            if str(x.get("year")) == y:
-                rel = ce.suiyun_relation(x["ganzhi"], r["year_pillar"])
-                clues.append(f"{y}年{x['ganzhi']}与年柱{r['year_pillar']}: {rel.get('read', '')}")
+            if str(x.get("year")) != y:
+                continue
+            parts = []
+            # 流年 vs 年柱 / 日柱（伏吟反吟）
+            rel = ce.suiyun_relation(x["ganzhi"], r["year_pillar"])
+            if rel.get("read"):
+                parts.append(f"与年柱{r['year_pillar']}{rel['read'][:24]}")
+            if x["ganzhi"] == day_gz:
+                parts.append(f"流年{x['ganzhi']}与日柱伏吟(本命重复, 自身/婚姻多动)")
+            else:
+                dz = ce.suiyun_relation(x["ganzhi"], day_gz)
+                if dz.get("read") and ("战" in dz["read"] or "冲" in dz["read"]):
+                    parts.append(f"流年{x['ganzhi']}对日柱{day_gz}: {dz['read'][:24]}")
+            # 流年 vs 夫妻宫
+            pair = x["ganzhi"][1] + day_zhi
+            if pair in XING_ZHI:
+                parts.append(XING_ZHI[pair] + "(动夫妻宫)")
+            if frozenset((x["ganzhi"][1], day_zhi)) in ce.CHONG_PAIRS:
+                parts.append(f"流年支{x['ganzhi'][1]}冲夫妻宫{day_zhi}")
+            # 岁运并临（流年=大运）
+            for lu in r.get("lucky", []):
+                if lu.get("ganzhi") == x["ganzhi"]:
+                    parts.append(f"岁运并临(流年=大运{x['ganzhi']})")
+            clues.append(f"{y}年{x['ganzhi']}: " + "；".join(parts))
     return "；".join(clues) if clues else ""
+
+
+def focused_clue(r: dict, gender: str, category: str, question: str) -> str:
+    """按题目类别给最强 2-3 条线索（放在完整判据之前）。"""
+    pillars = _pillars_of(r)
+    day_gan = r.get("day_master")
+    day_zhi = pillars[2]["zhi"]
+    tally = _shishen_tally(day_gan, pillars)
+    out = []
+    if category in ("婚姻", "家庭"):
+        out.append(_marriage_clue(day_gan, pillars, gender, tally))
+        yc = _year_clue(r, question)
+        if yc:
+            out.append("应期: " + yc)
+    elif category == "财运":
+        out.append(_wealth_clue(day_gan, pillars, tally))
+        yc = _year_clue(r, question)
+        if yc:
+            out.append("应期: " + yc)
+    elif category == "健康":
+        cnt = _counts_of(r, pillars)
+        weak = sorted(cnt.items(), key=lambda kv: kv[1])
+        out.append(f"五行最弱: {weak[0][0]}{weak[0][1]}、{weak[1][0]}{weak[1][1]}；旺极而折、弱极而病，岁运冲旺克弱为应期")
+        yc = _year_clue(r, question)
+        if yc:
+            out.append("应期: " + yc)
+    elif category == "性格":
+        cnt = _counts_of(r, pillars)
+        top = sorted(cnt.items(), key=lambda kv: -kv[1])[:2]
+        out.append(f"五行主导: {top[0][0]}、{top[1][0]}")
+        sf = ce.source_flow(cnt)
+        out.append(f"源流: 源头{sf.get('source', '')} → 流经{'/'.join(sf.get('chain', []))} → 汇{sf.get('sink', '')}")
+    elif category == "事业":
+        month_zhi = pillars[1]["zhi"]
+        month_shi = ce._shishen(day_gan, ce.CANG[month_zhi][0])
+        out.append(f"月令用神: {SHI_TO_GE.get(ce.SHI_GROUP[month_shi], '杂格')}（{month_zhi}本气{ce.CANG[month_zhi][0]}）")
+        yc = _year_clue(r, question)
+        if yc:
+            out.append("应期: " + yc)
+    return "；".join(out)
 
 
 def build_clues(r: dict, gender: str = "male", question: str = "") -> str:

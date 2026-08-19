@@ -37,7 +37,7 @@ sys.modules["pai_pan"] = pp
 spec.loader.exec_module(pp)
 
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
-from mingli_clues import build_clues
+from mingli_clues import build_clues, focused_clue
 
 # 已知口径差异案例（夏令时/农历年流派），盲测时排除，避免把口径差异算成推理错误
 SKIP_IDS = {f"ftb_{i:04d}" for i in range(11, 16)} | {f"ftb_{i:04d}" for i in range(151, 156)}
@@ -84,6 +84,9 @@ def main():
     pack = []
     for q in sample:
         summary, r = chart_summary(q)
+        gender = "male" if q["birth_info"]["gender"] == "男" else "female"
+        focus = focused_clue(r, gender, q["category"], q["question"])
+        full = build_clues(r, gender=gender, question=q["question"])
         item = {
             "id": q["id"],
             "category": q["category"],
@@ -91,8 +94,7 @@ def main():
             "question": q["question"],
             "options": [{"letter": o["letter"], "text": o["text"]} for o in q["options"]],
             "chart": summary,
-            "clues": build_clues(r, gender="male" if q["birth_info"]["gender"] == "男" else "female",
-                                 question=q["question"]),
+            "clues": focus + (" | " + full if focus else full),
         }
         if args.with_answer:
             item["answer"] = q["answer"]

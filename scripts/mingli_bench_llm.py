@@ -90,6 +90,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--label", default="audit-001")
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--cats", default="", help="只跑指定类别（逗号分隔，如 财运,学业）")
     ap.add_argument("--base-url", default=os.environ.get("BFFT_LLM_URL", "https://api.deepseek.com/chat/completions"))
     ap.add_argument("--model", default=os.environ.get("BFFT_LLM_MODEL", "deepseek-chat"))
     ap.add_argument("--effort", default=os.environ.get("BFFT_LLM_EFFORT", ""))
@@ -98,6 +99,10 @@ def main() -> None:
     pack = json.load(open(PACK_PATH, encoding="utf-8"))
     truth = {q["id"]: q["answer"] for q in json.load(open(TRUTH_PATH, encoding="utf-8"))["questions"]}
     items = pack["items"][: args.limit] if args.limit else pack["items"]
+    if args.cats:
+        want = {c.strip() for c in args.cats.split(",") if c.strip()}
+        items = [it for it in items if it["category"] in want]
+        print(f"类别过滤: {sorted(want)} → {len(items)} 题", flush=True)
 
     detail = []
     for i, it in enumerate(items, 1):

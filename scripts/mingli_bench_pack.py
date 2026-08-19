@@ -85,14 +85,15 @@ def main():
     for q in sample:
         summary, r = chart_summary(q)
         gender = "male" if q["birth_info"]["gender"] == "男" else "female"
-        focus = focused_clue(r, gender, q["category"], q["question"])
+        options = [{"letter": o["letter"], "text": o["text"]} for o in q["options"]]
+        focus = focused_clue(r, gender, q["category"], q["question"], options)
         full = build_clues(r, gender=gender, question=q["question"])
         item = {
             "id": q["id"],
             "category": q["category"],
             "birth_raw": q["birth_info"]["raw"],
             "question": q["question"],
-            "options": [{"letter": o["letter"], "text": o["text"]} for o in q["options"]],
+            "options": options,
             "chart": summary,
             "clues": focus + (" | " + full if focus else full),
         }
